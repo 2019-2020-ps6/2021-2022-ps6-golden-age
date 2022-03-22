@@ -6,11 +6,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app.routing.module';
 import {HeaderUserComponent} from './header/headerUser/headerUser.component';
+import {QuizComponent} from './quizzes/quiz/quiz.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderUserComponent
+    HeaderUserComponent,
+    QuizComponent
   ],
   imports: [
     BrowserModule,
