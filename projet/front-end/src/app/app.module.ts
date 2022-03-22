@@ -10,6 +10,8 @@ import {QuizComponent} from './quizzes/quiz/quiz.component';
 import {QuestionComponent} from './questions/question/question.component';
 import {QuestionListComponent} from './questions/question-list/question-list.component';
 import {QuestionFormComponent} from './questions/question-form/question-form.component';
+import {QuizFormComponent} from './quizzes/quiz-form/quiz-form.component';
+import {QuizListComponent} from './quizzes/quiz-list/quiz-list.component';
 
 
 @NgModule({
@@ -17,6 +19,8 @@ import {QuestionFormComponent} from './questions/question-form/question-form.com
     AppComponent,
     HeaderUserComponent,
     QuizComponent,
+    QuizFormComponent,
+    QuizListComponent,
     QuestionComponent,
     QuestionListComponent,
     QuestionFormComponent
