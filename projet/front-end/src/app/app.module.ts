@@ -7,10 +7,14 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app.routing.module';
 import {HeaderUserComponent} from './header/headerUser/headerUser.component';
 
+import { SelectionQuizComponent } from './quizzes/selectionnerUnQuiz.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderUserComponent
+    HeaderUserComponent,
+    SelectionQuizComponent
   ],
   imports: [
     BrowserModule,
