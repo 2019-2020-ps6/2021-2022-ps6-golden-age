@@ -7,13 +7,19 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app.routing.module';
 import {HeaderUserComponent} from './header/headerUser/headerUser.component';
 import {QuizComponent} from './quizzes/quiz/quiz.component';
+import {QuestionComponent} from './questions/question/question.component';
+import {QuestionListComponent} from './questions/question-list/question-list.component';
+import {QuestionFormComponent} from './questions/question-form/question-form.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderUserComponent,
-    QuizComponent
+    QuizComponent,
+    QuestionComponent,
+    QuestionListComponent,
+    QuestionFormComponent
   ],
   imports: [
     BrowserModule,
