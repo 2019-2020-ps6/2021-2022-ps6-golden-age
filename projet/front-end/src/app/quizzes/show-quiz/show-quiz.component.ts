@@ -2,12 +2,12 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-header',
-  templateUrl: './helpPageUser.component.html',
-  styleUrls: ['./helpPageUser.component.scss']
+  templateUrl: './show-quiz.component.html',
+  styleUrls: ['./show-quiz.component.scss']
 })
 
 // tslint:disable-next-line:class-name
-export class helpPageUserComponent implements OnInit {
+export class ShowQuizComponent implements OnInit {
 
   constructor() { }
 

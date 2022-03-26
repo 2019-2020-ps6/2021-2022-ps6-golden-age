@@ -4,10 +4,10 @@ import { QuizService } from '../../services/quiz.service';
 import { Quiz } from '../../../models/quiz.model';
 
 @Component({
-  selector: 'app-quiz-list',
+  selector: 'app-header',
   templateUrl: './quiz-list.component.html',
-  styleUrls: ['./quiz-list.component.scss']
-})
+  styleUrls: ['./quiz-list.component.scss']})
+
 export class QuizListComponent implements OnInit {
 
   public quizList: Quiz[] = [];

@@ -12,6 +12,9 @@ import {QuestionListComponent} from './questions/question-list/question-list.com
 import {QuestionFormComponent} from './questions/question-form/question-form.component';
 import {QuizFormComponent} from './quizzes/quiz-form/quiz-form.component';
 import {QuizListComponent} from './quizzes/quiz-list/quiz-list.component';
+import {helpPageUserComponent} from './help/user/helpPageUser.component';
+import {helpPageProComponent} from './help/pro/helpPagePro.component';
+import {ShowQuizComponent} from './quizzes/show-quiz/show-quiz.component';
 
 
 @NgModule({
@@ -23,7 +26,10 @@ import {QuizListComponent} from './quizzes/quiz-list/quiz-list.component';
     QuizListComponent,
     QuestionComponent,
     QuestionListComponent,
-    QuestionFormComponent
+    QuestionFormComponent,
+    helpPageUserComponent,
+    helpPageProComponent,
+    ShowQuizComponent,
   ],
   imports: [
     BrowserModule,
