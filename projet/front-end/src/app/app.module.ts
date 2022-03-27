@@ -12,8 +12,8 @@ import {QuestionListComponent} from './questions/question-list/question-list.com
 import {QuestionFormComponent} from './questions/question-form/question-form.component';
 import {QuizFormComponent} from './quizzes/quiz-form/quiz-form.component';
 import {QuizListComponent} from './quizzes/quiz-list/quiz-list.component';
-import {helpPageUserComponent} from './help/user/helpPageUser.component';
-import {helpPageProComponent} from './help/pro/helpPagePro.component';
+import {HelpPageUserComponent} from './help/user/help-page-user.component';
+import {HelpPageProComponent} from './help/pro/help-page-pro.component';
 import {ShowQuizComponent} from './quizzes/show-quiz/show-quiz.component';
 
 
@@ -27,8 +27,8 @@ import {ShowQuizComponent} from './quizzes/show-quiz/show-quiz.component';
     QuestionComponent,
     QuestionListComponent,
     QuestionFormComponent,
-    helpPageUserComponent,
-    helpPageProComponent,
+    HelpPageUserComponent,
+    HelpPageProComponent,
     ShowQuizComponent,
   ],
   imports: [

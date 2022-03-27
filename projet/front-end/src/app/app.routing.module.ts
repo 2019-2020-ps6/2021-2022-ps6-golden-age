@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { helpPageProComponent } from './help/pro/helpPagePro.component';
-import { helpPageUserComponent } from './help/user/helpPageUser.component';
+import { HelpPageProComponent } from './help/pro/help-page-pro.component';
+import { HelpPageUserComponent } from './help/user/help-page-user.component';
 import { AccueilUserComponent } from './accueil/user/accueilUser.component';
 import {QuizListComponent} from './quizzes/quiz-list/quiz-list.component';
 import {ShowQuizComponent} from './quizzes/show-quiz/show-quiz.component';
 
 const routes: Routes = [
-    {path: 'helpPro', component: helpPageProComponent},
-    {path: 'helpUser', component: helpPageUserComponent},
+    {path: 'help-pro', component: HelpPageProComponent},
+    {path: 'help-user', component: HelpPageUserComponent},
     {path: 'accueilUser', component: AccueilUserComponent},
     {path: 'quiz-list', component: QuizListComponent},
   {path: 'show-quiz', component: ShowQuizComponent},
