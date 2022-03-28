@@ -56,10 +56,10 @@ export class ThemeService {
     });
   }
 
-  // deleteQuiz(quiz: Theme): void {
-  //   const urlWithId = this.themeUrl + '/' + quiz.id;
-  //   this.http.delete<Theme>(urlWithId, this.httpOptions).subscribe(() => this.retrieveQuizzes());
-  // }
+  deleteTheme(theme: Theme): void {
+    const urlWithId = this.themeUrl + '/' + theme.id;
+    this.http.delete<Theme>(urlWithId, this.httpOptions).subscribe(() => this.retrieveThemes());
+  }
 
   // addQuiz(theme: Theme, quiz: Theme): void {
   //   const quizUrl = this.themeUrl + '/' + theme.id + '/' + this.quizzesPath;

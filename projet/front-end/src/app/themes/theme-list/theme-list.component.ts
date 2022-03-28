@@ -21,15 +21,17 @@ export class ThemeListComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  themeSelected(selected: boolean): void {
-    console.log('event received from child:', selected);
+  themeSelected(theme: Theme): void {
+    console.log(theme);
+    this.router.navigate(['/select-theme/' + theme.id]);
+    console.log('event received from child:', theme);
   }
 
   // editQuiz(quiz: Theme): void {
   //   this.router.navigate(['/edit-quiz/' + quiz.name]);
   // }
 
-  // deleteQuiz(quiz: Theme): void {
-  //   this.themeService.deleteQuiz(quiz);
-  // }
+  deleteTheme(theme: Theme): void {
+    this.themeService.deleteTheme(theme);
+  }
 }

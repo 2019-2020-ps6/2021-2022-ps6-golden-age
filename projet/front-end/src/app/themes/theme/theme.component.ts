@@ -17,8 +17,8 @@ export class ThemeComponent implements OnInit {
   // @Output()
   // editQuiz: EventEmitter<Theme> = new EventEmitter<Theme>();
 
-  // @Output()
-  // deleteQuiz: EventEmitter<Theme> = new EventEmitter<Theme>();
+  @Output()
+  deleteTheme: EventEmitter<Theme> = new EventEmitter<Theme>();
 
   constructor() {
   }
@@ -34,7 +34,7 @@ export class ThemeComponent implements OnInit {
   //   this.editQuiz.emit(this.quiz);
   // }
   //
-  // delete(): void {
-  //   this.deleteQuiz.emit(this.quiz);
-  // }
+  delete(): void {
+    this.deleteTheme.emit(this.theme);
+  }
 }
