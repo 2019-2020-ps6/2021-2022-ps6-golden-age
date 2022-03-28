@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Quiz } from 'src/models/quiz.model';
-import { QuizService } from '../../services/quiz.service';
+import { QuizService } from 'src/services/quiz.service';
 import { Question } from 'src/models/question.model';
 
 @Component({
