@@ -13,22 +13,39 @@ import {QuestionFormComponent} from './questions/question-form/question-form.com
 import {QuizFormComponent} from './quizzes/quiz-form/quiz-form.component';
 import {QuizListComponent} from './quizzes/quiz-list/quiz-list.component';
 
+import { ThemeListComponent } from './themes/theme-list/theme-list.component';
+import { ThemeFormComponent } from './themes/theme-form/theme-form.component';
+import { ThemeComponent } from './themes/theme/theme.component';
+
+import { QuestionListComponent } from './questions/question-list/question-list.component';
+import { QuestionFormComponent } from './questions/question-form/question-form.component';
+import { QuestionComponent } from './questions/question/question.component';
+
+import { QuizListComponent } from './quizzes/quiz-list/quiz-list.component';
+import { QuizFormComponent } from './quizzes/quiz-form/quiz-form.component';
+import { QuizComponent } from './quizzes/quiz/quiz.component';
+import { EditQuizComponent } from './quizzes/edit-quiz/edit-quiz.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderUserComponent,
-    QuizComponent,
-    QuizFormComponent,
-    QuizListComponent,
-    QuestionComponent,
+    ThemeListComponent,
+    ThemeFormComponent,
+    ThemeComponent,
     QuestionListComponent,
-    QuestionFormComponent
+    QuestionFormComponent,
+    QuestionComponent,
+    QuizListComponent,
+    QuizFormComponent,
+    QuizComponent,
+    EditQuizComponent
   ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
     AppRoutingModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
