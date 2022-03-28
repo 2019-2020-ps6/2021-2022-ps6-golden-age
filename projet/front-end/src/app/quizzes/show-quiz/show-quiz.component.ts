@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import {Quiz} from '../../../models/quiz.model';
 import {Router} from '@angular/router';
+import {QUIZ_LIST} from '../../../mocks/quiz-list.mock';
 
 @Component({
   selector: 'app-show-quiz',
@@ -11,7 +12,7 @@ import {Router} from '@angular/router';
 // tslint:disable-next-line:class-name
 export class ShowQuizComponent implements OnInit {
   @Input()
-  quiz: Quiz;
+  quiz = QUIZ_LIST.pop();
   private router: Router;
   constructor() { }
 
@@ -19,7 +20,7 @@ export class ShowQuizComponent implements OnInit {
   }
 
   startQuiz(quiz: Quiz): void {
-    this.router.navigate(['/edit-quiz/' + quiz.name]);
+    this.router.navigate([quiz.name + '/question-list' ]);
   }
 
 }

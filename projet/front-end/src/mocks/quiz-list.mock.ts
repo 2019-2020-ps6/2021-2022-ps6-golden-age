@@ -1,7 +1,7 @@
 import { Quiz } from '../models/quiz.model';
 import { Question } from '../models/question.model';
 
-export const QUESTION_ACTOR: Question = {
+export const QUESTION_MONUMENT: Question = {
     id: '1',
     label: 'Où se situe ce pont?',
     answers: [
@@ -29,7 +29,7 @@ export const QUIZ_LIST: Quiz[] = [
         id: 'Les-Etats-Unis',
         name: 'Les Etats Unis',
         theme: 'Geographie',
-        img : 'projet/front-end/src/assets/images/illustrationQuizMonuments.png',
-        questions: [],
+        img : 'assets/images/illustrationQuizMonuments.png',
+        questions: [QUESTION_MONUMENT],
     }
 ];

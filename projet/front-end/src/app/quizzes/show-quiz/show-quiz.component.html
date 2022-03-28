@@ -2,8 +2,8 @@
   Vous avez sélectionné : <br>
   Quiz {{quiz.theme}} : {{quiz.name}}
   <br>
-  <img src="{{quiz.img}}">
+  <img src="{{quiz.img}}" width="45%" height="60%" >
   <br>
   Nombre de questions : {{quiz.questions.length}}
-  <button class="button-card" (click)="startQuiz()">Commencer</button>
+  <button class="button-card" (click)="startQuiz(quiz)">Commencer</button>
 </div>
