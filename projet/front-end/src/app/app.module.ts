@@ -39,6 +39,7 @@ import {ThemeFormComponent} from './themes/theme-form/theme-form.component';
     BrowserModule,
     ReactiveFormsModule,
     AppRoutingModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
