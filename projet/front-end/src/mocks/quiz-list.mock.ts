@@ -29,6 +29,7 @@ export const QUIZ_LIST: Quiz[] = [
         id: 'Les-Etats-Unis',
         name: 'Les Etats Unis',
         theme: 'Geographie',
+        img : 'projet/front-end/src/assets/images/illustrationQuizMonuments.png',
         questions: [],
     }
 ];
