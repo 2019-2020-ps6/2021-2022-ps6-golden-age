@@ -15,6 +15,8 @@ import {QuizListComponent} from './quizzes/quiz-list/quiz-list.component';
 import {HelpPageUserComponent} from './help/user/help-page-user.component';
 import {HelpPageProComponent} from './help/pro/help-page-pro.component';
 import {ShowQuizComponent} from './quizzes/show-quiz/show-quiz.component';
+import {ThemeListComponent} from './themes/theme-list/theme-list.component';
+import {ThemeFormComponent} from './themes/theme-form/theme-form.component';
 
 
 @NgModule({
@@ -30,6 +32,8 @@ import {ShowQuizComponent} from './quizzes/show-quiz/show-quiz.component';
     HelpPageUserComponent,
     HelpPageProComponent,
     ShowQuizComponent,
+    ThemeListComponent,
+    ThemeFormComponent,
   ],
   imports: [
     BrowserModule,
