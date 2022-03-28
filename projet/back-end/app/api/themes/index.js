@@ -11,17 +11,17 @@ router.use('/:themeId/quizzes', QuizzesRouter)
 
 router.get('/', (req, res) => {
   try {
-    const quizzes = buildThemes()
-    res.status(200).json(quizzes)
+    const themes = buildThemes()
+    res.status(200).json(themes)
   } catch (err) {
     manageAllErrors(res, err)
   }
 })
 
-router.get('/:quizId', (req, res) => {
+router.get('/:themeId', (req, res) => {
   try {
-    const quizz = buildTheme(req.params.quizId)
-    res.status(200).json(quizz)
+    const theme = buildTheme(req.params.themeId)
+    res.status(200).json(theme)
   } catch (err) {
     manageAllErrors(res, err)
   }
@@ -29,14 +29,14 @@ router.get('/:quizId', (req, res) => {
 
 router.post('/', (req, res) => {
   try {
-    const quiz = Theme.create({ ...req.body })
-    res.status(201).json(quiz)
+    const theme = Theme.create({ ...req.body })
+    res.status(201).json(theme)
   } catch (err) {
     manageAllErrors(res, err)
   }
 })
 
-router.put('/:quizId', (req, res) => {
+router.put('/:themeId', (req, res) => {
   try {
     res.status(200).json(Theme.update(req.params.quizId, req.body))
   } catch (err) {
@@ -44,9 +44,9 @@ router.put('/:quizId', (req, res) => {
   }
 })
 
-router.delete('/:quizId', (req, res) => {
+router.delete('/:themeId', (req, res) => {
   try {
-    Theme.delete(req.params.quizId)
+    Theme.delete(req.params.themeId)
     res.status(204).end()
   } catch (err) {
     manageAllErrors(res, err)
