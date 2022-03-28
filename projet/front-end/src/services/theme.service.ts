@@ -34,10 +34,10 @@ export class ThemeService {
   private httpOptions = httpOptionsBase;
 
   constructor(private http: HttpClient) {
-    this.retrieveQuizzes();
+    this.retrieveThemes();
   }
 
-  retrieveQuizzes(): void {
+  retrieveThemes(): void {
     this.http.get<Theme[]>(this.themeUrl).subscribe((themeList) => {
       this.themes = themeList;
       console.log(this.themes);
@@ -45,9 +45,9 @@ export class ThemeService {
     });
   }
 
-  // addQuiz(quiz: Theme): void {
-  //   this.http.post<Theme>(this.themeUrl, quiz, this.httpOptions).subscribe(() => this.retrieveQuizzes());
-  // }
+  addTheme(quiz: Theme): void {
+    this.http.post<Theme>(this.themeUrl, quiz, this.httpOptions).subscribe(() => this.retrieveThemes());
+  }
 
   setSelectedTheme(quizId: string): void {
     const urlWithId = this.themeUrl + '/' + quizId;
@@ -61,10 +61,10 @@ export class ThemeService {
   //   this.http.delete<Theme>(urlWithId, this.httpOptions).subscribe(() => this.retrieveQuizzes());
   // }
 
-  addQuiz(theme: Theme, quiz: Theme): void {
-    const quizUrl = this.themeUrl + '/' + theme.id + '/' + this.quizzesPath;
-    this.http.post<Theme>(quizUrl, quiz, this.httpOptions).subscribe(() => this.setSelectedTheme(theme.id));
-  }
+  // addQuiz(theme: Theme, quiz: Theme): void {
+  //   const quizUrl = this.themeUrl + '/' + theme.id + '/' + this.quizzesPath;
+  //   this.http.post<Theme>(quizUrl, quiz, this.httpOptions).subscribe(() => this.setSelectedTheme(theme.id));
+  // }
 
   // deleteQuestion(quiz: Theme, question: Question): void {
   //   const questionUrl = this.themeUrl + '/' + quiz.id + '/' + this.quizzesPath + '/' + question.id;

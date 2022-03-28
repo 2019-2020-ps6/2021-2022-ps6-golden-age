@@ -8,6 +8,7 @@ import { AppRoutingModule } from './app.routing.module';
 import {HeaderUserComponent} from './header/headerUser/headerUser.component';
 
 import { ThemeListComponent } from './themes/theme-list/theme-list.component';
+import { ThemeFormComponent } from './themes/theme-form/theme-form.component';
 import { ThemeComponent } from './themes/theme/theme.component';
 
 import { QuestionListComponent } from './questions/question-list/question-list.component';
@@ -24,6 +25,7 @@ import { EditQuizComponent } from './quizzes/edit-quiz/edit-quiz.component';
     AppComponent,
     HeaderUserComponent,
     ThemeListComponent,
+    ThemeFormComponent,
     ThemeComponent,
     QuestionListComponent,
     QuestionFormComponent,
