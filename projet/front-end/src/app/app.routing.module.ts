@@ -7,7 +7,7 @@ import { ThemeListComponent } from './themes/theme-list/theme-list.component';
 
 
 const routes: Routes = [
-    {path: 'themes', component : ThemeListComponent},
+    {path: 'theme-list', component : ThemeListComponent},
     //{path: 'quiz-list', component: QuizListComponent},
     //{path: 'edit-quiz/:id', component: EditQuizComponent},
     //{ path: '', redirectTo: '/quiz-list', pathMatch: 'full' },

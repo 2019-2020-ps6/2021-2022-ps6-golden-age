@@ -6,12 +6,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app.routing.module';
 import {HeaderUserComponent} from './header/headerUser/headerUser.component';
-import {QuizComponent} from './quizzes/quiz/quiz.component';
-import {QuestionComponent} from './questions/question/question.component';
-import {QuestionListComponent} from './questions/question-list/question-list.component';
-import {QuestionFormComponent} from './questions/question-form/question-form.component';
-import {QuizFormComponent} from './quizzes/quiz-form/quiz-form.component';
-import {QuizListComponent} from './quizzes/quiz-list/quiz-list.component';
 
 import { ThemeListComponent } from './themes/theme-list/theme-list.component';
 import { ThemeFormComponent } from './themes/theme-form/theme-form.component';
