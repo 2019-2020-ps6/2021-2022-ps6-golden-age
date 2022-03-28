@@ -1,7 +1,42 @@
 <div class="header">
-  <img alt="logo GoldenAge" src="assets/images/logoPetit.png">
 
-  <a class="navigation" [routerLink]="['/quiz-list']">Accueil</a>
-  <a class="navigation" [routerLink]="['themes']">Selectionner un quiz</a>
-  <a class="navigation" [routerLink]="['/user-list']">Mes statistiques</a>
+  <div class="box">
+    <div style="order: 1" class="align">
+      <img alt="logo GoldenAge" src="assets/images/logoPetit.png" height="157" width="153">
+
+      <img alt="logo user" src="assets/images/userLogo.png" height="80" width="70" class="align">
+    </div>
+
+    <div style="order: 2; flex-grow: 2" class="column">
+      <img alt="titre" src="assets/images/textGoldenAge.png" height="40" width="290">
+
+      <h1>Bienvenue sur votre espace personnel</h1>
+
+    </div>
+
+    <div style="order: 3" class="align">
+      <img alt="logo cog" src="assets/images/cogLogo.png" height="80" width="70">
+
+      <img alt="logo log out" src="assets/images/logOutLogo.png" height="70" width="60" class="align">
+    </div>
+
+  </div>
+
+  <div class="displayed">
+      <nav>
+        <a class="navigation" [routerLink]="['accueilUser']">Accueil</a>
+        <a class="navigation" [routerLink]="['/theme-list']">Selectionner un theme</a>
+        <a class="navigation" [routerLink]="['/user-list']">Mes statistiques</a>
+      </nav>
+  </div>
+
+
+  <!--modifier plus tard -->
+  <div>
+    <a class="navigation" [routerLink]="['helpUser']">Help</a>
+    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">j'ai de la chance</a>
+  </div>
+
+
+
 </div>

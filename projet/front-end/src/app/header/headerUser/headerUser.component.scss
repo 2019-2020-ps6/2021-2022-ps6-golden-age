@@ -8,6 +8,11 @@
   color: $white;
 }
 
+h1{
+  color: $pink;
+  font-size: 24px;
+}
+
 .header {
   background: $app-background-color;
   padding: 0.5em;
@@ -15,7 +20,39 @@
 }
 
 .navigation {
-  font-size: 0.7em;
-  padding-left: 0.5em;
-  color: white;
+  font-size: 20px;
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+  text-decoration: none;
+  color: $pink;
+}
+
+.box {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.align{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+  align-items: center;
+}
+
+.column{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.displayed {
+  margin-left: auto;
+  margin-right: auto;
+  width: 30em;
+  background-color: $white;
 }
