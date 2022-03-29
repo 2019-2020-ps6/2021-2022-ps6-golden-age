@@ -23,7 +23,6 @@ import { EditQuizComponent } from './quizzes/edit-quiz/edit-quiz.component';
 import {ShowQuizComponent} from './quizzes/show-quiz/show-quiz.component';
 
 
-
 @NgModule({
   declarations: [
     AppComponent,

@@ -6,10 +6,10 @@
       <input class="input-custom" type="text" id="name" [formControlName]="'name'">
     </label>
     <br>
-    <label for="theme">
-      <select name="theme" id="theme" [formControlName]="'theme'">
+    <label for="themeId">
+      <select name="theme" id="themeId" [formControlName]="'themeId'">
         <option value="">Choisissez une option</option>
-        <option *ngFor="let theme of themeList" value="{{theme}}" >{{theme.name}}</option>
+        <option *ngFor="let theme of themeList" value="{{theme.id}}" >{{theme.name}}</option>
       </select>
     </label>
     <br>

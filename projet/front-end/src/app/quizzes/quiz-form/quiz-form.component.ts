@@ -26,7 +26,7 @@ export class QuizFormComponent implements OnInit {
   constructor(public formBuilder: FormBuilder, public quizService: QuizService, public themeService: ThemeService) {
     this.quizForm = this.formBuilder.group({
       name: [''],
-      theme: ['']
+      themeId: ['']
     });
     this.themeService.themes$.subscribe((themes: Theme[]) => {
       this.themeList = themes;
@@ -43,7 +43,9 @@ export class QuizFormComponent implements OnInit {
   addQuiz(): void {
     // We retrieve here the quiz object from the quizForm and we cast the type "as Quiz".
     const quizToCreate: Quiz = this.quizForm.getRawValue() as Quiz;
-
+    console.log(typeof (quizToCreate.themeId));
+    quizToCreate.themeId = parseInt(String(quizToCreate.themeId), 10);
+    console.log(quizToCreate);
     this.quizService.addQuiz(quizToCreate);
   }
 

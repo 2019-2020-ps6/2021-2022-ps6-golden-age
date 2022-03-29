@@ -26,9 +26,9 @@ export const QUESTION_MONUMENT: Question = {
 
 export const QUIZ_LIST: Quiz[] = [
     {
-        id: 'Les-Etats-Unis',
+        id: 1648536265818,
         name: 'Les Etats Unis',
-        theme: 'Geographie',
+        themeId: 1648537673166,
         img : 'assets/images/illustrationQuizMonuments.png',
         questions: [QUESTION_MONUMENT],
     }
