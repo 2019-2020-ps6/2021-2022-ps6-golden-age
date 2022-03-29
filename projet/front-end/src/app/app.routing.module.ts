@@ -15,7 +15,8 @@ const routes: Routes = [
     {path: 'accueilUser', component: AccueilUserComponent},
     {path: 'quiz-list', component: QuizListComponent},
     {path: 'question-list/:id', component: QuestionListComponent},
-    {path: 'show-quiz', component: ShowQuizComponent},
+    {path: 'show-quiz/:id', component: ShowQuizComponent},
+    {path: 'show-question/:id', component: QuestionListComponent},
     /*{path: 'edit-quiz/:id', component: EditQuizComponent},
     { path: '', redirectTo: '/quiz-list', pathMatch: 'full' },*/
 ];

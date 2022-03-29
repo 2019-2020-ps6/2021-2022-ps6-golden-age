@@ -14,11 +14,15 @@ import { ThemeComponent } from './themes/theme/theme.component';
 import { QuestionListComponent } from './questions/question-list/question-list.component';
 import { QuestionFormComponent } from './questions/question-form/question-form.component';
 import { QuestionComponent } from './questions/question/question.component';
+import {ShowQuestionComponent} from './questions/show-question/show-question.component';
 
 import { QuizListComponent } from './quizzes/quiz-list/quiz-list.component';
 import { QuizFormComponent } from './quizzes/quiz-form/quiz-form.component';
 import { QuizComponent } from './quizzes/quiz/quiz.component';
 import { EditQuizComponent } from './quizzes/edit-quiz/edit-quiz.component';
+import {ShowQuizComponent} from './quizzes/show-quiz/show-quiz.component';
+
+
 
 @NgModule({
   declarations: [
@@ -33,7 +37,9 @@ import { EditQuizComponent } from './quizzes/edit-quiz/edit-quiz.component';
     QuizListComponent,
     QuizFormComponent,
     QuizComponent,
-    EditQuizComponent
+    EditQuizComponent,
+    ShowQuizComponent,
+    ShowQuestionComponent,
   ],
   imports: [
     BrowserModule,
