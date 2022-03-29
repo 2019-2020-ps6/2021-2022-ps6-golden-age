@@ -23,6 +23,7 @@ import { EditQuizComponent } from './quizzes/edit-quiz/edit-quiz.component';
 import { HelpPageUserComponent } from './help/user/help-page-user.component';
 import { AccueilUserComponent } from './accueil/user/accueilUser.component';
 import { ShowQuizComponent } from './quizzes/show-quiz/show-quiz.component';
+// import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
