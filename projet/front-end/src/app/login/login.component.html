@@ -1,28 +1,43 @@
 <body>  
-    <div classe = "user">
-        <div>User</div>
-        <form action="/ma-page-de-traitement" method="post">
-            <div>
-                <label for="Nom d'utilisateur">Nom d'utilisateur :</label>
-                <input type="text" id="user_name" name="user_name">
+    <div style="width: 100%;">
+        <div style="width: 50%; height: 100px; float: left;"> 
+            <div id="user" classe = "log">
+                <div>Utilisateurs</div><br>
+                <form action="/ma-page-de-traitement" method="post">
+                    <div>
+                        <label for="Nom d'utilisateur">Nom d'utilisateur :</label>
+                        <input type="text" id="user_name" name="user_name">
+                    </div>
+                    <div>
+                        <label for="mdp">Mot de passe :</label>
+                        <textarea id="mdp" name="mdp"></textarea>
+                    </div>
+                    <div>
+                        <button [routerLink]="['/accueilUser']">Connexion</button>
+                    </div>
+                </form>
             </div>
-            <div>
-                <label for="mdp">Mot de passe :</label>
-                <textarea id="mdp" name="mdp"></textarea>
+        </div>
+        <div style="margin-left: 50%; height: 100px;"> 
+            <div id="pro" classe = "log">
+                <div>Professionnels</div><br>
+                <form action="/ma-page-de-traitement" method="post">
+                    <div>
+                        <label for="Nom d'utilisateur">Nom d'utilisateur :</label>
+                        <input type="text" id="user_name" name="user_name">
+                    </div>
+                    <div>
+                        <label for="mdp">Mot de passe :</label>
+                        <textarea id="mdp" name="mdp"></textarea>
+                    </div>
+                    <div>
+                        <button [routerLink]="['/accueilUser']">Connexion</button> 
+                        <!-- à changer en accueilPro quand il sera implémenté -->
+                    </div>
+                </form>
             </div>
-        </form>
+        </div>
     </div>
-    <div classe = "pro">
-        <div>Pro</div>
-        <form action="/ma-page-de-traitement" method="post">
-            <div>
-                <label for="Nom d'utilisateur">Nom d'utilisateur :</label>
-                <input type="text" id="user_name" name="user_name">
-            </div>
-            <div>
-                <label for="mdp">Mot de passe :</label>
-                <textarea id="mdp" name="mdp"></textarea>
-            </div>
-        </form>
-    </div>
+
+
 </body>
