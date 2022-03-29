@@ -6,6 +6,7 @@ import { ThemeListComponent } from './themes/theme-list/theme-list.component';
 import {QuizListComponent} from './quizzes/quiz-list/quiz-list.component';
 import {QuestionListComponent} from './questions/question-list/question-list.component';
 import {ShowQuizComponent} from './quizzes/show-quiz/show-quiz.component';
+import { LoginComponent } from './login/login.component';
 
 
 const routes: Routes = [
@@ -16,8 +17,9 @@ const routes: Routes = [
     {path: 'quiz-list', component: QuizListComponent},
     {path: 'question-list/:id', component: QuestionListComponent},
     {path: 'show-quiz', component: ShowQuizComponent},
+    {path: 'login',component: LoginComponent},
     // {path: 'edit-quiz/:id', component: EditQuizComponent},
-    {path: '', redirectTo: '/theme-list', pathMatch: 'full'},
+    {path: '', redirectTo: '/login', pathMatch: 'full'},
 ];
 
 @NgModule({
