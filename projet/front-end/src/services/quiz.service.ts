@@ -30,7 +30,7 @@ export class QuizService {
 
   public quizSelected$: Subject<Quiz> = new Subject();
 
-  private quizUrl = serverUrl + '/themes/quizzes';
+  private quizUrl = serverUrl + '/quizzes';
   private questionsPath = 'questions';
 
   private httpOptions = httpOptionsBase;
