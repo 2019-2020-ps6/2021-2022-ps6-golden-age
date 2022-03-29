@@ -1,4 +1,4 @@
-import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Quiz} from '../../../models/quiz.model';
 import {Router} from '@angular/router';
 import {Question} from '../../../models/question.model';
@@ -16,10 +16,6 @@ export class ShowQuizComponent implements OnInit {
   quiz: Quiz;*/
 
   quiz = QUIZ_LIST.pop();
-
-  @Output()
-  questionSelected: EventEmitter<Question> = new EventEmitter<Question>();
-
   private router: Router;
   constructor() { }
 
