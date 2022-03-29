@@ -20,6 +20,10 @@ import { QuizFormComponent } from './quizzes/quiz-form/quiz-form.component';
 import { QuizComponent } from './quizzes/quiz/quiz.component';
 import { EditQuizComponent } from './quizzes/edit-quiz/edit-quiz.component';
 
+import { HelpPageUserComponent } from './help/user/help-page-user.component';
+import { AccueilUserComponent } from './accueil/user/accueilUser.component';
+import { ShowQuizComponent } from './quizzes/show-quiz/show-quiz.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,7 +37,10 @@ import { EditQuizComponent } from './quizzes/edit-quiz/edit-quiz.component';
     QuizListComponent,
     QuizFormComponent,
     QuizComponent,
-    EditQuizComponent
+    EditQuizComponent,
+    HelpPageUserComponent,
+    AccueilUserComponent,
+    ShowQuizComponent
   ],
   imports: [
     BrowserModule,
