@@ -21,27 +21,30 @@ import { UserFormComponent } from './users/user-form/user-form.component';
 import { UserListComponent } from './users/user-list/user-list.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    QuizListComponent,
-    QuizComponent,
-    HeaderComponent,
-    QuizFormComponent,
-    EditQuizComponent,
-    QuestionListComponent,
-    QuestionFormComponent,
-    QuestionComponent,
-    UserComponent,
-    UserFormComponent,
-    UserListComponent,
-  ],
-  imports: [
-    BrowserModule,
-    ReactiveFormsModule,
-    AppRoutingModule,
-    HttpClientModule,
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        QuizListComponent,
+        QuizComponent,
+        HeaderComponent,
+        QuizFormComponent,
+        EditQuizComponent,
+        QuestionListComponent,
+        QuestionFormComponent,
+        QuestionComponent,
+        UserComponent,
+        UserFormComponent,
+        UserListComponent,
+    ],
+    imports: [
+        BrowserModule,
+        ReactiveFormsModule,
+        AppRoutingModule,
+        HttpClientModule,
+    ],
+    providers: [],
+    exports: [
+        QuizFormComponent
+    ],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -45,14 +45,14 @@ export class ThemeService {
     });
   }
 
-  addTheme(quiz: Theme): void {
-    this.http.post<Theme>(this.themeUrl, quiz, this.httpOptions).subscribe(() => this.retrieveThemes());
+  addTheme(theme: Theme): void {
+    this.http.post<Theme>(this.themeUrl, theme, this.httpOptions).subscribe(() => this.retrieveThemes());
   }
 
-  setSelectedTheme(quizId: string): void {
-    const urlWithId = this.themeUrl + '/' + quizId;
-    this.http.get<Theme>(urlWithId).subscribe((quiz) => {
-      this.themeSelected$.next(quiz);
+  setSelectedTheme(themeId: string): void {
+    const urlWithId = this.themeUrl + '/' + themeId;
+    this.http.get<Theme>(urlWithId).subscribe((theme) => {
+      this.themeSelected$.next(theme);
     });
   }
 

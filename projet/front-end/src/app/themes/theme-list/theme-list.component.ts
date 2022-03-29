@@ -23,7 +23,7 @@ export class ThemeListComponent implements OnInit {
 
   themeSelected(theme: Theme): void {
     console.log(theme);
-    this.router.navigate(['/select-theme/' + theme.id]);
+    this.router.navigate(['/theme/' + theme.name.toLowerCase()]);
     console.log('event received from child:', theme);
   }
 

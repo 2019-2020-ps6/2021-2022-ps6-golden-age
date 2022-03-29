@@ -11,7 +11,7 @@ import {ShowQuizComponent} from './quizzes/show-quiz/show-quiz.component';
 const routes: Routes = [
     {path: 'theme-list', component : ThemeListComponent},
     {path: 'helpUser', component: HelpPageUserComponent},
-    {path: 'select-theme/:themeId', component: QuizListComponent},
+    {path: 'theme/:themeName', component: QuizListComponent},
     {path: 'accueilUser', component: AccueilUserComponent},
     {path: 'quiz-list', component: QuizListComponent},
     {path: 'question-list/:id', component: QuestionListComponent},
