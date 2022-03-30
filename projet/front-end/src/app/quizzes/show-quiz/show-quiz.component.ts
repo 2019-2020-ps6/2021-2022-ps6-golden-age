@@ -2,8 +2,7 @@ import {Component, Input, OnInit} from '@angular/core';
 import {Quiz} from '../../../models/quiz.model';
 import {ActivatedRoute, Router} from '@angular/router';
 import {Question} from '../../../models/question.model';
-import {QUIZ_LIST} from '../../../mocks/quiz-list.mock';
-import {QuizService} from "../../../services/quiz.service";
+import {QuizService} from '../../../services/quiz.service';
 
 @Component({
   selector: 'app-show-quiz',
@@ -23,7 +22,7 @@ export class ShowQuizComponent implements OnInit {
 
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id');
-    this.quizService.setSelectedQuiz(id);
+    this.quizService.setSelectedQuiz(parseInt(id, 10));
   }
 
   startQuiz(quiz: Quiz): void {
