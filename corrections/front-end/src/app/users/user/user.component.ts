@@ -20,6 +20,7 @@ export class UserComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  // tslint:disable-next-line:typedef
   delete() {
     this.deleteUser.emit(this.user);
   }
