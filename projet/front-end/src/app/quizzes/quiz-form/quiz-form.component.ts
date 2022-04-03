@@ -5,6 +5,7 @@ import { QuizService } from '../../../services/quiz.service';
 import { Quiz } from '../../../models/quiz.model';
 import {ThemeService} from '../../../services/theme.service';
 import {Theme} from '../../../models/theme.model';
+import {QUESTION_LIST, QUESTION_MONUMENT} from '../../../mocks/quiz-list.mock';
 
 @Component({
   selector: 'app-quiz-form',
@@ -44,9 +45,9 @@ export class QuizFormComponent implements OnInit {
     // We retrieve here the quiz object from the quizForm and we cast the type "as Quiz".
     const quizToCreate: Quiz = this.quizForm.getRawValue() as Quiz;
     quizToCreate.img = quizToCreate.img ? quizToCreate.img : 'assets/images/a.png';
-    console.log(typeof (quizToCreate.themeId));
+    quizToCreate.questions = quizToCreate.questions ? quizToCreate.questions : QUESTION_LIST ;
     quizToCreate.themeId = parseInt(String(quizToCreate.themeId), 10);
-    console.log(quizToCreate);
+    console.log('add', quizToCreate);
     this.quizService.addQuiz(quizToCreate);
   }
 
