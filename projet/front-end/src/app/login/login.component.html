@@ -1,16 +1,17 @@
-<body>  
+<!--suppress XmlDuplicatedId, XmlDuplicatedId -->lDuplicatedId -->lDuplicatedId -->
+<body>
     <div style="width: 100%;">
-        <div style="width: 50%; height: 100px; float: left;"> 
+        <div style="width: 50%; height: 100px; float: left;">
             <div id="user" classe = "log">
                 <div>Utilisateurs</div><br>
                 <form action="/ma-page-de-traitement" method="post">
                     <div>
-                        <label for="Nom d'utilisateur">Nom d'utilisateur :</label>
-                        <input type="text" id="user_name" name="user_name">
+                        <label for="user_name">Nom d'utilisateur :</label>
+                        <input type="text" id="u_name" name="user_name">
                     </div>
                     <div>
                         <label for="mdp">Mot de passe :</label>
-                        <textarea id="mdp" name="mdp"></textarea>
+                        <textarea id="password" name="mdp"></textarea>
                     </div>
                     <div>
                         <button [routerLink]="['/accueilUser']">Connexion</button>
@@ -18,12 +19,12 @@
                 </form>
             </div>
         </div>
-        <div style="margin-left: 50%; height: 100px;"> 
+        <div style="margin-left: 50%; height: 100px;">
             <div id="pro" classe = "log">
                 <div>Professionnels</div><br>
                 <form action="/ma-page-de-traitement" method="post">
                     <div>
-                        <label for="Nom d'utilisateur">Nom d'utilisateur :</label>
+                        <label for="user_name">Nom d'utilisateur :</label>
                         <input type="text" id="user_name" name="user_name">
                     </div>
                     <div>
@@ -31,7 +32,7 @@
                         <textarea id="mdp" name="mdp"></textarea>
                     </div>
                     <div>
-                        <button [routerLink]="['/accueilUser']">Connexion</button> 
+                        <button [routerLink]="['/accueilPro']">Connexion</button>
                         <!-- à changer en accueilPro quand il sera implémenté -->
                     </div>
                 </form>
