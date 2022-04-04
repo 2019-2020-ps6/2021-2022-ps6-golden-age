@@ -24,12 +24,4 @@ export class QuizListComponent implements OnInit {
   quizSelected(selected: boolean): void {
     console.log('event received from child:', selected);
   }
-
-  editQuiz(quiz: Quiz): void {
-    this.router.navigate(['/edit-quiz/' + quiz.name]);
-  }
-
-  deleteQuiz(quiz: Quiz): void {
-    this.quizService.deleteQuiz(quiz);
-  }
 }

@@ -17,7 +17,7 @@ import { QuestionComponent } from './questions/question/question.component';
 
 import { QuizListComponent } from './quizzes/quiz-list/quiz-list.component';
 import { QuizFormComponent } from './quizzes/quiz-form/quiz-form.component';
-import { QuizComponent } from './quizzes/quiz/quiz.component';
+import { QuizUserComponent } from './quizzes/quiz/user/quiz-user.component';
 import { EditQuizComponent } from './quizzes/edit-quiz/edit-quiz.component';
 
 import { HelpPageUserComponent } from './help/user/help-page-user.component';
@@ -31,6 +31,7 @@ import {UserComponent} from './users/user/user.component';
 import {UserFormComponent} from './users/user-form/user-form.component';
 import {UserListComponent} from './users/user-list/user-list.component';
 import {HeaderProComponent} from './header/pro/header-pro.component';
+import {QuizProComponent} from './quizzes/quiz/pro/quiz-pro.component';
 
 
 @NgModule({
@@ -46,7 +47,8 @@ import {HeaderProComponent} from './header/pro/header-pro.component';
     QuestionComponent,
     QuizListComponent,
     QuizFormComponent,
-    QuizComponent,
+    QuizUserComponent,
+    QuizProComponent,
     EditQuizComponent,
     HelpPageUserComponent,
     AccueilUserComponent,

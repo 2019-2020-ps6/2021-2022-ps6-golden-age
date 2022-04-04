@@ -21,10 +21,6 @@ export class MesQuizComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  quizSelected(selected: boolean): void {
-    console.log('event received from child:', selected);
-  }
-
   editQuiz(quiz: Quiz): void {
     this.router.navigate(['/edit-quiz/' + quiz.name]);
   }
