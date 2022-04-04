@@ -7,9 +7,11 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app.routing.module';
 import {HeaderUserComponent} from './header/user/header-user.component';
 
-import { ThemeListComponent } from './themes/theme-list/theme-list.component';
+import { ThemeListUserComponent } from './themes/theme-list/user/theme-list-user.component';
 import { ThemeFormComponent } from './themes/theme-form/theme-form.component';
-import { ThemeComponent } from './themes/theme/theme.component';
+import { ThemeComponent } from './themes/theme/user/theme.component';
+import {ThemeListProComponent} from './themes/theme-list/pro/theme-list-pro.component';
+import {ThemeProComponent} from './themes/theme/pro/theme-pro.component';
 
 import { QuestionListComponent } from './questions/question-list/question-list.component';
 import { QuestionFormComponent } from './questions/question-form/question-form.component';
@@ -39,9 +41,11 @@ import {QuizProComponent} from './quizzes/quiz/pro/quiz-pro.component';
     AppComponent,
     HeaderUserComponent,
     HeaderProComponent,
-    ThemeListComponent,
+    ThemeListUserComponent,
+    ThemeListProComponent,
     ThemeFormComponent,
     ThemeComponent,
+    ThemeProComponent,
     QuestionListComponent,
     QuestionFormComponent,
     QuestionComponent,
