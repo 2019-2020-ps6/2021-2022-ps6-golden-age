@@ -30,6 +30,6 @@ export const QUIZ_LIST: Quiz[] = [
         name: 'Les Etats Unis',
         themeId: 1648537673166,
         img : 'assets/images/illustrationQuizMonuments.png',
-        questions: [QUESTION_MONUMENT],
+        questions: [QUESTION_MONUMENT]
     }
 ];

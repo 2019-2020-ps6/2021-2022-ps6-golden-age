@@ -7,6 +7,9 @@ import {QuizListComponent} from './quizzes/quiz-list/quiz-list.component';
 import {QuestionListComponent} from './questions/question-list/question-list.component';
 import {ShowQuizComponent} from './quizzes/show-quiz/show-quiz.component';
 import { LoginComponent } from './login/login.component';
+import {AccueilProComponent} from './accueil/pro/accueil-pro.component';
+import {MesQuizComponent} from './quizzes/mes-quiz/mes-quiz.component';
+import {QuizFormComponent} from './quizzes/quiz-form/quiz-form.component';
 
 
 const routes: Routes = [
@@ -14,10 +17,13 @@ const routes: Routes = [
     {path: 'helpUser', component: HelpPageUserComponent},
     {path: 'theme/:themeName', component: QuizListComponent},
     {path: 'accueilUser', component: AccueilUserComponent},
+    {path: 'accueilPro', component: AccueilProComponent},
     {path: 'quiz-list', component: QuizListComponent},
     {path: 'question-list/:id', component: QuestionListComponent},
     {path: 'show-quiz', component: ShowQuizComponent},
-    {path: 'login',component: LoginComponent},
+    {path: 'login', component: LoginComponent},
+    {path: 'mes-quiz', component: MesQuizComponent},
+    {path: 'ajouter-quiz', component: QuizFormComponent},
     // {path: 'edit-quiz/:id', component: EditQuizComponent},
     {path: '', redirectTo: '/login', pathMatch: 'full'},
 ];
