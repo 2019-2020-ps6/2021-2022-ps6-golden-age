@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HelpPageUserComponent } from './help/user/help-page-user.component';
+import { HelpPageProComponent } from './help/pro/help-page-pro.component';
 import { AccueilUserComponent } from './accueil/user/accueilUser.component';
 import { ThemeListUserComponent } from './themes/theme-list/user/theme-list-user.component';
 import {QuizListComponent} from './quizzes/quiz-list/quiz-list.component';
@@ -16,6 +17,7 @@ import {ThemeFormComponent} from './themes/theme-form/theme-form.component';
 const routes: Routes = [
     {path: 'theme-list', component : ThemeListUserComponent},
     {path: 'helpUser', component: HelpPageUserComponent},
+    {path: 'helpPro', component: HelpPageProComponent},
     {path: 'theme/:themeName', component: QuizListComponent},
     {path: 'accueilUser', component: AccueilUserComponent},
     {path: 'accueilPro', component: AccueilProComponent},
