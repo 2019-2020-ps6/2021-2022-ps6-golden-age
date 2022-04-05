@@ -35,6 +35,8 @@ import { UserFormComponent } from './users/user-form/user-form.component';
 import { UserListComponent } from './users/user-list/user-list.component';
 import { HeaderProComponent } from './header/pro/header-pro.component';
 import { QuizProComponent } from './quizzes/quiz/pro/quiz-pro.component';
+import {FooterUserComponent} from "./footer/user/footerUser.component";
+import {FooterProComponent} from "./footer/pro/footerPro.component";
 
 
 @NgModule({
@@ -42,6 +44,8 @@ import { QuizProComponent } from './quizzes/quiz/pro/quiz-pro.component';
     AppComponent,
     HeaderUserComponent,
     HeaderProComponent,
+    FooterUserComponent,
+    FooterProComponent,
     ThemeListUserComponent,
     ThemeListProComponent,
     ThemeFormComponent,
