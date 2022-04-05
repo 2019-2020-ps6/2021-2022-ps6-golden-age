@@ -1,7 +1,9 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
-import { Router } from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import { QuizService } from '../../../services/quiz.service';
 import { Quiz } from '../../../models/quiz.model';
+import {ThemeService} from '../../../services/theme.service';
+import {Theme} from '../../../models/theme.model';
 
 @Component({
   selector: 'app-quiz-list',
@@ -13,11 +15,16 @@ export class QuizListComponent implements OnInit {
   @Output()
   quizSelected: EventEmitter<Quiz> = new EventEmitter<Quiz>();
 
+  public theme: Theme;
+
   public quizList: Quiz[] = [];
 
-  constructor(private router: Router, public quizService: QuizService) {
+  constructor(private route: ActivatedRoute, private router: Router, public quizService: QuizService) {
     this.quizService.quizzes$.subscribe((quizzes: Quiz[]) => {
       this.quizList = quizzes;
+      console.log('before:', this.quizList);
+      this.quizList = this.quizList.filter(quiz => quiz.themeId.toString() === this.route.snapshot.paramMap.get('id'));
+      console.log('ayo', this.quizList);
     });
   }
 
