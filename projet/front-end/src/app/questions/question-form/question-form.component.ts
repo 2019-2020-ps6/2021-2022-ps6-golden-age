@@ -28,9 +28,7 @@ export class QuestionFormComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    for (let i = 1; i <= 4 ; i++) {
-      this.addAnswer();
-    }
+    this.initializeQuestionForm();
     const id = this.route.snapshot.paramMap.get('id');
     this.quizService.setSelectedQuiz(parseInt(id, 10));
   }
@@ -40,6 +38,9 @@ export class QuestionFormComponent implements OnInit {
       label: ['', Validators.required],
       answers: this.formBuilder.array([])
     });
+    for (let i = 1; i <= 4 ; i++) {
+      this.addAnswer();
+    }
   }
 
   get answers(): FormArray {
@@ -63,7 +64,7 @@ export class QuestionFormComponent implements OnInit {
       question.id = Date.now();
       console.log('questionToCreate', question);
       this.quizService.addQuestion(this.quiz, question);
-      this.initializeQuestionForm();
+      // this.initializeQuestionForm();
     }
   }
 }
