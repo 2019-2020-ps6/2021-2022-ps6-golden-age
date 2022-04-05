@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ThemeService } from '../../../services/theme.service';
-import { Theme } from '../../../models/theme.model';
+import { ThemeService } from '../../../../services/theme.service';
+import { Theme } from '../../../../models/theme.model';
 
 @Component({
-  selector: 'app-theme-list',
-  templateUrl: './theme-list.component.html',
-  styleUrls: ['./theme-list.component.scss']
+  selector: 'app-theme-list-user',
+  templateUrl: './theme-list-user.component.html',
+  styleUrls: ['./theme-list-user.component.scss']
 })
-export class ThemeListComponent implements OnInit {
+export class ThemeListUserComponent implements OnInit {
 
   public themeList: Theme[] = [];
 
@@ -25,13 +25,5 @@ export class ThemeListComponent implements OnInit {
     console.log(theme);
     this.router.navigate(['/theme/' + theme.name.toLowerCase()]);
     console.log('event received from child:', theme);
-  }
-
-  // editQuiz(quiz: Theme): void {
-  //   this.router.navigate(['/edit-quiz/' + quiz.name]);
-  // }
-
-  deleteTheme(theme: Theme): void {
-    this.themeService.deleteTheme(theme);
   }
 }
