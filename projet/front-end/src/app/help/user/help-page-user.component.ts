@@ -9,7 +9,9 @@ import { Component, OnInit } from '@angular/core';
 // tslint:disable-next-line:class-name
 export class HelpPageUserComponent implements OnInit {
 
-  constructor() { }
+
+  constructor() { 
+  }
 
   ngOnInit(): void {
   }

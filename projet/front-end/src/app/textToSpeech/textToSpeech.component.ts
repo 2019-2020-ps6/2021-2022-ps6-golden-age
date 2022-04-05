@@ -119,6 +119,19 @@ export class TextToSpeechComponent {
 
 	}
 
+	public say(line : string) : void {
+
+		if ( ! this.selectedVoice || ! this.text ) {
+
+			return;
+
+		}
+
+		this.stop();
+		this.synthesizeSpeechFromText( this.selectedVoice, this.selectedRate, line );
+
+	}
+
 
 	// I stop any current speech synthesis.
 	public stop() : void {

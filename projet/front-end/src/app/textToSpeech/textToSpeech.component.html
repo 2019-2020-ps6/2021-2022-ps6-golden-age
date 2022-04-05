@@ -1,4 +1,4 @@
-<div class="form-field">
+<!-- <div class="form-field">
 	<label for="voice-control" class="form-field__label">
 		Voice:
 	</label>
@@ -25,9 +25,9 @@
 			( &larr; ) indicates a voice that Ben could understand clearly.
 		</div>
 	</div>
-</div>
+</div> -->
 
-<div class="form-field">
+<!-- <div class="form-field">
 	<label for="rate-control" class="form-field__label">
 		Speed:
 	</label>
@@ -49,32 +49,35 @@
 			</option>
 		</select>
 	</div>
-</div>
+</div> -->
 
 <div class="form-field">
 	<label for="text-control" class="form-field__label">
-		Text:
+		<!-- Text: -->
 	</label>
 	<div class="form-field__content">
-		<textarea
+		<textarea style="display: none;"
 			id="text-control"
 			name="text"
 			[(ngModel)]="text"
 			(input)="updateSayCommand()"
-			(keydown.Meta.Enter)="speak()"
+			(keydown.enter)="say('bonjour')"
 			class="form-field__control"
 		></textarea>
 
-		<div class="form-field__subnote">
+		<!-- <div class="form-field__subnote">
 			You can hit <code>CMD+Enter</code> to speak text.
-		</div>
+		</div> -->
 	</div>
 </div>
 
-<div class="form-actions">
+
+<div  class="form-actions">
 	<button
+		#TTS
 		type="button"
 		(click)="speak()"
+		(mouseover)="say(TTS.innerText)"
 		class="form-actions__button">
 		Speak text
 	</button>
@@ -88,7 +91,7 @@
 </div>
 
 
-<div *ngIf="sayCommand" class="say">
+<!-- <div *ngIf="sayCommand" class="say">
 
 	<h3 class="say__title">
 		On MacOS? Want to generate a sound file?
@@ -107,4 +110,4 @@
 		class="say__code"
 	/>
 
-</div>
+</div> -->
