@@ -1,15 +1,19 @@
-<!--suppress XmlDuplicatedId, XmlDuplicatedId -->lDuplicatedId -->lDuplicatedId -->
-<body>
-    <div style="width: 100%;">
-        <div style="width: 50%; height: 100px; float: left;">
-            <div id="user" classe = "log">
+<!--suppress XmlDuplicatedId, XmlDuplicatedId ->lDuplicatedId ->lDuplicatedId -->
+
+    <div class="img">
+      <img alt="logo GoldenAge login" src="assets/images/logoComplet.png" height="289" width="813">
+      <h1>Veuillez vous connecter.</h1>
+    </div>
+    <div class="displayed">
+        <div style="float: left" class="log">
+            <div id="user">
                 <div>Utilisateurs</div><br>
                 <form action="/ma-page-de-traitement" method="post">
-                    <div>
+                    <div class="spacing">
                         <label for="user_name">Nom d'utilisateur :</label>
                         <input type="text" id="u_name" name="user_name">
                     </div>
-                    <div>
+                    <div class="spacing">
                         <label for="mdp">Mot de passe :</label>
                         <textarea id="password" name="mdp"></textarea>
                     </div>
@@ -19,26 +23,23 @@
                 </form>
             </div>
         </div>
-        <div style="margin-left: 50%; height: 100px;">
-            <div id="pro" classe = "log">
+        <div style="margin-left: auto" class="log">
+            <div id="pro">
                 <div>Professionnels</div><br>
                 <form action="/ma-page-de-traitement" method="post">
-                    <div>
+                    <div class="spacing">
                         <label for="user_name">Nom d'utilisateur :</label>
                         <input type="text" id="user_name" name="user_name">
                     </div>
-                    <div>
+                    <div class="spacing">
                         <label for="mdp">Mot de passe :</label>
                         <textarea id="mdp" name="mdp"></textarea>
                     </div>
                     <div>
                         <button [routerLink]="['/accueilPro']">Connexion</button>
-                        <!-- à changer en accueilPro quand il sera implémenté -->
                     </div>
                 </form>
             </div>
         </div>
     </div>
 
-
-</body>
