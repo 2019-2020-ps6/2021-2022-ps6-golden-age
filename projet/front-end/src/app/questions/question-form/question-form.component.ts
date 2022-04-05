@@ -49,6 +49,8 @@ export class QuestionFormComponent implements OnInit {
   addQuestion(): void {
     if (this.questionForm.valid) {
       const question = this.questionForm.getRawValue() as Question;
+      question.id = Date.now();
+      console.log('questionToCreate', question);
       this.quizService.addQuestion(this.quiz, question);
       this.initializeQuestionForm();
     }

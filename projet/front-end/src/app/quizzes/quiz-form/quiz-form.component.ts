@@ -44,11 +44,11 @@ export class QuizFormComponent implements OnInit {
   addQuiz(): void {
     // We retrieve here the quiz object from the quizForm and we cast the type "as Quiz".
     const quizToCreate: Quiz = this.quizForm.getRawValue() as Quiz;
-    console.log(typeof (quizToCreate.themeId));
+    quizToCreate.id = Date.now();
     quizToCreate.themeId = parseInt(String(quizToCreate.themeId), 10);
-    console.log(quizToCreate);
+    console.log('quizToCreate', quizToCreate);
     this.quizService.addQuiz(quizToCreate);
-    this.router.navigate(['/quiz/' + quizToCreate.name.toLowerCase()]);
+    this.router.navigate(['/create-quiz/' + quizToCreate.id]);
   }
 
 }
