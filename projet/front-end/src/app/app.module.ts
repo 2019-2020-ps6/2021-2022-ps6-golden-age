@@ -25,7 +25,6 @@ import { EditQuizComponent } from './quizzes/edit-quiz/edit-quiz.component';
 import { HelpPageUserComponent } from './help/user/help-page-user.component';
 import { HelpPageProComponent } from './help/pro/help-page-pro.component';
 import { AccueilUserComponent } from './accueil/user/accueilUser.component';
-import { AccueilProComponent } from './accueil/pro/accueil-pro.component';
 import { ShowQuizComponent } from './quizzes/show-quiz/show-quiz.component';
 import { MesQuizComponent } from './quizzes/mes-quiz/mes-quiz.component';
 
@@ -35,8 +34,8 @@ import { UserFormComponent } from './users/user-form/user-form.component';
 import { UserListComponent } from './users/user-list/user-list.component';
 import { HeaderProComponent } from './header/pro/header-pro.component';
 import { QuizProComponent } from './quizzes/quiz/pro/quiz-pro.component';
-import {FooterUserComponent} from "./footer/user/footerUser.component";
-import {FooterProComponent} from "./footer/pro/footerPro.component";
+import {FooterUserComponent} from './footer/user/footerUser.component';
+import {FooterProComponent} from './footer/pro/footerPro.component';
 
 
 @NgModule({
@@ -62,7 +61,6 @@ import {FooterProComponent} from "./footer/pro/footerPro.component";
     HelpPageUserComponent,
     HelpPageProComponent,
     AccueilUserComponent,
-    AccueilProComponent,
     ShowQuizComponent,
     LoginComponent,
     UserComponent,
