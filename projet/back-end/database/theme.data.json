@@ -1,14 +1,7 @@
 [
   {
-    "name": "Geographie",
-    "id": 1648537673166
-  },
-  {
-    "name": "Banane",
-    "id": 1649084362858
-  },
-  {
-    "name": "Feuilles",
-    "id": 1649084809584
+    "name": "Fruits",
+    "img": "https://www.journallenord.com/wp-content/uploads/sites/39/2020/09/Depositphotos_19486333_xl-2015.jpg",
+    "id": 1649151336365
   }
 ]

@@ -1,0 +1,17 @@
+@import "../../../styles/variables";
+
+.displayed {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  text-align : justify;
+  padding-left: 1em;
+  padding-right: 1em;
+  background-color: $lightGrey;
+  border: solid;
+  border-color: $darkGrey;
+}
+
+p{
+  color: $blue;
+}

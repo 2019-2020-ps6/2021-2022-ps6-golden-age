@@ -7,6 +7,7 @@ import { ThemeListUserComponent } from './themes/theme-list/user/theme-list-user
 import {QuizListComponent} from './quizzes/quiz-list/quiz-list.component';
 import {QuestionListComponent} from './questions/question-list/question-list.component';
 import {ShowQuizComponent} from './quizzes/show-quiz/show-quiz.component';
+import {ShowQuestionComponent} from './questions/show-question/show-question.component';
 import { LoginComponent } from './login/login.component';
 import {MesQuizComponent} from './quizzes/mes-quiz/mes-quiz.component';
 import {QuizFormComponent} from './quizzes/quiz-form/quiz-form.component';
@@ -23,7 +24,8 @@ const routes: Routes = [
     {path: 'accueilUser', component: AccueilUserComponent},
     {path: 'quiz-list', component: QuizListComponent},
     {path: 'question-list/:id', component: QuestionListComponent},
-    {path: 'show-quiz', component: ShowQuizComponent},
+    {path: 'quiz/:id', component: ShowQuizComponent},
+    {path: 'question/:id', component: ShowQuestionComponent},
     {path: 'login', component: LoginComponent},
     {path: 'mes-quiz', component: MesQuizComponent},
     {path: 'ajouter-quiz', component: QuizFormComponent},
@@ -31,6 +33,7 @@ const routes: Routes = [
     // {path: 'edit-quiz/:id', component: EditQuizComponent},
     {path: 'create-quiz/:id', component: QuestionFormComponent},
     {path: '', redirectTo: '/login', pathMatch: 'full'},
+
 ];
 
 @NgModule({

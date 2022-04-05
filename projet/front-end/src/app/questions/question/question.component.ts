@@ -14,6 +14,9 @@ export class QuestionComponent implements OnInit {
   @Output()
   deleteQuestion: EventEmitter<Question> = new EventEmitter<Question>();
 
+  @Output()
+  questionSelected: EventEmitter<boolean> = new EventEmitter<boolean>();
+
   constructor() { }
 
   ngOnInit(): void {
@@ -21,6 +24,10 @@ export class QuestionComponent implements OnInit {
 
   delete(): void {
     this.deleteQuestion.emit(this.question);
+  }
+
+  selectQuestion(): void {
+    this.questionSelected.emit(true);
   }
 
 }

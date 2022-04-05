@@ -1,7 +1,7 @@
 <app-header-user></app-header-user>
 <div class="quiz-list">
     <div class="quiz" *ngFor="let quiz of quizList">
-        <app-quiz-user [quiz]="quiz" (quizSelected)="quizSelected($event)"></app-quiz-user>
+        <app-quiz-user [quiz]="quiz" (quizSelected)="selectQuiz(quiz)"></app-quiz-user>
     </div>
 </div>
 <app-footer-user></app-footer-user>

@@ -22,7 +22,8 @@ export class ThemeFormComponent implements OnInit {
 
   constructor(public formBuilder: FormBuilder, public themeService: ThemeService) {
     this.themeForm = this.formBuilder.group({
-      name: ['']
+      name: [''],
+      img: [''],
     });
     // You can also add validators to your inputs such as required, maxlength or even create your own validator!
     // More information: https://angular.io/guide/reactive-forms#simple-form-validation
@@ -37,6 +38,7 @@ export class ThemeFormComponent implements OnInit {
     const themeToCreate: Theme = this.themeForm.getRawValue() as Theme;
     themeToCreate.id = Date.now();
     console.log('themeToCreate', themeToCreate);
+    themeToCreate.img = themeToCreate.img ? themeToCreate.img : 'assets/images/a.png';
     this.themeService.addTheme(themeToCreate);
   }
 

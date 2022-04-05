@@ -1,5 +1,4 @@
 export interface Answer {
-    type?: string;
     value: string;
     isCorrect: boolean;
 }
@@ -7,5 +6,10 @@ export interface Answer {
 export interface Question {
     id: number;
     label: string;
+    number: number;
+    quizId: string;
     answers: Answer[];
+    img: string;
 }
+
+// Créer un modèle dans le backend pour stocker les réponses données
