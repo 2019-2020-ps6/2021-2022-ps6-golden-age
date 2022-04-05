@@ -1,4 +1,10 @@
-<div class="card">
-    <h2>{{quiz.name}}</h2>
-    <button class="button-card" (click)="selectQuiz()">Select</button>
+<div class="displayed">
+  <div class="align">
+      <img src="{{quiz.img}}"/>
+      <div>
+        <p>{{quiz.name}}</p>
+        <p>Nombre de questions : {{quiz.questions.length}}</p>
+      </div>
+      <button class="button-card" (click)="selectQuiz()">Select</button>
+  </div>
 </div>

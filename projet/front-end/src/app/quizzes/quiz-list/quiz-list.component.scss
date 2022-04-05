@@ -1,3 +1,15 @@
-.quiz-list {
+@import "../../../styles/variables";
+@import '../../../styles/card.scss';
+
+
+.displayed {
   display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+
+h2{
+  color: $blue;
+  padding-bottom: 1em;
 }
