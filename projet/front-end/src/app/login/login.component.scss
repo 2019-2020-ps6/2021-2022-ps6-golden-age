@@ -1,5 +1,5 @@
 @import "../../styles/variables";
-
+@import '../../styles/card.scss';
 
 .img{
   text-align : center;
@@ -25,19 +25,6 @@ h1{
   flex-wrap: wrap;
   text-align : center;
   padding-bottom: 5em;
-}
-
-
-button{
-  background-color: $pink;
-  color: $white;
-  border: 2px solid $black;
-  transition-duration: 0.4s;
-}
-
-button:hover {
-  background-color: $white;
-  color: $pink;
 }
 
 .spacing{
