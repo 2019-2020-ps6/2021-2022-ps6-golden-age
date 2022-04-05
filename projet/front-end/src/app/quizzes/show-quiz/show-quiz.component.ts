@@ -20,10 +20,11 @@ export class ShowQuizComponent implements OnInit {
   constructor(private route: ActivatedRoute, private router: Router, private quizService: QuizService, private themeService: ThemeService) {
     this.quizService.quizSelected$.subscribe((quiz) => {
       this.quiz = quiz;
-      console.log('coucou', quiz);
-      console.log('c lui', this.quiz);
+      this.themeService.setSelectedTheme(this.quiz.themeId);
     });
-    console.log('la', this.quiz);
+    this.themeService.themeSelected$.subscribe((theme) => {
+      this.theme = theme;
+    });
   }
 
   ngOnInit(): void {

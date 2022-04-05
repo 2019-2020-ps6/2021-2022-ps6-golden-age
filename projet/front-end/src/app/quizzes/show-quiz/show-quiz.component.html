@@ -1,7 +1,7 @@
 <app-header-user></app-header-user>
-<div>
+<div *ngIf="quiz && theme">
   Vous avez sélectionné : <br>
-  Quiz  : {{quiz.name}}
+  Quiz {{theme.name}} : {{quiz.name}}
   <br>
   <img src="{{quiz.img}}" width="45%" height="60%"/>
   <br>
