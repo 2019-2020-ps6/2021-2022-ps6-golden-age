@@ -15,16 +15,9 @@ h1{
 
 .header {
   background: $app-background-color;
-  padding: 0.5em;
-  box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12);
-}
-
-.navigation {
-  font-size: 20px;
-  padding-left: 1.5em;
-  padding-right: 1.5em;
-  text-decoration: none;
-  color: $pink;
+  border-bottom: solid;
+  border-color: $darkGrey;
+  padding-bottom: 1.5em;
 }
 
 .box {
@@ -50,9 +43,21 @@ h1{
   align-items: center;
 }
 
+
 .displayed {
-  margin-left: auto;
-  margin-right: auto;
-  width: 30em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.navigation {
+  font-size: 20px;
+  padding-left: 2em;
+  padding-right: 2em;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  text-decoration: none;
+  color: $pink;
   background-color: $white;
 }
