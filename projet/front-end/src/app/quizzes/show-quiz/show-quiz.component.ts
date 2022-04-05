@@ -3,6 +3,8 @@ import {Quiz} from '../../../models/quiz.model';
 import {ActivatedRoute, Router} from '@angular/router';
 import {QuizService} from '../../../services/quiz.service';
 import {QUESTION_MONUMENT} from '../../../mocks/quiz-list.mock';
+import {Theme} from '../../../models/theme.model';
+import {ThemeService} from '../../../services/theme.service';
 
 @Component({
   selector: 'app-show-quiz',
@@ -12,12 +14,16 @@ import {QUESTION_MONUMENT} from '../../../mocks/quiz-list.mock';
 
 // tslint:disable-next-line:class-name
 export class ShowQuizComponent implements OnInit {
-  @Output()
-  quizSelected: EventEmitter<Quiz> = new EventEmitter<Quiz>();
   public quiz: Quiz;
+  public theme: Theme;
 
-  constructor(private route: ActivatedRoute, private router: Router, private quizService: QuizService) {
-    this.quizService.quizSelected$.subscribe((quiz) => this.quiz = quiz);
+  constructor(private route: ActivatedRoute, private router: Router, private quizService: QuizService, private themeService: ThemeService) {
+    this.quizService.quizSelected$.subscribe((quiz) => {
+      this.quiz = quiz;
+      console.log('coucou', quiz);
+      console.log('c lui', this.quiz);
+    });
+    console.log('la', this.quiz);
   }
 
   ngOnInit(): void {
