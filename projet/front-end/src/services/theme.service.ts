@@ -29,7 +29,6 @@ export class ThemeService {
   public themeSelected$: Subject<Theme> = new Subject();
 
   private themeUrl = serverUrl + '/themes';
-  private quizzesPath = 'quizzes';
 
   private httpOptions = httpOptionsBase;
 
