@@ -29,6 +29,7 @@ const routes: Routes = [
     {path: 'ajouter-quiz', component: QuizFormComponent},
     {path: 'ajouter-theme', component: ThemeFormComponent},
     // {path: 'edit-quiz/:id', component: EditQuizComponent},
+    {path: 'quiz/:id', },
     {path: '', redirectTo: '/login', pathMatch: 'full'},
 ];
 

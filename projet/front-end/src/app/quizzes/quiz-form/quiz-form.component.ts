@@ -5,6 +5,7 @@ import { QuizService } from '../../../services/quiz.service';
 import { Quiz } from '../../../models/quiz.model';
 import {ThemeService} from '../../../services/theme.service';
 import {Theme} from '../../../models/theme.model';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-quiz-form',
@@ -23,7 +24,7 @@ export class QuizFormComponent implements OnInit {
   public quizForm: FormGroup;
   public themeList: Theme[] = [];
 
-  constructor(public formBuilder: FormBuilder, public quizService: QuizService, public themeService: ThemeService) {
+  constructor(private router: Router, public formBuilder: FormBuilder, public quizService: QuizService, public themeService: ThemeService) {
     this.quizForm = this.formBuilder.group({
       name: [''],
       themeId: ['']
@@ -47,6 +48,7 @@ export class QuizFormComponent implements OnInit {
     quizToCreate.themeId = parseInt(String(quizToCreate.themeId), 10);
     console.log(quizToCreate);
     this.quizService.addQuiz(quizToCreate);
+    this.router.navigate(['/quiz/' + quizToCreate.name.toLowerCase()]);
   }
 
 }
