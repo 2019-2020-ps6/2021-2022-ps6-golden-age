@@ -45,7 +45,6 @@ export class QuizFormComponent implements OnInit {
   addQuiz(): void {
     // We retrieve here the quiz object from the quizForm and we cast the type "as Quiz".
     const quizToCreate: Quiz = this.quizForm.getRawValue() as Quiz;
-    console.log('k', quizToCreate.img);
     quizToCreate.img = quizToCreate.img ? quizToCreate.img : 'assets/images/a.png';
     quizToCreate.questions = quizToCreate.questions ? quizToCreate.questions : QUESTION_LIST ;
     quizToCreate.themeId = parseInt(String(quizToCreate.themeId), 10);

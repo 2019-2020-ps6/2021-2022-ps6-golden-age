@@ -6,6 +6,11 @@
       Nom du Theme <br>
       <input class="input-custom" type="text" id="theme" [formControlName]="'name'">
     </label>
+    <br>
+    <label for="img">
+      Image <br>
+      <input class="input-custom" type="text" id="img" [formControlName]="'img'">
+    </label>
     <button type="submit" class="button-card" (click)="addTheme()" [routerLink]="['/ajouter-quiz']">Create</button>
   </form>
 </div>
