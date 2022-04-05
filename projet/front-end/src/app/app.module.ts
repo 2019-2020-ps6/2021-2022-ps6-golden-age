@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app.routing.module';
@@ -25,6 +26,8 @@ import { AccueilUserComponent } from './accueil/user/accueilUser.component';
 import { ShowQuizComponent } from './quizzes/show-quiz/show-quiz.component';
 import { LoginComponent } from './login/login.component';
 
+import { TextToSpeechComponent } from './textToSpeech/textToSpeech.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,13 +45,15 @@ import { LoginComponent } from './login/login.component';
     HelpPageUserComponent,
     AccueilUserComponent,
     ShowQuizComponent,
-    LoginComponent
+    LoginComponent,
+    TextToSpeechComponent
   ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
