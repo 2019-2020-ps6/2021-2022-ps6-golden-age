@@ -9,7 +9,6 @@ import {QuestionListComponent} from './questions/question-list/question-list.com
 import {ShowQuizComponent} from './quizzes/show-quiz/show-quiz.component';
 import {ShowQuestionComponent} from './questions/show-question/show-question.component';
 import { LoginComponent } from './login/login.component';
-import {AccueilProComponent} from './accueil/pro/accueil-pro.component';
 import {MesQuizComponent} from './quizzes/mes-quiz/mes-quiz.component';
 import {QuizFormComponent} from './quizzes/quiz-form/quiz-form.component';
 import {ThemeFormComponent} from './themes/theme-form/theme-form.component';
@@ -21,7 +20,6 @@ const routes: Routes = [
     {path: 'helpPro', component: HelpPageProComponent},
     {path: 'theme/:themeName', component: QuizListComponent},
     {path: 'accueilUser', component: AccueilUserComponent},
-    {path: 'accueilPro', component: AccueilProComponent},
     {path: 'quiz-list', component: QuizListComponent},
     {path: 'question-list/:id', component: QuestionListComponent},
     {path: 'quiz/:id', component: ShowQuizComponent},
