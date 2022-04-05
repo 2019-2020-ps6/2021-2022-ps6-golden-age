@@ -3,6 +3,7 @@ import { FormGroup, FormBuilder, FormArray, Validators } from '@angular/forms';
 import { QuizService } from '../../../services/quiz.service';
 import { Quiz } from 'src/models/quiz.model';
 import { Question } from 'src/models/question.model';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-question-form',
@@ -16,9 +17,22 @@ export class QuestionFormComponent implements OnInit {
 
   public questionForm: FormGroup;
 
-  constructor(public formBuilder: FormBuilder, private quizService: QuizService) {
+
+  constructor(private route: ActivatedRoute, public formBuilder: FormBuilder, private quizService: QuizService) {
     // Form creation
+    this.quizService.quizSelected$.subscribe( quiz => {
+      this.quiz = quiz;
+      console.log(quiz);
+    });
     this.initializeQuestionForm();
+  }
+
+  ngOnInit(): void {
+    for (let i = 1; i <= 4 ; i++) {
+      this.addAnswer();
+    }
+    const id = this.route.snapshot.paramMap.get('id');
+    this.quizService.setSelectedQuiz(parseInt(id, 10));
   }
 
   private initializeQuestionForm(): void {
@@ -26,9 +40,6 @@ export class QuestionFormComponent implements OnInit {
       label: ['', Validators.required],
       answers: this.formBuilder.array([])
     });
-  }
-
-  ngOnInit(): void {
   }
 
   get answers(): FormArray {

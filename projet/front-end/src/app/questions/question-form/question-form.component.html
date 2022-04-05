@@ -1,25 +1,25 @@
+<app-header-pro></app-header-pro>
 <div class="card">
   <h2>Create a new question</h2>
   <form class="quiz-form" [formGroup]="questionForm">
     <label for="label">
-      Title <br>
+      Enoncé de la question :<br>
       <input class="input-custom" type="text" id="label" [formControlName]="'label'">
     </label>
     <br>
-    <button class="button-card" (click)="addAnswer()">Add Answer</button>
     <div class="answer" formArrayName="answers">
       <div *ngFor="let address of answers.controls; let i=index">
         <div class="answer-form" [formGroupName]="i">
           <label>
-            Answer
+            Réponse {{i + 1}} :
             <input type="text" [formControlName]="'value'">
-            <br>
-            Correct
             <input type="checkbox" [formControlName]="'isCorrect'">
           </label>
         </div>
       </div>
     </div>
+
+    <img *ngIf="quiz" src="{{quiz.img}}">
     <button type="submit" class="button-card" (click)="addQuestion()">Create</button>
   </form>
 </div>
