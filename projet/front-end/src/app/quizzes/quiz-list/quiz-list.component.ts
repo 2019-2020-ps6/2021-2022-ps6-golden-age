@@ -19,16 +19,20 @@ export class QuizListComponent implements OnInit {
 
   public quizList: Quiz[] = [];
 
-  constructor(private route: ActivatedRoute, private router: Router, public quizService: QuizService) {
+  constructor(private route: ActivatedRoute, private router: Router, public quizService: QuizService, public themeService: ThemeService) {
     this.quizService.quizzes$.subscribe((quizzes: Quiz[]) => {
       this.quizList = quizzes;
       console.log('before:', this.quizList);
       this.quizList = this.quizList.filter(quiz => quiz.themeId.toString() === this.route.snapshot.paramMap.get('id'));
       console.log('ayo', this.quizList);
     });
+    this.themeService.themeSelected$.subscribe((theme) => {
+      this.theme = theme;
+    });
   }
 
   ngOnInit(): void {
+    this.themeService.setSelectedTheme(parseInt(this.route.snapshot.paramMap.get('id'), 10));
   }
 
   selectQuiz(quiz: Quiz): void {
