@@ -8,5 +8,10 @@
     "name": "Animaux",
     "img": "assets/images/a.png",
     "id": 1649161591808
+  },
+  {
+    "name": "Monuments",
+    "img": "assets/images/a.png",
+    "id": 1649689869022
   }
 ]

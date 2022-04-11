@@ -22,9 +22,7 @@ export class QuizListComponent implements OnInit {
   constructor(private route: ActivatedRoute, private router: Router, public quizService: QuizService, public themeService: ThemeService) {
     this.quizService.quizzes$.subscribe((quizzes: Quiz[]) => {
       this.quizList = quizzes;
-      console.log('before:', this.quizList);
       this.quizList = this.quizList.filter(quiz => quiz.themeId.toString() === this.route.snapshot.paramMap.get('id'));
-      console.log('ayo', this.quizList);
     });
     this.themeService.themeSelected$.subscribe((theme) => {
       this.theme = theme;
@@ -36,7 +34,7 @@ export class QuizListComponent implements OnInit {
   }
 
   selectQuiz(quiz: Quiz): void {
-    console.log(quiz);
     this.router.navigate(['/quiz/' + quiz.id ]);
+    this.quizService.setSelectedQuiz(quiz.id);
   }
 }
