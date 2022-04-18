@@ -65,8 +65,7 @@ export class QuestionFormComponent implements OnInit {
       question.img = question.img ? question.img : 'assets/images/a.png';
       console.log('questionToCreate', question);
       this.quizService.addQuestion(this.quiz, question);
-
-      // this.initializeQuestionForm();
+      this.initializeQuestionForm();
     }
   }
 
