@@ -1,0 +1,19 @@
+.align{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+img{
+  max-height: 20em;
+  width: auto;
+  padding-bottom: 1em;
+}
+
+.answers{
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 1em;
+}

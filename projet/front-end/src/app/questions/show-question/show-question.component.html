@@ -1,11 +1,13 @@
 <div>
   <div class="displayed" *ngIf="question">
-    Vous avez sélectionné : <br>
+    <div class="name">{{quiz.name}}</div>
     Question {{id+1}} : {{question.label}}
     <br>
+    <div class="align">
+      <img src="{{question.img}}"/>
+    </div>
     <div class="answers" *ngFor="let answer of answers">
-
-      <div class="displayed" *ngIf="answered">
+      <div class="answered" *ngIf="answered">
         <div class="correct" *ngIf="answer.isCorrect">
           <button class="answer" style="background-color: green; color: white">{{answer.value}}</button>
         </div>
@@ -17,7 +19,7 @@
         </div>
       </div>
 
-      <div class="displayed" *ngIf="answered === false">
+      <div class="answers" *ngIf="answered === false">
         <button class="answer" style="background-color: white; color: black" (click)="selectAnswer(answer)" >{{answer.value}}</button>
       </div>
 

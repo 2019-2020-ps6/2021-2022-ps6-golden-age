@@ -36,7 +36,8 @@ export class QuestionFormComponent implements OnInit {
   private initializeQuestionForm(): void {
     this.questionForm = this.formBuilder.group({
       label: ['', Validators.required],
-      answers: this.formBuilder.array([])
+      answers: this.formBuilder.array([]),
+      img: [''],
     });
     for (let i = 1; i <= 4 ; i++) {
       this.addAnswer();
@@ -61,6 +62,7 @@ export class QuestionFormComponent implements OnInit {
   addQuestion(): void {
     if (this.questionForm.valid) {
       const question = this.questionForm.getRawValue() as Question;
+      question.img = question.img ? question.img : 'assets/images/a.png';
       console.log('questionToCreate', question);
       this.quizService.addQuestion(this.quiz, question);
 
