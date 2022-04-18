@@ -1,6 +1,6 @@
 <app-header-pro></app-header-pro>
 <div class="card">
-  <h2>Create a new Theme</h2>
+  <h2>Créer un nouveau Theme</h2>
   <form class="theme-form" [formGroup]="themeForm">
     <label for="theme">
       Nom du Theme <br>
@@ -11,7 +11,8 @@
       Image <br>
       <input class="input-custom" type="text" id="img" [formControlName]="'img'">
     </label>
-    <button type="submit" class="button-card" (click)="addTheme()" [routerLink]="['/ajouter-quiz']">Create</button>
+    <br>
+    <button type="submit" class="button-card" (click)="addTheme()" [routerLink]="['/ajouter-quiz']">Créer</button>
   </form>
 </div>
 

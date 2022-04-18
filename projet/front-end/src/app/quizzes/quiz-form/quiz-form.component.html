@@ -1,27 +1,25 @@
 <app-header-pro></app-header-pro>
 <div class="card">
-  <h2>Create a new Quiz</h2>
+  <h2>Créer un nouveau Quiz</h2>
   <form class="quiz-form" [formGroup]="quizForm">
     <label for="name">
-      Title <br>
+      Titre <br>
       <input class="input-custom" type="text" id="name" [formControlName]="'name'">
     </label>
     <br>
     <label for="themeId">
       <select name="theme" id="themeId" [formControlName]="'themeId'">
-        <option value="">Choisissez une option</option>
+        <option value="">Choisissez un theme</option>
         <option *ngFor="let theme of themeList" value="{{theme.id}}" >{{theme.name}}</option>
       </select>
     </label>
-    <br>
-    <button class="navigation" [routerLink]="['/ajouter-theme']">Ajouter un thème</button>
     <br>
     <label for="img">
       Image <br>
       <input class="input-custom" type="text" id="img" [formControlName]="'img'">
     </label>
     <br>
-    <button type="submit" class="button-card" (click)="addQuiz()">Create</button>
+    <button type="submit" class="button-card" (click)="addQuiz()">Créer</button>
   </form>
 </div>
 <!-- Uncomment below to see your form structure and how it changes-->
