@@ -18,7 +18,9 @@
         </div>
       </div>
     </div>
-    <button type="submit" class="button-card" (click)="addQuestion()">Create</button>
+    <button type="submit" class="button-card" (click)="addQuestion()">Ajouter une question</button>
+    <br>
+    <button class="button-card" (click)="finish()">Terminer</button>
     <br>
     <img *ngIf="quiz" src="{{quiz.img}}">
 

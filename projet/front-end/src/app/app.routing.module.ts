@@ -14,6 +14,7 @@ import {QuizFormComponent} from './quizzes/quiz-form/quiz-form.component';
 import {ThemeFormComponent} from './themes/theme-form/theme-form.component';
 import {QuestionComponent} from './questions/question/question.component';
 import {QuestionFormComponent} from './questions/question-form/question-form.component';
+import {EditQuizComponent} from './quizzes/edit-quiz/edit-quiz.component';
 
 
 const routes: Routes = [
@@ -29,7 +30,7 @@ const routes: Routes = [
     {path: 'mes-quiz', component: MesQuizComponent},
     {path: 'ajouter-quiz', component: QuizFormComponent},
     {path: 'ajouter-theme', component: ThemeFormComponent},
-    // {path: 'edit-quiz/:id', component: EditQuizComponent},
+    {path: 'edit-quiz/:id', component: QuestionFormComponent},
     {path: 'create-quiz/:id', component: QuestionFormComponent},
     {path: '', redirectTo: '/login', pathMatch: 'full'},
 
