@@ -41,13 +41,10 @@ export class ShowQuestionComponent implements OnInit {
   }
 
   suivant(): void {
-    console.log('coucou');
     if (this.id + 1 < this.quiz.questions.length){
-      console.log('recoucou');
       const currentUrl = 'quiz/' + this.quiz.id + '/questions/' + (this.id + 2);
       this.router.navigateByUrl('/', {skipLocationChange: true}).then(() => {
         this.router.navigate([currentUrl]);
-        console.log('rerecoucou');
       });
     }
   }
