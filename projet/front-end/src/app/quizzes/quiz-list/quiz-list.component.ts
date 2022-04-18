@@ -23,6 +23,7 @@ export class QuizListComponent implements OnInit {
     this.quizService.quizzes$.subscribe((quizzes: Quiz[]) => {
       this.quizList = quizzes;
       this.quizList = this.quizList.filter(quiz => quiz.themeId.toString() === this.route.snapshot.paramMap.get('id'));
+      console.log('Liste de quiz :', this.quizList);
     });
     this.themeService.themeSelected$.subscribe((theme) => {
       this.theme = theme;
