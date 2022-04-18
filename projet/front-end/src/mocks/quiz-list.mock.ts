@@ -2,7 +2,7 @@ import { Quiz } from '../models/quiz.model';
 import { Question } from '../models/question.model';
 
 export const QUESTION_MONUMENT: Question = {
-    id: '1',
+    id: 1,
     label: 'Où se situe ce pont?',
     number: 1,
     answers: [

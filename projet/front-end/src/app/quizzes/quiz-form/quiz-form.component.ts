@@ -5,6 +5,7 @@ import { QuizService } from '../../../services/quiz.service';
 import { Quiz } from '../../../models/quiz.model';
 import {ThemeService} from '../../../services/theme.service';
 import {Theme} from '../../../models/theme.model';
+import {Router} from '@angular/router';
 import {QUESTION_LIST, QUESTION_MONUMENT} from '../../../mocks/quiz-list.mock';
 
 @Component({
@@ -24,7 +25,7 @@ export class QuizFormComponent implements OnInit {
   public quizForm: FormGroup;
   public themeList: Theme[] = [];
 
-  constructor(public formBuilder: FormBuilder, public quizService: QuizService, public themeService: ThemeService) {
+  constructor(private router: Router, public formBuilder: FormBuilder, public quizService: QuizService, public themeService: ThemeService) {
     this.quizForm = this.formBuilder.group({
       name: [''],
       themeId: [''],
@@ -46,11 +47,13 @@ export class QuizFormComponent implements OnInit {
   addQuiz(): void {
     // We retrieve here the quiz object from the quizForm and we cast the type "as Quiz".
     const quizToCreate: Quiz = this.quizForm.getRawValue() as Quiz;
+    quizToCreate.id = Date.now();
     quizToCreate.img = quizToCreate.img ? quizToCreate.img : 'assets/images/a.png';
     quizToCreate.questions = quizToCreate.questions ? quizToCreate.questions : QUESTION_LIST ;
     quizToCreate.themeId = parseInt(String(quizToCreate.themeId), 10);
-    this.quizService.addQuiz(quizToCreate);
-    console.log('add', quizToCreate);
-  }
 
+    console.log('quizToCreate', quizToCreate);
+    this.quizService.addQuiz(quizToCreate);
+    this.router.navigate(['/create-quiz/' + quizToCreate.id]);
+  }
 }

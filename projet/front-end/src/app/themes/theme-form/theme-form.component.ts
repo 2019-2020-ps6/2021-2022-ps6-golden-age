@@ -36,9 +36,9 @@ export class ThemeFormComponent implements OnInit {
   addTheme(): void {
     // We retrieve here the theme object from the themeForm and we cast the type "as Theme".
     const themeToCreate: Theme = this.themeForm.getRawValue() as Theme;
-    console.log(themeToCreate.img),
+    themeToCreate.id = Date.now();
+    console.log('themeToCreate', themeToCreate);
     themeToCreate.img = themeToCreate.img ? themeToCreate.img : 'assets/images/a.png';
-    console.log(themeToCreate);
     this.themeService.addTheme(themeToCreate);
   }
 
