@@ -2,9 +2,29 @@
   Vous avez sélectionné : <br>
   Question {{question.id}}
   <br>
+  {{question.label}}
   <br>
-  <div class="answer" *ngFor="let answer of answers">
-    {{answer.value}}
+  <div class="answers" *ngFor="let answer of answers">
+    <div class="displayed" *ngIf="answered">
+      <div class="correct" *ngIf="answer.isCorrect">
+        <button class="answer" style="background-color: green; color: white">{{answer.value}}</button>
+      </div>
+      <div class="incorrect" *ngIf="answer === selectedAnswer && !answer.isCorrect">
+        <button class="answer" style="background-color: brown; color: white">{{answer.value}}</button>
+      </div>
+      <div class="others" *ngIf="answer !== selectedAnswer && !answer.isCorrect">
+        <button class="answer" style="background-color: white; color: black" >{{answer.value}}</button>
+      </div>
+
+    </div>
+    <div class="displayed" *ngIf="answered === false">
+      <button class="answer" style="background-color: white; color: black" (click)="selectAnswer(answer)" >{{answer.value}}</button>
+      </div>
   </div>
+
+  <div class="displayed" *ngIf="answered">
+    <button class="next" style="color: #123c69; background-color: transparent; border-color: transparent; cursor: default;">Suivant</button>
+  </div>
+
 
 </div>

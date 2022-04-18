@@ -32,7 +32,7 @@ const routes: Routes = [
     {path: 'ajouter-quiz', component: QuizFormComponent},
     {path: 'ajouter-theme', component: ThemeFormComponent},
     {path: 'show-quiz', component: ShowQuizComponent},
-    {path: 'login',component: LoginComponent},
+    {path: 'login', component: LoginComponent},
     {path: 'textToSpeech', component : TextToSpeechComponent},
     {path: 'edit-quiz/:id', component: QuestionFormComponent},
     {path: 'create-quiz/:id', component: QuestionFormComponent},

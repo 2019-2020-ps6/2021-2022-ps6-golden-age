@@ -15,16 +15,31 @@ export class ShowQuestionComponent implements OnInit {
   public question: Question;
   public id: number;
   public answers: Answer[];
+  public selectedAnswer: Answer;
+  public answered: boolean;
+  public correctAnswers: Answer[] = [];
 
   constructor(private route: ActivatedRoute, private quizService: QuizService) {
     this.quizService.quizSelected$.subscribe((quiz) => {
       this.question = quiz.questions[this.id];
-      this.answers = this.question.answers; });
+      this.answers = this.question.answers;
+      this.answered = false;
+      for (const answer of this.answers){
+        if (answer.isCorrect === true){
+            this.correctAnswers.push(answer);
+            console.log(this.correctAnswers);
+        }
+      }});
   }
 
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id');
     this.quizService.setSelectedQuiz(parseInt(id, 10));
     this.id = parseInt(this.route.snapshot.paramMap.get('questionId'), 10) - 1;
+  }
+
+  selectAnswer(answer: Answer): void {
+    this.selectedAnswer = answer;
+    this.answered = true;
   }
 }
