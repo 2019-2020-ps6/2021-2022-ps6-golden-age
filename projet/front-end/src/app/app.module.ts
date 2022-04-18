@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app.routing.module';
@@ -37,6 +38,7 @@ import { QuizProComponent } from './quizzes/quiz/pro/quiz-pro.component';
 import {FooterUserComponent} from './footer/user/footerUser.component';
 import {FooterProComponent} from './footer/pro/footerPro.component';
 
+import { TextToSpeechComponent } from './textToSpeech/textToSpeech.component';
 
 @NgModule({
   declarations: [
@@ -64,6 +66,7 @@ import {FooterProComponent} from './footer/pro/footerPro.component';
     HelpPageProComponent,
     HelpPageUserComponent,
     ShowQuizComponent,
+    TextToSpeechComponent,
     LoginComponent,
     UserComponent,
     UserFormComponent,
@@ -75,6 +78,7 @@ import {FooterProComponent} from './footer/pro/footerPro.component';
     ReactiveFormsModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

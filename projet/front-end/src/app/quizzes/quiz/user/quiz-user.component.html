@@ -1,10 +1,12 @@
+<app-textToSpeech #TTS></app-textToSpeech>
+
 <div class="displayed">
   <div class="align">
       <img src="{{quiz.img}}"/>
       <div>
-        <p>{{quiz.name}}</p>
-        <p>Nombre de questions : {{quiz.questions.length}}</p>
+        <p #tts1 (mouseover)="TTS.say(tts1.innerText)" (mouseout)="TTS.stop()">{{quiz.name}}</p>
+        <p #tts2 (mouseover)="TTS.say(tts2.innerText)" (mouseout)="TTS.stop()">Nombre de questions : {{quiz.questions.length}}</p>
       </div>
-      <button class="button-card" (click)="selectQuiz()">Selectionner</button>
+      <button #tts2 class="button-card" (click)="selectQuiz()" (mouseover)="TTS.say(tts2.innerText)" (mouseout)="TTS.stop()">Sélectionner</button>
   </div>
 </div>
