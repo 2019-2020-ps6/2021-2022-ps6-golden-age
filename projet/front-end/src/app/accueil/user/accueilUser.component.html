@@ -1,9 +1,10 @@
+<app-textToSpeech #TTS></app-textToSpeech>
 <app-header-user></app-header-user>
 <br>
 <div class="displayed">
-  <p>Oh non ! Il semblerait que vous n'ayez pas encore fait de quiz.</p>
-  <p>Voulez-vous faire votre premier quiz avec nous?</p>
-  <p>Si oui, vous pouvez faire votre premier quiz en cliquant sur le bouton "Sélectionner un quiz" en haut de la page !</p>
+  <p #tts10 (mouseover)="TTS.say(tts10.innerText)" (mouseout)="TTS.stop()">Oh non ! Il semblerait que vous n'ayez pas encore fait de quiz.</p>
+  <p #tts11 (mouseover)="TTS.say(tts11.innerText)" (mouseout)="TTS.stop()">Voulez-vous faire votre premier quiz avec nous?</p>
+  <p #tts12 (mouseover)="TTS.say(tts12.innerText)" (mouseout)="TTS.stop()">Si oui, vous pouvez faire votre premier quiz en cliquant sur le bouton "Sélectionner un quiz" en haut de la page !</p>
   <div class="img">
     <img alt="logo GoldenAge login" src="assets/images/logoComplet.png" height="289" width="813">
   </div>
