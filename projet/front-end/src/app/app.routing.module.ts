@@ -26,7 +26,7 @@ const routes: Routes = [
     {path: 'accueilUser', component: AccueilUserComponent},
     {path: 'question-list/:id', component: QuestionListComponent},
     {path: 'quiz/:id', component: ShowQuizComponent},
-    {path: 'question/:id', component: ShowQuestionComponent},
+    {path: 'quiz/:id/questions/:questionId', component: ShowQuestionComponent},
     {path: 'login', component: LoginComponent},
     {path: 'mes-quiz', component: MesQuizComponent},
     {path: 'ajouter-quiz', component: QuizFormComponent},

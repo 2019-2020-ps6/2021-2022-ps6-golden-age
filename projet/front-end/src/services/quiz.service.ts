@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Subject } from 'rxjs';
 import { Quiz } from '../models/quiz.model';
-import {QUESTION_MONUMENT, QUIZ_LIST} from '../mocks/quiz-list.mock';
+import { QUIZ_LIST} from '../mocks/quiz-list.mock';
 import { Question } from '../models/question.model';
 import { serverUrl, httpOptionsBase } from '../configs/server.config';
 
@@ -29,6 +29,7 @@ export class QuizService {
     = new BehaviorSubject(this.quizzes);
 
   public quizSelected$: Subject<Quiz> = new Subject();
+  public questionSelected$: Subject<Question> = new Subject();
 
   private quizUrl = serverUrl + '/quizzes';
   private questionsPath = 'questions';
@@ -55,6 +56,14 @@ export class QuizService {
     this.http.get<Quiz>(urlWithId).subscribe((quiz) => {
       this.quizSelected$.next(quiz);
       console.log('quiz: ', quiz);
+    });
+  }
+
+  setSelectedQuestion(quizId: number, questionId: number): void {
+    const urlWithId = this.quizUrl + '/' + quizId + '/questions/' + questionId;
+    this.http.get<Question>(urlWithId).subscribe((question) => {
+      this.questionSelected$.next(question);
+      console.log('question: ', question);
     });
   }
 

@@ -33,7 +33,7 @@ export class ShowQuizComponent implements OnInit {
 
   startQuiz(): void {
     console.log(this.quiz);
-    this.router.navigate(['/question/' + QUESTION_MONUMENT.id ]);
+    this.router.navigate(['quiz/' + this.quiz.id + '/questions/1' ]);
   }
 
 }

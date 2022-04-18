@@ -2,7 +2,9 @@
   Vous avez sélectionné : <br>
   Question {{question.id}}
   <br>
-  <img src="{{question.img}}" width="45%" height="60%" >
   <br>
-  {{question.answers}}
+  <div class="answer" *ngFor="let answer of answers">
+    {{answer.value}}
+  </div>
+
 </div>

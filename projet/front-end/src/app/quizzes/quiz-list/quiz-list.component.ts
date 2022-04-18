@@ -20,6 +20,7 @@ export class QuizListComponent implements OnInit {
   public quizList: Quiz[] = [];
 
   constructor(private route: ActivatedRoute, private router: Router, public quizService: QuizService, public themeService: ThemeService) {
+    this.quizService.retrieveQuizzes();
     this.quizService.quizzes$.subscribe((quizzes: Quiz[]) => {
       this.quizList = quizzes;
       this.quizList = this.quizList.filter(quiz => quiz.themeId.toString() === this.route.snapshot.paramMap.get('id'));
