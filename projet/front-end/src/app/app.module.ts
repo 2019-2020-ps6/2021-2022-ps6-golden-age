@@ -38,7 +38,7 @@ import { QuizProComponent } from './quizzes/quiz/pro/quiz-pro.component';
 import {FooterUserComponent} from './footer/user/footerUser.component';
 import {FooterProComponent} from './footer/pro/footerPro.component';
 
-import { TextToSpeechComponent } from './textToSpeech/textToSpeech.component';
+import { TextToSpeechComponent } from './textToSpeech/text-to-speech.component';
 
 @NgModule({
   declarations: [

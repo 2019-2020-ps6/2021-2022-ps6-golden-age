@@ -1,4 +1,4 @@
-<app-textToSpeech #TTS></app-textToSpeech>
+<app-text-to-speech #TTS></app-text-to-speech>
 <div>
   <a [routerLink]="['/helpUser']"><img #tts1 alt="Aide" src="assets/images/help.png" height="60" width="60" class="align" (mouseover)="TTS.say(tts1.alt)" (mouseout)="TTS.stop()"/></a>
 </div>
