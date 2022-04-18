@@ -63,13 +63,14 @@ export class QuizService {
   }
 
   addQuestion(quiz: Quiz, question: Question): void {
+    quiz.questions.push(question);
+    console.log('put', quiz);
+    this.updateQuiz(quiz);
+  }
+
+  updateQuiz(quiz: Quiz): void{
     const urlWithId = this.quizUrl + '/' + quiz.id;
-    this.setSelectedQuiz(quiz.id);
-    this.quizSelected$.subscribe((quizUpdated: Quiz) => {
-      quizUpdated.questions.push(question);
-      console.log('put', quizUpdated);
-      this.http.put<Quiz>(urlWithId, quizUpdated, this.httpOptions).subscribe(() => this.retrieveQuizzes());
-    });
+    this.http.put<Quiz>(urlWithId, quiz, this.httpOptions).subscribe(() => this.retrieveQuizzes());
   }
 
   deleteQuestion(quiz: Quiz, question: Question): void {
