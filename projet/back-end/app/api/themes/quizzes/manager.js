@@ -1,4 +1,4 @@
-const { Quiz, Theme} = require('../../../models')
+const { Quiz } = require('../../../models')
 
 /**
  * Function buildQuizz.
