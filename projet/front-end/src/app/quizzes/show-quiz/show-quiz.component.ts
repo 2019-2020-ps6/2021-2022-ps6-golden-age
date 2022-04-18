@@ -17,7 +17,7 @@ export class ShowQuizComponent implements OnInit {
   public quiz: Quiz;
   public theme: Theme;
 
-  constructor(private route: ActivatedRoute, private router: Router, private quizService: QuizService, private themeService: ThemeService) {
+  constructor(private router: Router, private quizService: QuizService, private themeService: ThemeService) {
     this.quizService.quizSelected$.subscribe((quiz) => {
       console.log(quiz);
       this.quiz = quiz;

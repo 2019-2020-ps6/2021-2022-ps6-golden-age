@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {Answer, Question} from '../../../models/question.model';
 import {QuizService} from '../../../services/quiz.service';
+import {Quiz} from '../../../models/quiz.model';
 
 @Component({
   selector: 'app-show-question',
@@ -13,23 +14,19 @@ import {QuizService} from '../../../services/quiz.service';
 export class ShowQuestionComponent implements OnInit {
   @Input()
   public question: Question;
+  public quiz: Quiz;
   public id: number;
   public answers: Answer[];
   public selectedAnswer: Answer;
   public answered: boolean;
-  public correctAnswers: Answer[] = [];
 
-  constructor(private route: ActivatedRoute, private quizService: QuizService) {
+  constructor(private route: ActivatedRoute, private router: Router, private quizService: QuizService) {
     this.quizService.quizSelected$.subscribe((quiz) => {
+      this.quiz = quiz;
       this.question = quiz.questions[this.id];
       this.answers = this.question.answers;
       this.answered = false;
-      for (const answer of this.answers){
-        if (answer.isCorrect === true){
-            this.correctAnswers.push(answer);
-            console.log(this.correctAnswers);
-        }
-      }});
+    });
   }
 
   ngOnInit(): void {
@@ -41,5 +38,17 @@ export class ShowQuestionComponent implements OnInit {
   selectAnswer(answer: Answer): void {
     this.selectedAnswer = answer;
     this.answered = true;
+  }
+
+  suivant(): void {
+    console.log('coucou');
+    if (this.id + 1 < this.quiz.questions.length){
+      console.log('recoucou');
+      const currentUrl = 'quiz/' + this.quiz.id + '/questions/' + (this.id + 2);
+      this.router.navigateByUrl('/', {skipLocationChange: true}).then(() => {
+        this.router.navigate([currentUrl]);
+        console.log('rerecoucou');
+      });
+    }
   }
 }
