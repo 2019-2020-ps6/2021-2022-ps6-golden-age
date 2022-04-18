@@ -9,12 +9,10 @@
     <br>
     <label for="themeId">
       <select name="theme" id="themeId" [formControlName]="'themeId'">
-        <option value="">Choisissez une option</option>
+        <option value="">Choisissez un theme</option>
         <option *ngFor="let theme of themeList" value="{{theme.id}}" >{{theme.name}}</option>
       </select>
     </label>
-    <br>
-    <button class="navigation" [routerLink]="['/ajouter-theme']">Ajouter un thème</button>
     <br>
     <label for="img">
       Image <br>
