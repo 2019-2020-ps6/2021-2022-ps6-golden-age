@@ -6,7 +6,7 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app.routing.module';
-import {HeaderUserComponent} from './header/user/header-user.component';
+import { HeaderUserComponent } from './header/user/header-user.component';
 
 import { ThemeListUserComponent } from './themes/theme-list/user/theme-list-user.component';
 import { ThemeFormComponent } from './themes/theme-form/theme-form.component';
@@ -66,7 +66,7 @@ import { TextToSpeechComponent } from './textToSpeech/textToSpeech.component';
     HelpPageProComponent,
     HelpPageUserComponent,
     ShowQuizComponent,
-    TextToSpeechComponent
+    TextToSpeechComponent,
     LoginComponent,
     UserComponent,
     UserFormComponent,
