@@ -9,7 +9,7 @@ import {QuestionListComponent} from './questions/question-list/question-list.com
 import {ShowQuizComponent} from './quizzes/show-quiz/show-quiz.component';
 import {ShowQuestionComponent} from './questions/show-question/show-question.component';
 import { LoginComponent } from './login/login.component';
-import { TextToSpeechComponent } from './textToSpeech/textToSpeech.component';
+import { TextToSpeechComponent } from './textToSpeech/text-to-speech.component';
 import {MesQuizComponent} from './quizzes/mes-quiz/mes-quiz.component';
 import {QuizFormComponent} from './quizzes/quiz-form/quiz-form.component';
 import {ThemeFormComponent} from './themes/theme-form/theme-form.component';
