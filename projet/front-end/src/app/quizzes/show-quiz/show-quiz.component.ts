@@ -1,7 +1,10 @@
-import { Component, OnInit, Input } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {Quiz} from '../../../models/quiz.model';
-import {Router} from '@angular/router';
-import {QUIZ_LIST} from '../../../mocks/quiz-list.mock';
+import {ActivatedRoute, Router} from '@angular/router';
+import {QuizService} from '../../../services/quiz.service';
+import {QUESTION_MONUMENT} from '../../../mocks/quiz-list.mock';
+import {Theme} from '../../../models/theme.model';
+import {ThemeService} from '../../../services/theme.service';
 
 @Component({
   selector: 'app-show-quiz',
@@ -11,16 +14,26 @@ import {QUIZ_LIST} from '../../../mocks/quiz-list.mock';
 
 // tslint:disable-next-line:class-name
 export class ShowQuizComponent implements OnInit {
-  @Input()
-  quiz = QUIZ_LIST.pop();
-  private router: Router;
-  constructor() { }
+  public quiz: Quiz;
+  public theme: Theme;
+
+  constructor(private route: ActivatedRoute, private router: Router, private quizService: QuizService, private themeService: ThemeService) {
+    this.quizService.quizSelected$.subscribe((quiz) => {
+      console.log(quiz);
+      this.quiz = quiz;
+      this.themeService.setSelectedTheme(this.quiz.themeId);
+    });
+    this.themeService.themeSelected$.subscribe((theme) => {
+      this.theme = theme;
+    });
+  }
 
   ngOnInit(): void {
   }
 
-  startQuiz(quiz: Quiz): void {
-    this.router.navigate([quiz.name + '/question-list' ]);
+  startQuiz(): void {
+    console.log(this.quiz);
+    this.router.navigate(['/question/' + QUESTION_MONUMENT.id ]);
   }
 
 }

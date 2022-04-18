@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Subject } from 'rxjs';
 import { Quiz } from '../models/quiz.model';
-import { QUIZ_LIST } from '../mocks/quiz-list.mock';
+import {QUESTION_MONUMENT, QUIZ_LIST} from '../mocks/quiz-list.mock';
 import { Question } from '../models/question.model';
 import { serverUrl, httpOptionsBase } from '../configs/server.config';
 
@@ -54,6 +54,7 @@ export class QuizService {
     const urlWithId = this.quizUrl + '/' + quizId;
     this.http.get<Quiz>(urlWithId).subscribe((quiz) => {
       this.quizSelected$.next(quiz);
+      console.log('quiz: ', quiz);
     });
   }
 
@@ -63,8 +64,13 @@ export class QuizService {
   }
 
   addQuestion(quiz: Quiz, question: Question): void {
-    const questionUrl = this.quizUrl + '/' + quiz.id + '/' + this.questionsPath;
-    this.http.post<Question>(questionUrl, question, this.httpOptions).subscribe(() => this.setSelectedQuiz(quiz.id));
+    const urlWithId = this.quizUrl + '/' + quiz.id;
+    this.setSelectedQuiz(quiz.id);
+    this.quizSelected$.subscribe((quizUpdated: Quiz) => {
+      quizUpdated.questions.push(question);
+      console.log('put', quizUpdated);
+      this.http.put<Quiz>(urlWithId, quizUpdated, this.httpOptions).subscribe(() => this.retrieveQuizzes());
+    });
   }
 
   deleteQuestion(quiz: Quiz, question: Question): void {
@@ -73,13 +79,9 @@ export class QuizService {
   }
 
   /*
-  Note: The functions below don't interact with the server. It's an example of implementation for the exercice 10.
+  Note: The functions below don't interact with the server. It's an example of implementation for the exercise 10.
   addQuestion(quiz: Quiz, question: Question) {
-    quiz.questions.push(question);
-    const index = this.themes.findIndex((q: Quiz) => q.id === quiz.id);
-    if (index) {
-      this.updateQuizzes(quiz, index);
-    }
+
   }
 
   deleteQuestion(quiz: Quiz, question: Question) {

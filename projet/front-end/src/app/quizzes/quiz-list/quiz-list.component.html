@@ -1,7 +1,9 @@
-<app-header></app-header>
-<app-quiz-form></app-quiz-form>
-<div class="quiz-list">
-    <div class="quiz" *ngFor="let quiz of quizList">
-        <app-quiz [quiz]="quiz" (quizSelected)="quizSelected($event)" (deleteQuiz)="deleteQuiz($event)" (editQuiz)="editQuiz($event)"></app-quiz>
-    </div>
+<app-header-user></app-header-user>
+<br>
+<div class="displayed">
+  <h2>{{theme.name}}</h2>
+  <div class="quiz" *ngFor="let quiz of quizList">
+    <app-quiz-user [quiz]="quiz" (quizSelected)="selectQuiz(quiz)"></app-quiz-user>
+  </div>
 </div>
+<app-footer-user></app-footer-user>

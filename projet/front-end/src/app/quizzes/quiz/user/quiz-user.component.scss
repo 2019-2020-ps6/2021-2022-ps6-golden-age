@@ -1,0 +1,27 @@
+@import '../../../../styles/card';
+
+.align {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  align-items: center;
+}
+
+img{
+  max-height: 10em;
+  width: auto;
+  padding-bottom: 1em;
+}
+
+p{
+  color: $blue;
+  padding-left: 3em;
+  padding-right: 3em;
+}
+
+
+.displayed {
+  display: grid;
+  place-items: center;
+  padding-bottom: 2em;
+}

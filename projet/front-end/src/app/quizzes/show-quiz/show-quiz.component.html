@@ -1,10 +1,16 @@
-<app-header></app-header>
-<div>
-  Vous avez sélectionné : <br>
-  Quiz {{quiz.themeId}} : {{quiz.name}}
-  <br>
-  <img src="{{quiz.img}}" width="45%" height="60%" >
-  <br>
-  Nombre de questions : {{quiz.questions.length}}
-  <button class="button-card" (click)="startQuiz(quiz)">Commencer</button>
+<app-header-user></app-header-user>
+<br>
+<div class="displayed" *ngIf="quiz && theme">
+  <div class="title">
+    <p>Vous avez sélectionné :</p>
+  </div>
+  <p>Quiz {{theme.name}} : {{quiz.name}}</p>
+  <div class="align">
+    <p>Nombre de questions : {{quiz.questions.length}}</p>
+    <img src="{{quiz.img}}"/>
+    <div class="bottom">
+      <button class="button-card" (click)="startQuiz()">Commencer</button>
+    </div>
+  </div>
 </div>
+<app-footer-user></app-footer-user>

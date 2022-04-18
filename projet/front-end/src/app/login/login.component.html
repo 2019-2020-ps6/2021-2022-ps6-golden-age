@@ -1,44 +1,45 @@
-<app-textToSpeech #TTS></app-textToSpeech>
-<body>  
-    <div  style="width: 100%;">
-        <div style="width: 50%; height: 100px; float: left;"> 
-            <div #tts1 (mouseover)="TTS.say(tts1.innerText)" (mouseout)="TTS.stop()" id="user" classe = "log">
+<!--suppress XmlDuplicatedId, XmlDuplicatedId ->lDuplicatedId ->lDuplicatedId -->
+
+    <div class="img">
+      <img alt="logo GoldenAge login" src="assets/images/logoComplet.png" height="150" width="421">
+      <h1>Veuillez vous connecter.</h1>
+    </div>
+    <div class="displayed">
+        <div style="float: left" class="log">
+            <div id="user">
                 <div>Utilisateurs</div><br>
                 <form action="/ma-page-de-traitement" method="post">
-                    <div>
-                        <label for="Nom d'utilisateur">Nom d'utilisateur :</label>
-                        <input type="text" id="user_name" name="user_name">
+                    <div class="spacing">
+                        <label for="user_name">Nom d'utilisateur :</label>
+                        <input type="text" id="u_name" name="user_name"/>
                     </div>
-                    <div>
+                    <div class="spacing">
                         <label for="mdp">Mot de passe :</label>
-                        <textarea id="mdp" name="mdp"></textarea>
+                        <input id="password" name="mdp"/>
                     </div>
                     <div>
-                        <button [routerLink]="['/accueilUser']">Connexion</button>
+                        <button class="button-card" [routerLink]="['/accueilUser']">Connexion</button>
                     </div>
                 </form>
             </div>
         </div>
-        <div  style="margin-left: 50%; height: 100px;"> 
-            <div #tts2 (mouseover)="TTS.say(tts2.innerText)" (mouseout)="TTS.stop()" id="pro" classe = "log">
+        <div style="margin-left: auto" class="log">
+            <div id="pro">
                 <div>Professionnels</div><br>
                 <form action="/ma-page-de-traitement" method="post">
-                    <div>
-                        <label for="Nom d'utilisateur">Nom d'utilisateur :</label>
-                        <input type="text" id="user_name" name="user_name">
+                    <div class="spacing">
+                        <label for="user_name">Nom d'utilisateur :</label>
+                        <input type="text" id="user_name" name="user_name"/>
                     </div>
-                    <div>
+                    <div class="spacing">
                         <label for="mdp">Mot de passe :</label>
-                        <textarea id="mdp" name="mdp"></textarea>
+                        <input id="mdp" name="mdp"/>
                     </div>
                     <div>
-                        <button [routerLink]="['/accueilUser']">Connexion</button> 
-                        <!-- à changer en accueilPro quand il sera implémenté -->
+                        <button class="button-card" [routerLink]="['/mes-quiz']">Connexion</button>
                     </div>
                 </form>
             </div>
         </div>
     </div>
 
-
-</body>

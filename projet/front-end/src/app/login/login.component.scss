@@ -1,7 +1,32 @@
-body{
-    text-align: center;
-    margin-top: 30%;
+@import "../../styles/variables";
+@import '../../styles/card.scss';
+
+.img{
+  text-align : center;
+  padding-bottom: 2em;
 }
-// .log{
-//     text-align: left;
-// }
+
+h1{
+  color: $blue;
+}
+
+.log{
+  background-color: $lightGrey;
+  border: solid;
+  border-color: $darkGrey;
+  width: 45%;
+  padding-bottom: 1em;
+  padding-top: 1em;
+}
+
+.displayed {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  text-align : center;
+  padding-bottom: 5em;
+}
+
+.spacing{
+  padding-bottom: 2em;
+}

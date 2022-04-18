@@ -1,3 +1,4 @@
+<app-header-pro></app-header-pro>
 <div class="card">
   <h2>Create a new Theme</h2>
   <form class="theme-form" [formGroup]="themeForm">
@@ -5,8 +6,15 @@
       Nom du Theme <br>
       <input class="input-custom" type="text" id="theme" [formControlName]="'name'">
     </label>
-    <button type="submit" class="button-card" (click)="addTheme()">Create</button>
+    <br>
+    <label for="img">
+      Image <br>
+      <input class="input-custom" type="text" id="img" [formControlName]="'img'">
+    </label>
+    <button type="submit" class="button-card" (click)="addTheme()" [routerLink]="['/ajouter-quiz']">Create</button>
   </form>
 </div>
+
+<app-theme-list-pro></app-theme-list-pro>
 <!-- Uncomment below to see your form structure and how it changes-->
 <!-- <br><br>{{quizForm.getRawValue() | json}} -->

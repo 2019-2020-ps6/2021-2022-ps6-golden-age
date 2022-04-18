@@ -1,3 +1,4 @@
+<app-header-pro></app-header-pro>
 <div class="card">
   <h2>Create a new Quiz</h2>
   <form class="quiz-form" [formGroup]="quizForm">
@@ -13,8 +14,16 @@
       </select>
     </label>
     <br>
+    <button class="navigation" [routerLink]="['/ajouter-theme']">Ajouter un thème</button>
+    <br>
+    <label for="img">
+      Image <br>
+      <input class="input-custom" type="text" id="img" [formControlName]="'img'">
+    </label>
+    <br>
     <button type="submit" class="button-card" (click)="addQuiz()">Create</button>
   </form>
 </div>
 <!-- Uncomment below to see your form structure and how it changes-->
 <!-- <br><br>{{quizForm.getRawValue() | json}} -->
+<app-footer-pro></app-footer-pro>

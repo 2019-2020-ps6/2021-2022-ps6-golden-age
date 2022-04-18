@@ -29,7 +29,6 @@ export class ThemeService {
   public themeSelected$: Subject<Theme> = new Subject();
 
   private themeUrl = serverUrl + '/themes';
-  private quizzesPath = 'quizzes';
 
   private httpOptions = httpOptionsBase;
 
@@ -49,7 +48,7 @@ export class ThemeService {
     this.http.post<Theme>(this.themeUrl, theme, this.httpOptions).subscribe(() => this.retrieveThemes());
   }
 
-  setSelectedTheme(themeId: string): void {
+  setSelectedTheme(themeId: number): void {
     const urlWithId = this.themeUrl + '/' + themeId;
     this.http.get<Theme>(urlWithId).subscribe((theme) => {
       this.themeSelected$.next(theme);

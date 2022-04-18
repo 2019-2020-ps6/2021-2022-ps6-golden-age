@@ -1,7 +1,6 @@
-<app-header></app-header>
 <app-textToSpeech #TTS></app-textToSpeech>
- <div #tts (mouseover)="TTS.say(tts.innerText)" (mouseout)="TTS.stop()">
-    <p >Pour faire des quiz, appuyez sur le bouton "Sélectionner un quiz" puis choisissez le quiz qui vous plaît.</p>
+<app-header-user></app-header-user>
+<div class="displayed">
     <p>Pour voir les résultats de vos quiz, appuyez sur le bouton "Mes statistiques".</p>
     <p>Pour retourner sur la page d'accueil, appuyer sur le bouton "Accueil" ou sur l'icône du personnage en haut à gauche de la page.</p>
     <p>Pour modifier vos configurations, cliquez sur l'engrenage en haut de votre écran.
