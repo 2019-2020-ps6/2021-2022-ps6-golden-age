@@ -47,5 +47,9 @@ export class ShowQuestionComponent implements OnInit {
         this.router.navigate([currentUrl]);
       });
     }
+    else{
+      this.router.navigate(['resultats']);
+      this.quizService.setSelectedQuiz(this.quiz.id);
+    }
   }
 }

@@ -28,6 +28,7 @@ import { HelpPageUserComponent } from './help/user/help-page-user.component';
 import { AccueilUserComponent } from './accueil/user/accueilUser.component';
 import { ShowQuizComponent } from './quizzes/show-quiz/show-quiz.component';
 import { MesQuizComponent } from './quizzes/mes-quiz/mes-quiz.component';
+import {ResultsQuizComponent} from './quizzes/results-quiz/results-quiz.component';
 
 import { LoginComponent } from './login/login.component';
 import { UserComponent } from './users/user/user.component';
@@ -59,6 +60,7 @@ import { TextToSpeechComponent } from './textToSpeech/text-to-speech.component';
     QuizFormComponent,
     QuizUserComponent,
     QuizProComponent,
+    ResultsQuizComponent,
     EditQuizComponent,
     ShowQuizComponent,
     ShowQuestionComponent,

@@ -16,6 +16,7 @@ import {ThemeFormComponent} from './themes/theme-form/theme-form.component';
 import {QuestionComponent} from './questions/question/question.component';
 import {QuestionFormComponent} from './questions/question-form/question-form.component';
 import {EditQuizComponent} from './quizzes/edit-quiz/edit-quiz.component';
+import {ResultsQuizComponent} from './quizzes/results-quiz/results-quiz.component';
 
 
 const routes: Routes = [
@@ -30,6 +31,7 @@ const routes: Routes = [
     {path: 'login', component: LoginComponent},
     {path: 'mes-quiz', component: MesQuizComponent},
     {path: 'ajouter-quiz', component: QuizFormComponent},
+    {path: 'resultats', component: ResultsQuizComponent},
     {path: 'ajouter-theme', component: ThemeFormComponent},
     {path: 'show-quiz', component: ShowQuizComponent},
     {path: 'login', component: LoginComponent},

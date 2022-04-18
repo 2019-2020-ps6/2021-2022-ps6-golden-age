@@ -1,0 +1,14 @@
+<app-header-user></app-header-user>
+<br>
+  <div class="title">
+  </div>
+  <p>Quiz {{theme.name}} : {{quiz.name}}</p>
+  <div class="align">
+    <p>Score : 1/{{quiz.questions.length}}</p>
+    <img src="{{quiz.img}}"/>
+    <div class="bottom">
+      <button class="button-card" (click)="restartQuiz()">Recommencer</button>
+      <button class="button-card" (click)="showQuiz()">Voir d'autres quiz</button>
+    </div>
+  </div>
+<app-footer-user></app-footer-user>
