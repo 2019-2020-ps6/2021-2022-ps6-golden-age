@@ -6,7 +6,7 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app.routing.module';
-import {HeaderUserComponent} from './header/headerUser/headerUser.component';
+import {HeaderUserComponent} from './header/user/header-user.component';
 
 import { ThemeListComponent } from './themes/theme-list/theme-list.component';
 import { ThemeFormComponent } from './themes/theme-form/theme-form.component';

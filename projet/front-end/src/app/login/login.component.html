@@ -1,7 +1,8 @@
+<app-textToSpeech #TTS></app-textToSpeech>
 <body>  
-    <div style="width: 100%;">
+    <div  style="width: 100%;">
         <div style="width: 50%; height: 100px; float: left;"> 
-            <div id="user" classe = "log">
+            <div #tts1 (mouseover)="TTS.say(tts1.innerText)" (mouseout)="TTS.stop()" id="user" classe = "log">
                 <div>Utilisateurs</div><br>
                 <form action="/ma-page-de-traitement" method="post">
                     <div>
@@ -18,8 +19,8 @@
                 </form>
             </div>
         </div>
-        <div style="margin-left: 50%; height: 100px;"> 
-            <div id="pro" classe = "log">
+        <div  style="margin-left: 50%; height: 100px;"> 
+            <div #tts2 (mouseover)="TTS.say(tts2.innerText)" (mouseout)="TTS.stop()" id="pro" classe = "log">
                 <div>Professionnels</div><br>
                 <form action="/ma-page-de-traitement" method="post">
                     <div>
