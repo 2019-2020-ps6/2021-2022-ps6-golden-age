@@ -30,6 +30,7 @@ export class QuizFormComponent implements OnInit {
       name: [''],
       themeId: [''],
       img: [''],
+      questions: [''],
     });
     this.themeService.themes$.subscribe((themes: Theme[]) => {
       this.themeList = themes;
@@ -50,9 +51,9 @@ export class QuizFormComponent implements OnInit {
     quizToCreate.img = quizToCreate.img ? quizToCreate.img : 'assets/images/a.png';
     quizToCreate.questions = quizToCreate.questions ? quizToCreate.questions : QUESTION_LIST ;
     quizToCreate.themeId = parseInt(String(quizToCreate.themeId), 10);
+
     console.log('quizToCreate', quizToCreate);
     this.quizService.addQuiz(quizToCreate);
     this.router.navigate(['/create-quiz/' + quizToCreate.id]);
   }
-
 }

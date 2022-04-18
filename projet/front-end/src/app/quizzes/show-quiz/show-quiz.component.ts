@@ -19,6 +19,7 @@ export class ShowQuizComponent implements OnInit {
 
   constructor(private route: ActivatedRoute, private router: Router, private quizService: QuizService, private themeService: ThemeService) {
     this.quizService.quizSelected$.subscribe((quiz) => {
+      console.log(quiz);
       this.quiz = quiz;
       this.themeService.setSelectedTheme(this.quiz.themeId);
     });
@@ -28,8 +29,6 @@ export class ShowQuizComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    const id = this.route.snapshot.paramMap.get('id');
-    this.quizService.setSelectedQuiz(parseInt(id, 10));
   }
 
   startQuiz(): void {

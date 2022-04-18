@@ -7,7 +7,6 @@ export interface Question {
     id: number;
     label: string;
     number: number;
-    quizId: string;
     answers: Answer[];
     img: string;
 }

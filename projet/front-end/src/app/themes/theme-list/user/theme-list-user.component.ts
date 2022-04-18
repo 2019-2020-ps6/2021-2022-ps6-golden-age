@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ThemeService } from '../../../../services/theme.service';
 import { Theme } from '../../../../models/theme.model';
+import {QuizService} from '../../../../services/quiz.service';
 
 @Component({
   selector: 'app-theme-list-user',
@@ -12,7 +13,7 @@ export class ThemeListUserComponent implements OnInit {
 
   public themeList: Theme[] = [];
 
-  constructor(private router: Router, public themeService: ThemeService) {
+  constructor(private router: Router, public themeService: ThemeService, public quizService: QuizService) {
     this.themeService.themes$.subscribe((themes: Theme[]) => {
       this.themeList = themes;
     });
@@ -22,8 +23,8 @@ export class ThemeListUserComponent implements OnInit {
   }
 
   themeSelected(theme: Theme): void {
-    console.log(theme);
-    this.router.navigate(['/theme/' + theme.name.toLowerCase()]);
+    this.router.navigate(['/theme/' + theme.id]);
     console.log('event received from child:', theme);
+    this.themeService.setSelectedTheme(Number(theme.id));
   }
 }

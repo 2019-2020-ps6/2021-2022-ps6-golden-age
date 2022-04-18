@@ -24,7 +24,6 @@ export const QUESTION_MONUMENT: Question = {
         }
     ],
   img : 'assets/images/a.png',
-  quizId: '1648536265818',
 };
 
 export const QUESTION_LIST: Question[] = [QUESTION_MONUMENT];
