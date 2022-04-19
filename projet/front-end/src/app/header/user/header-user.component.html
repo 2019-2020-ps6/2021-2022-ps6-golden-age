@@ -1,4 +1,4 @@
-<app-textToSpeech #TTS></app-textToSpeech>
+<app-text-to-speech #TTS></app-text-to-speech>
 <div class="header">
 
   <div class="box">
@@ -26,7 +26,7 @@
   <div class="displayed">
       <nav>
         <a #tts20 (mouseover)="TTS.say(tts20.innerText)" (mouseout)="TTS.stop()" class="navigation" [routerLink]="['/accueilUser']">Accueil</a>
-        <a #tts21 (mouseover)="TTS.say(tts21.innerText)" (mouseout)="TTS.stop()" class="navigation" [routerLink]="['/theme-list']">Selectionner un theme</a>
+        <a #tts21 (mouseover)="TTS.say(tts21.innerText)" (mouseout)="TTS.stop()" class="navigation" [routerLink]="['/theme-list']">Séléctionner un thème</a>
         <a #tts22 (mouseover)="TTS.say(tts22.innerText)" (mouseout)="TTS.stop()" class="navigation" [routerLink]="['/user-list']">Mes statistiques</a>
       </nav>
   </div>

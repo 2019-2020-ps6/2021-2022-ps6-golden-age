@@ -1,8 +1,33 @@
 <div>
-  Vous avez sélectionné : <br>
-  Question {{question.id}}
-  <br>
-  <img src="{{question.img}}" width="45%" height="60%" >
-  <br>
-  {{question.answers}}
+  <div class="displayed" *ngIf="question">
+    <div class="name">{{quiz.name}}</div>
+    Question {{id+1}} : {{question.label}}
+    <br>
+    <div class="align">
+      <img src="{{question.img}}"/>
+    </div>
+    <div class="answers" *ngFor="let answer of answers">
+      <div class="answered" *ngIf="answered">
+        <div class="correct" *ngIf="answer.isCorrect">
+          <button class="answer" style="background-color: green; color: white">{{answer.value}}</button>
+        </div>
+        <div class="incorrect" *ngIf="answer === selectedAnswer && !answer.isCorrect">
+          <button class="answer" style="background-color: brown; color: white">{{answer.value}}</button>
+        </div>
+        <div class="others" *ngIf="answer !== selectedAnswer && !answer.isCorrect">
+          <button class="answer" style="background-color: white; color: black" >{{answer.value}}</button>
+        </div>
+      </div>
+
+      <div class="answers" *ngIf="answered === false">
+        <button class="answer" style="background-color: white; color: black" (click)="selectAnswer(answer)" >{{answer.value}}</button>
+      </div>
+
+    </div>
+
+    <div class="displayed" *ngIf="answered">
+      <a class="next" style="color: #123c69; background-color: transparent; border-color: transparent" (click)="suivant()">Suivant</a>
+    </div>
+
+  </div>
 </div>

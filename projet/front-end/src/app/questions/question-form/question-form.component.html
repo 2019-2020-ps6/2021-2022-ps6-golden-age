@@ -7,6 +7,11 @@
       <input class="input-custom" type="text" id="label" [formControlName]="'label'">
     </label>
     <br>
+    <label for="img">
+      Image <br>
+      <input class="input-custom" type="text" id="img" [formControlName]="'img'">
+    </label>
+    <br>
     <div class="answer" formArrayName="answers">
       <div *ngFor="let address of answers.controls; let i=index">
         <div class="answer-form" [formGroupName]="i">
@@ -19,7 +24,6 @@
       </div>
     </div>
     <button type="submit" class="button-card" (click)="addQuestion()">Ajouter une question</button>
-    <br>
     <button class="button-card" (click)="finish()">Terminer</button>
     <br>
     <img *ngIf="quiz" src="{{quiz.img}}">

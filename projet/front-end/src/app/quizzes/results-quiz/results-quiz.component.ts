@@ -1,19 +1,17 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Quiz} from '../../../models/quiz.model';
-import {ActivatedRoute, Router} from '@angular/router';
+import {Router} from '@angular/router';
 import {QuizService} from '../../../services/quiz.service';
-import {QUESTION_MONUMENT} from '../../../mocks/quiz-list.mock';
 import {Theme} from '../../../models/theme.model';
 import {ThemeService} from '../../../services/theme.service';
 
 @Component({
-  selector: 'app-show-quiz',
-  templateUrl: './show-quiz.component.html',
-  styleUrls: ['./show-quiz.component.scss']
+  selector: 'app-results-quiz',
+  templateUrl: './results-quiz.component.html',
+  styleUrls: ['./results-quiz.component.scss']
 })
 
-// tslint:disable-next-line:class-name
-export class ShowQuizComponent implements OnInit {
+export class ResultsQuizComponent implements OnInit {
   public quiz: Quiz;
   public theme: Theme;
 
@@ -31,9 +29,14 @@ export class ShowQuizComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  startQuiz(): void {
-    console.log(this.quiz);
+  restartQuiz(): void {
+    console.log('retry');
     this.router.navigate(['quiz/' + this.quiz.id + '/questions/1' ]);
+  }
+
+  showQuiz(): void {
+    console.log('bye');
+    this.router.navigate(['theme-list']);
   }
 
 }

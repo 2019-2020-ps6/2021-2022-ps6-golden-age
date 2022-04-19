@@ -1,10 +1,12 @@
-<app-textToSpeech #TTS></app-textToSpeech>
+<app-text-to-speech #TTS></app-text-to-speech>
 <app-header-user></app-header-user>
 <br>
 <div class="displayed">
-  <h2 #tts1 (mouseover)="TTS.say(tts1.innerText)" (mouseout)="TTS.stop()">{{theme.name}}</h2>
-  <div class="quiz" *ngFor="let quiz of quizList">
-    <app-quiz-user [quiz]="quiz" (quizSelected)="selectQuiz(quiz)"></app-quiz-user>
+  <h2 *ngIf="theme" #tts1 (mouseover)="TTS.say(tts1.innerText)" (mouseout)="TTS.stop()">{{theme.name}}</h2>
+  <div *ngIf="quizList">
+    <div class="quiz" *ngFor="let quiz of quizList">
+      <app-quiz-user [quiz]="quiz" (quizSelected)="selectQuiz(quiz)"></app-quiz-user>
+    </div>
   </div>
 </div>
 <app-footer-user></app-footer-user>
