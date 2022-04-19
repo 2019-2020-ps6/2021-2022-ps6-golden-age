@@ -1,8 +1,9 @@
-import { Component, OnInit, Input } from '@angular/core';
+import {Component, OnInit, Input, ViewChild, TemplateRef} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {Answer, Question} from '../../../models/question.model';
 import {QuizService} from '../../../services/quiz.service';
 import {Quiz} from '../../../models/quiz.model';
+import {MatDialog} from "@angular/material/dialog";
 
 @Component({
   selector: 'app-show-question',
@@ -20,13 +21,17 @@ export class ShowQuestionComponent implements OnInit {
   public selectedAnswer: Answer;
   public answered: boolean;
 
-  constructor(private route: ActivatedRoute, private router: Router, private quizService: QuizService) {
+  constructor(private route: ActivatedRoute, private router: Router, private quizService: QuizService, private dialog: MatDialog) {
     this.quizService.quizSelected$.subscribe((quiz) => {
       this.quiz = quiz;
       this.question = quiz.questions[this.id];
       this.answers = this.question.answers;
       this.answered = false;
     });
+  }
+  @ViewChild('secondDialog', { static: true }) secondDialog: TemplateRef<any>;
+  openDialogWithTemplateRef(templateRef: TemplateRef<any>): void {
+    this.dialog.open(templateRef);
   }
 
   ngOnInit(): void {
@@ -51,5 +56,9 @@ export class ShowQuestionComponent implements OnInit {
       this.router.navigate(['resultats']);
       this.quizService.setSelectedQuiz(this.quiz.id);
     }
+  }
+
+  openDialogWithoutRef(): void{
+    this.dialog.open(this.secondDialog);
   }
 }

@@ -1,5 +1,6 @@
 <app-text-to-speech #TTS></app-text-to-speech>
 <app-header-user></app-header-user>
+<br>
 <div class="displayed">
     <p #tts10 (mouseover)="TTS.say(tts10.innerText)" (mouseout)="TTS.stop()">Pour voir les résultats de vos quiz, appuyez sur le bouton "Mes statistiques".</p>
     <p #tts11 (mouseover)="TTS.say(tts11.innerText)" (mouseout)="TTS.stop()">Pour retourner sur la page d'accueil, appuyer sur le bouton "Accueil" ou sur l'icône du personnage en haut à gauche de la page.</p>
