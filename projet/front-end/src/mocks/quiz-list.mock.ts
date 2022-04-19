@@ -23,7 +23,7 @@ export const QUESTION_MONUMENT: Question = {
           isCorrect: false,
         }
     ],
-  img : 'assets/images/a.png',
+  img : 'assets/images/pont.png',
 };
 
 export const QUESTION_LIST: Question[] = [QUESTION_MONUMENT];
