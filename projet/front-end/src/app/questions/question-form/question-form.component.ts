@@ -22,13 +22,11 @@ export class QuestionFormComponent implements OnInit {
     // Form creation
     this.quizService.quizSelected$.subscribe( quiz => {
       this.quiz = quiz;
-      console.log(quiz);
+      this.initializeQuestionForm();
     });
-    this.initializeQuestionForm();
   }
 
   ngOnInit(): void {
-    this.initializeQuestionForm();
     const id = this.route.snapshot.paramMap.get('id');
     this.quizService.setSelectedQuiz(parseInt(id, 10));
   }

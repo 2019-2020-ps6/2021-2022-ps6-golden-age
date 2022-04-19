@@ -6,7 +6,6 @@ import { Quiz } from '../../../models/quiz.model';
 import {ThemeService} from '../../../services/theme.service';
 import {Theme} from '../../../models/theme.model';
 import {Router} from '@angular/router';
-import {QUESTION_LIST, QUESTION_MONUMENT} from '../../../mocks/quiz-list.mock';
 
 @Component({
   selector: 'app-quiz-form',
@@ -49,11 +48,11 @@ export class QuizFormComponent implements OnInit {
     const quizToCreate: Quiz = this.quizForm.getRawValue() as Quiz;
     quizToCreate.id = Date.now();
     quizToCreate.img = quizToCreate.img ? quizToCreate.img : 'assets/images/a.png';
-    quizToCreate.questions = quizToCreate.questions ? quizToCreate.questions : QUESTION_LIST ;
+    quizToCreate.questions = quizToCreate.questions ? quizToCreate.questions : [] ;
     quizToCreate.themeId = parseInt(String(quizToCreate.themeId), 10);
 
     console.log('quizToCreate', quizToCreate);
     this.quizService.addQuiz(quizToCreate);
-    this.router.navigate(['/create-quiz/' + quizToCreate.id]);
+    this.router.navigate(['/edit-quiz/' + quizToCreate.id + '/question/0']);
   }
 }

@@ -5,7 +5,6 @@ import { HelpPageProComponent } from './help/pro/help-page-pro.component';
 import { AccueilUserComponent } from './accueil/user/accueilUser.component';
 import { ThemeListUserComponent } from './themes/theme-list/user/theme-list-user.component';
 import {QuizListComponent} from './quizzes/quiz-list/quiz-list.component';
-import {QuestionListComponent} from './questions/question-list/question-list.component';
 import {ShowQuizComponent} from './quizzes/show-quiz/show-quiz.component';
 import {ShowQuestionComponent} from './questions/show-question/show-question.component';
 import { LoginComponent } from './account/login/login.component';
@@ -13,8 +12,6 @@ import { TextToSpeechComponent } from './textToSpeech/text-to-speech.component';
 import {MesQuizComponent} from './quizzes/mes-quiz/mes-quiz.component';
 import {QuizFormComponent} from './quizzes/quiz-form/quiz-form.component';
 import {ThemeFormComponent} from './themes/theme-form/theme-form.component';
-import {QuestionComponent} from './questions/question/question.component';
-import {QuestionFormComponent} from './questions/question-form/question-form.component';
 import {EditQuizComponent} from './quizzes/edit-quiz/edit-quiz.component';
 import {ResultsQuizComponent} from './quizzes/results-quiz/results-quiz.component';
 
@@ -25,7 +22,6 @@ const routes: Routes = [
     {path: 'helpPro', component: HelpPageProComponent},
     {path: 'theme/:id', component: QuizListComponent},
     {path: 'accueilUser', component: AccueilUserComponent},
-    {path: 'question-list/:id', component: QuestionListComponent},
     {path: 'quiz/:id', component: ShowQuizComponent},
     {path: 'quiz/:id/questions/:questionId', component: ShowQuestionComponent},
     {path: 'login', component: LoginComponent},
@@ -36,8 +32,7 @@ const routes: Routes = [
     {path: 'show-quiz', component: ShowQuizComponent},
     {path: 'login', component: LoginComponent},
     {path: 'textToSpeech', component : TextToSpeechComponent},
-    {path: 'edit-quiz/:id', component: QuestionFormComponent},
-    {path: 'create-quiz/:id', component: QuestionFormComponent},
+    {path: 'edit-quiz/:quizId/question/:questionId', component: EditQuizComponent},
     {path: '', redirectTo: '/login', pathMatch: 'full'},
 
 ];
