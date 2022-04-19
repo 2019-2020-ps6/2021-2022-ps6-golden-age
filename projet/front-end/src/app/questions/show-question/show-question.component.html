@@ -11,6 +11,9 @@
       <a [routerLink]="['/login']"><img #tts14 alt="Déconnexion" src="assets/images/logOutLogo.png" height="70" width="60" class="alignment" (mouseover)="TTS.say(tts14.alt)" (mouseout)="TTS.stop()"/></a>
     </div>
   </div>
+  <div class="score">
+    Score : {{currentScore}}/{{quiz.questions.length}}
+  </div>
 
 <app-text-to-speech #TTS></app-text-to-speech>
 <div>

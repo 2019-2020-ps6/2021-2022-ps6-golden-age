@@ -14,6 +14,7 @@ import {ThemeService} from '../../../services/theme.service';
 export class ResultsQuizComponent implements OnInit {
   public quiz: Quiz;
   public theme: Theme;
+  public score: number;
 
   constructor(private router: Router, private quizService: QuizService, private themeService: ThemeService) {
     this.quizService.quizSelected$.subscribe((quiz) => {
@@ -24,6 +25,7 @@ export class ResultsQuizComponent implements OnInit {
     this.themeService.themeSelected$.subscribe((theme) => {
       this.theme = theme;
     });
+    this.score = history.state.data;
   }
 
   ngOnInit(): void {

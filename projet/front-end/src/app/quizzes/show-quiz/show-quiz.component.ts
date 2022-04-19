@@ -17,6 +17,9 @@ export class ShowQuizComponent implements OnInit {
   public quiz: Quiz;
   public theme: Theme;
 
+  @Output()
+  score: EventEmitter<number> = new EventEmitter<number>();
+
   constructor(private router: Router, private quizService: QuizService, private themeService: ThemeService) {
     this.quizService.quizSelected$.subscribe((quiz) => {
       console.log(quiz);
@@ -34,6 +37,7 @@ export class ShowQuizComponent implements OnInit {
   startQuiz(): void {
     console.log(this.quiz);
     this.router.navigate(['quiz/' + this.quiz.id + '/questions/1' ]);
+    this.score.emit(0);
   }
 
 }

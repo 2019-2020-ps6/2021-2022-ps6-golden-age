@@ -3,7 +3,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {Answer, Question} from '../../../models/question.model';
 import {QuizService} from '../../../services/quiz.service';
 import {Quiz} from '../../../models/quiz.model';
-import {MatDialog} from "@angular/material/dialog";
+import {MatDialog} from '@angular/material/dialog';
 
 @Component({
   selector: 'app-show-question',
@@ -13,6 +13,7 @@ import {MatDialog} from "@angular/material/dialog";
 
 // tslint:disable-next-line:class-name
 export class ShowQuestionComponent implements OnInit {
+
   @Input()
   public question: Question;
   public quiz: Quiz;
@@ -20,6 +21,7 @@ export class ShowQuestionComponent implements OnInit {
   public answers: Answer[];
   public selectedAnswer: Answer;
   public answered: boolean;
+  public currentScore: number;
 
   constructor(private route: ActivatedRoute, private router: Router, private quizService: QuizService, private dialog: MatDialog) {
     this.quizService.quizSelected$.subscribe((quiz) => {
@@ -28,6 +30,11 @@ export class ShowQuestionComponent implements OnInit {
       this.answers = this.question.answers;
       this.answered = false;
     });
+    this.currentScore = history.state.data;
+    if (this.currentScore === undefined){
+      this.currentScore = 0;
+    }
+    console.log(this.currentScore);
   }
   @ViewChild('secondDialog', { static: true }) secondDialog: TemplateRef<any>;
   openDialogWithTemplateRef(templateRef: TemplateRef<any>): void {
@@ -38,22 +45,31 @@ export class ShowQuestionComponent implements OnInit {
     const id = this.route.snapshot.paramMap.get('id');
     this.quizService.setSelectedQuiz(parseInt(id, 10));
     this.id = parseInt(this.route.snapshot.paramMap.get('questionId'), 10) - 1;
+    this.currentScore = history.state.data;
+    if (this.currentScore === undefined){
+      this.currentScore = 0;
+    }
   }
 
   selectAnswer(answer: Answer): void {
     this.selectedAnswer = answer;
     this.answered = true;
+    if (this.selectedAnswer.isCorrect){
+      this.currentScore += 1;
+    }
   }
 
   suivant(): void {
     if (this.id + 1 < this.quiz.questions.length){
       const currentUrl = 'quiz/' + this.quiz.id + '/questions/' + (this.id + 2);
       this.router.navigateByUrl('/', {skipLocationChange: true}).then(() => {
-        this.router.navigate([currentUrl]);
+        this.router.navigate([currentUrl], {state: {data: this.currentScore}});
+        console.log('score:', this.currentScore);
       });
     }
     else{
-      this.router.navigate(['resultats']);
+      console.log('score:', this.currentScore);
+      this.router.navigate(['resultats'], {state: {data: this.currentScore}});
       this.quizService.setSelectedQuiz(this.quiz.id);
     }
   }

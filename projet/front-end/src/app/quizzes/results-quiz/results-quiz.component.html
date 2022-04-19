@@ -4,7 +4,7 @@
   </div>
   <p>Quiz {{theme.name}} : {{quiz.name}}</p>
   <div class="align">
-    <p>Score : 1/{{quiz.questions.length}}</p>
+    <p>Score : {{score}}/{{quiz.questions.length}}</p>
     <img src="{{quiz.img}}"/>
     <div class="bottom">
       <button class="button-card" (click)="restartQuiz()">Recommencer</button>
