@@ -3,7 +3,7 @@ import { FormGroup, FormBuilder, FormArray, Validators } from '@angular/forms';
 import { QuizService } from '../../../services/quiz.service';
 import { Quiz } from 'src/models/quiz.model';
 import { Question } from 'src/models/question.model';
-import { ActivatedRoute } from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-question-form',
@@ -18,7 +18,7 @@ export class QuestionFormComponent implements OnInit {
   public questionForm: FormGroup;
 
 
-  constructor(private route: ActivatedRoute, public formBuilder: FormBuilder, private quizService: QuizService) {
+  constructor(private router: Router, private route: ActivatedRoute, public formBuilder: FormBuilder, private quizService: QuizService) {
     // Form creation
     this.quizService.quizSelected$.subscribe( quiz => {
       this.quiz = quiz;
@@ -61,10 +61,21 @@ export class QuestionFormComponent implements OnInit {
   addQuestion(): void {
     if (this.questionForm.valid) {
       const question = this.questionForm.getRawValue() as Question;
-      question.id = Date.now();
       console.log('questionToCreate', question);
       this.quizService.addQuestion(this.quiz, question);
+
       // this.initializeQuestionForm();
     }
+  }
+
+  finish(): void {
+    let count = 0;
+    for (const question of this.quiz.questions) {
+      question.id = count;
+      count++;
+    }
+    console.log('Quiz créé : ', this.quiz);
+    this.quizService.updateQuiz(this.quiz);
+    this.router.navigate(['/mes-quiz']);
   }
 }

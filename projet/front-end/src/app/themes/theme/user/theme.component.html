@@ -1,6 +1,7 @@
+<app-textToSpeech #TTS></app-textToSpeech>
 
 <div class="card">
   <img src="{{theme.img}}">
-  <h2>{{theme.name}}</h2>
-  <button class="button-card" (click)="selectTheme()">Select</button>
+  <h2 #tts1 (mouseover)="TTS.say(tts1.innerText)" (mouseout)="TTS.stop()">{{theme.name}}</h2>
+  <button class="button-card" (click)="selectTheme()" #tts2 (mouseover)="TTS.say(tts2.innerText)" (mouseout)="TTS.stop()">Sélectionner</button>
 </div>

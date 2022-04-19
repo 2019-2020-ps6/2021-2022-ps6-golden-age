@@ -3,22 +3,22 @@
 
   <div class="box">
     <div style="order: 1" class="align">
-      <img alt="logo GoldenAge" src="assets/images/logoPetit.png" height="157" width="153">
+      <img #tts10 alt="logo GoldenAge" src="assets/images/logoPetit.png" height="157" width="153" (mouseover)="TTS.say(tts10.alt)" (mouseout)="TTS.stop()">
 
       <img alt="logo user" src="assets/images/userLogo.png" height="80" width="70" class="align">
     </div>
 
     <div style="order: 2; flex-grow: 2" class="column">
-      <img alt="titre" src="assets/images/textGoldenAge.png" height="40" width="290">
+      <img #tts11 alt="Golden Age" src="assets/images/textGoldenAge.png" height="40" width="290" (mouseover)="TTS.say(tts11.alt)" (mouseout)="TTS.stop()">
 
-      <h1 #tts10 (mouseover)="TTS.say(tts10.innerText)" (mouseout)="TTS.stop()">Bienvenue sur votre espace personnel</h1>
+      <h1 #tts12 (mouseover)="TTS.say(tts12.innerText)" (mouseout)="TTS.stop()">Bienvenue sur votre espace personnel</h1>
 
     </div>
 
     <div style="order: 3" class="align">
-      <img alt="logo cog" src="assets/images/cogLogo.png" height="80" width="70">
+      <img #tts13 alt="Réglage" src="assets/images/cogLogo.png" height="80" width="70" (mouseover)="TTS.say(tts13.alt)" (mouseout)="TTS.stop()" >
 
-      <a [routerLink]="['/login']"><img alt="logo log out" src="assets/images/logOutLogo.png" height="70" width="60" class="align"/></a>
+      <a [routerLink]="['/login']"><img #tts14 alt="Déconnexion" src="assets/images/logOutLogo.png" height="70" width="60" class="align" (mouseover)="TTS.say(tts14.alt)" (mouseout)="TTS.stop()"/></a>
     </div>
 
   </div>
