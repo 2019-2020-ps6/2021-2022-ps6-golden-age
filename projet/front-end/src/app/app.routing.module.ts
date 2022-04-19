@@ -8,7 +8,7 @@ import {QuizListComponent} from './quizzes/quiz-list/quiz-list.component';
 import {QuestionListComponent} from './questions/question-list/question-list.component';
 import {ShowQuizComponent} from './quizzes/show-quiz/show-quiz.component';
 import {ShowQuestionComponent} from './questions/show-question/show-question.component';
-import { LoginComponent } from './login/login.component';
+import { LoginComponent } from './account/login/login.component';
 import { TextToSpeechComponent } from './textToSpeech/text-to-speech.component';
 import {MesQuizComponent} from './quizzes/mes-quiz/mes-quiz.component';
 import {QuizFormComponent} from './quizzes/quiz-form/quiz-form.component';
