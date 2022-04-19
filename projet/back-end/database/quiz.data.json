@@ -11,7 +11,7 @@
         "answers": [
           {
             "value": "Chicago",
-            "isCorrect": true
+            "isCorrect": false
           },
           {
             "value": "New York",
@@ -19,14 +19,14 @@
           },
           {
             "value": "San Francisco",
-            "isCorrect": false
+            "isCorrect": true
           },
           {
             "value": "Londres",
             "isCorrect": false
           }
         ],
-        "img": "assets/images/a.png",
+        "img": "assets/images/pont.png",
         "quizId": "1648536265818"
       }
     ],
@@ -96,7 +96,7 @@
         "answers": [
           {
             "value": "Chicago",
-            "isCorrect": true
+            "isCorrect": false
           },
           {
             "value": "New York",
@@ -104,14 +104,14 @@
           },
           {
             "value": "San Francisco",
-            "isCorrect": false
+            "isCorrect": true
           },
           {
             "value": "Londres",
             "isCorrect": false
           }
         ],
-        "img": "assets/images/a.png"
+        "img": "assets/images/pont.png"
       },
       {
         "label": "Oui",
@@ -172,7 +172,7 @@
         "answers": [
           {
             "value": "Chicago",
-            "isCorrect": true
+            "isCorrect": false
           },
           {
             "value": "New York",
@@ -180,14 +180,14 @@
           },
           {
             "value": "San Francisco",
-            "isCorrect": false
+            "isCorrect": true
           },
           {
             "value": "Londres",
             "isCorrect": false
           }
         ],
-        "img": "assets/images/a.png"
+        "img": "assets/images/pont.png"
       },
       {
         "label": "Où se trouve ce monument?",
