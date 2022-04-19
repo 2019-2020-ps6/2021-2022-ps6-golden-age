@@ -12,8 +12,6 @@ import { TextToSpeechComponent } from './textToSpeech/text-to-speech.component';
 import {MesQuizComponent} from './quizzes/mes-quiz/mes-quiz.component';
 import {QuizFormComponent} from './quizzes/quiz-form/quiz-form.component';
 import {ThemeFormComponent} from './themes/theme-form/theme-form.component';
-import {QuestionComponent} from './questions/question/question.component';
-import {QuestionFormComponent} from './questions/question-form/question-form.component';
 import {EditQuizComponent} from './quizzes/edit-quiz/edit-quiz.component';
 import {ResultsQuizComponent} from './quizzes/results-quiz/results-quiz.component';
 
@@ -35,7 +33,6 @@ const routes: Routes = [
     {path: 'login', component: LoginComponent},
     {path: 'textToSpeech', component : TextToSpeechComponent},
     {path: 'edit-quiz/:quizId/question/:questionId', component: EditQuizComponent},
-    {path: 'create-quiz/:id', component: QuestionFormComponent},
     {path: '', redirectTo: '/login', pathMatch: 'full'},
 
 ];
