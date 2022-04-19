@@ -30,7 +30,7 @@ import { ShowQuizComponent } from './quizzes/show-quiz/show-quiz.component';
 import { MesQuizComponent } from './quizzes/mes-quiz/mes-quiz.component';
 import {ResultsQuizComponent} from './quizzes/results-quiz/results-quiz.component';
 
-import { LoginComponent } from './login/login.component';
+import { LoginComponent } from './account/login/login.component';
 import { UserComponent } from './users/user/user.component';
 import { UserFormComponent } from './users/user-form/user-form.component';
 import { UserListComponent } from './users/user-list/user-list.component';

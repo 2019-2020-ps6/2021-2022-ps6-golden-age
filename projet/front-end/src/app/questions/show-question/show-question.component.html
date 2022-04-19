@@ -1,7 +1,8 @@
+<app-text-to-speech #TTS></app-text-to-speech>
 <div>
   <div class="displayed" *ngIf="question">
-    <div class="name">{{quiz.name}}</div>
-    Question {{id+1}} : {{question.label}}
+    <div #tts10 (mouseover)="TTS.say(tts10.innerText)" (mouseout)="TTS.stop()" class="name">{{quiz.name}}</div>
+    <div #tts11 (mouseover)="TTS.say(tts11.innerText)" (mouseout)="TTS.stop()">Question {{id+1}} : {{question.label}}</div> 
     <br>
     <div class="align">
       <img src="{{question.img}}"/>
@@ -9,24 +10,24 @@
     <div class="answers" *ngFor="let answer of answers">
       <div class="answered" *ngIf="answered">
         <div class="correct" *ngIf="answer.isCorrect">
-          <button class="answer" style="background-color: green; color: white">{{answer.value}}</button>
+          <button #tts20 (mouseover)="TTS.say(tts20.innerText)" (mouseout)="TTS.stop()" class="answer" style="background-color: green; color: white">{{answer.value}}</button>
         </div>
         <div class="incorrect" *ngIf="answer === selectedAnswer && !answer.isCorrect">
-          <button class="answer" style="background-color: brown; color: white">{{answer.value}}</button>
+          <button #tts30 (mouseover)="TTS.say(tts30.innerText)" (mouseout)="TTS.stop()" class="answer" style="background-color: brown; color: white">{{answer.value}}</button>
         </div>
         <div class="others" *ngIf="answer !== selectedAnswer && !answer.isCorrect">
-          <button class="answer" style="background-color: white; color: black" >{{answer.value}}</button>
+          <button #tts40 (mouseover)="TTS.say(tts40.innerText)" (mouseout)="TTS.stop()" class="answer" style="background-color: white; color: black" >{{answer.value}}</button>
         </div>
       </div>
 
       <div class="answers" *ngIf="answered === false">
-        <button class="answer" style="background-color: white; color: black" (click)="selectAnswer(answer)" >{{answer.value}}</button>
+        <button #tts50 (mouseover)="TTS.say(tts50.innerText)" (mouseout)="TTS.stop()" class="answer" style="background-color: white; color: black" (click)="selectAnswer(answer)" >{{answer.value}}</button>
       </div>
 
     </div>
 
     <div class="displayed" *ngIf="answered">
-      <a class="next" style="color: #123c69; background-color: transparent; border-color: transparent" (click)="suivant()">Suivant</a>
+      <a #tts60 (mouseover)="TTS.say(tts60.innerText)" (mouseout)="TTS.stop()" class="next" style="color: #123c69; background-color: transparent; border-color: transparent" (click)="suivant()">Suivant</a>
     </div>
 
   </div>
