@@ -57,7 +57,7 @@
             "isCorrect": false
           }
         ],
-        "id": 0
+        "img": "assets/images/a.png"
       },
       {
         "label": "gb",
@@ -79,7 +79,7 @@
             "isCorrect": true
           }
         ],
-        "id": 1
+        "img": "assets/images/a.png"
       }
     ],
     "id": 1650296771901

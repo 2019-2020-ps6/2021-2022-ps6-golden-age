@@ -5,7 +5,8 @@
 .align{
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: center;
+  align-items: center;
 }
 
 img{
@@ -88,6 +89,11 @@ h1,h2, p{
   right: 20px;
 }
 
+.picture{
+  margin-left: 25%;
+  margin-right: auto;
+}
+
 .score{
-  color: $blue;
+  margin-right: 5%;;
 }

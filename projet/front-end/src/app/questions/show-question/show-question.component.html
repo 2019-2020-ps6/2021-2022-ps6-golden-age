@@ -11,24 +11,22 @@
       <a [routerLink]="['/login']"><img #tts14 alt="Déconnexion" src="assets/images/logOutLogo.png" height="70" width="60" class="alignment" (mouseover)="TTS.say(tts14.alt)" (mouseout)="TTS.stop()"/></a>
     </div>
   </div>
-  <div class="score">
-    Score : {{currentScore}}/{{quiz.questions.length}}
-  </div>
 
 <app-text-to-speech #TTS></app-text-to-speech>
 <div>
   <div *ngIf="question">
     <div class="align">
-      <img src="{{question.img}}"/>
+      <img src="{{question.img}}" class="picture"/>
+      <p class="score" >Score : {{currentScore}}/{{quiz.questions.length}}</p>
     </div>
     <h2 class="align" #tts11 (mouseover)="TTS.say(tts11.innerText)" (mouseout)="TTS.stop()">Question {{id+1}} : {{question.label}}</h2>
-    <div *ngFor="let answer of answers">
-      <div *ngIf="answered" class="answers">
+    <div *ngFor="let answer of answers" class="answers">
+      <div *ngIf="answered">
           <button *ngIf="answer.isCorrect" #tts20 (mouseover)="TTS.say(tts20.innerText)" (mouseout)="TTS.stop()" class="answerRight">{{answer.value}}</button>
           <button *ngIf="answer === selectedAnswer && !answer.isCorrect" #tts30 (mouseover)="TTS.say(tts30.innerText)" (mouseout)="TTS.stop()" class="answerWrong">{{answer.value}}</button>
           <button *ngIf="answer !== selectedAnswer && !answer.isCorrect" #tts40 (mouseover)="TTS.say(tts40.innerText)" (mouseout)="TTS.stop()" class="answerOther">{{answer.value}}</button>
       </div>
-      <div *ngIf="answered === false"  class="answers">
+      <div *ngIf="answered === false">
         <button #tts50 (mouseover)="TTS.say(tts50.innerText)" (mouseout)="TTS.stop()" class="answerDefault" (click)="selectAnswer(answer)" >{{answer.value}}</button>
       </div>
     </div>
