@@ -36,7 +36,7 @@ const routes: Routes = [
     {path: 'show-quiz', component: ShowQuizComponent},
     {path: 'login', component: LoginComponent},
     {path: 'textToSpeech', component : TextToSpeechComponent},
-    {path: 'edit-quiz/:id', component: QuestionFormComponent},
+    {path: 'edit-quiz/:quizId/question/:questionId', component: EditQuizComponent},
     {path: 'create-quiz/:id', component: QuestionFormComponent},
     {path: '', redirectTo: '/login', pathMatch: 'full'},
 
