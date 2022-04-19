@@ -15,23 +15,29 @@
             <div [formGroupName]="i">
               <label>Réponse {{i + 1}} :</label>
               <input type="text" [formControlName]="'value'">
-              <input type="checkbox" [formControlName]="'isCorrect'">
+              <input class="spacing" type="checkbox" [formControlName]="'isCorrect'">
             </div>
           </div>
         </div>
       </div>
-      <div class="item">
-        <label for="img">
-        <p>Image </p>
-        <input class="input-custom" type="text" id="img" [formControlName]="'img'">
-      </label>
+      <div>
+        <div class="item">
+          <label for="img">
+            <p>Image </p>
+            <input class="input-custom" type="text" id="img" [formControlName]="'img'">
+          </label>
+        </div>
+        <img *ngIf="quiz" src="{{quiz.img}}" alt="image du quiz">
       </div>
     </div>
+    <br>
     <button type="submit" class="button-card" (click)="addQuestion()">Ajouter une question</button>
     <button class="button-card item" (click)="finish()">Terminer</button>
-    <img *ngIf="quiz" src="{{quiz.img}}">
+
   </form>
 </div>
+
+<app-footer-pro></app-footer-pro>
 
 <!-- Uncomment below to see your form structure and how it changes-->
 <!-- <br><br>{{quizForm.getRawValue() | json}} -->

@@ -40,6 +40,9 @@ import {FooterUserComponent} from './footer/user/footerUser.component';
 import {FooterProComponent} from './footer/pro/footerPro.component';
 
 import { TextToSpeechComponent } from './textToSpeech/text-to-speech.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatButtonModule} from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -81,6 +84,9 @@ import { TextToSpeechComponent } from './textToSpeech/text-to-speech.component';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    BrowserAnimationsModule,
+    MatDialogModule,
+    MatButtonModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
