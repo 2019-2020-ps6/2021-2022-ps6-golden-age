@@ -3,12 +3,12 @@
   <h2>Créer une nouvelle question</h2>
   <form class="quiz-form" [formGroup]="questionForm">
     <label for="label">
-      Enoncé de la question :<br>
+      <p>Enoncé de la question :</p>
       <input class="input-custom" type="text" id="label" [formControlName]="'label'">
     </label>
     <br>
     <label for="img">
-      Image <br>
+      <p>Image </p>
       <input class="input-custom" type="text" id="img" [formControlName]="'img'">
     </label>
     <br>
@@ -16,7 +16,7 @@
       <div *ngFor="let address of answers.controls; let i=index">
         <div class="answer-form" [formGroupName]="i">
           <label>
-            Réponse {{i + 1}} :
+            <p>Réponse {{i + 1}} :</p>
             <input type="text" [formControlName]="'value'">
             <input type="checkbox" [formControlName]="'isCorrect'">
           </label>
