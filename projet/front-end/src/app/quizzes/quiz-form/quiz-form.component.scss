@@ -1,1 +1,36 @@
 @import '../../../styles/card.scss';
+@import "../../../styles/variables";
+
+.displayed {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  text-align : center;
+  padding-left: 1em;
+  padding-right: 1em;
+  background-color: $lightGrey;
+  border: solid;
+  border-color: $darkGrey;
+}
+
+p, h2{
+  color: $blue;
+}
+
+.align{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  text-align : center;
+  justify-content: center;
+}
+
+
+.item{
+  padding-left: 1em;
+  padding-right: 1em;
+  margin-bottom: 1em;
+  margin-right: 3em;
+  margin-left: 3em;
+}
+
