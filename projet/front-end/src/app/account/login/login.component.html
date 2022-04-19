@@ -7,20 +7,25 @@
     <div class="displayed">
         <div style="float: left" class="log">
             <div id="user">
+
+
                 <div>Utilisateurs</div><br>
-                <form action="/ma-page-de-traitement" method="post">
+                <form>
                     <div class="spacing">
-                        <label for="user_name">Nom d'utilisateur : </label>
-                        <input type="text" id="u_name" name="user_name"/>
+                        <label>Nom d'utilisateur : </label>
+                        <input name="user-userName" [(ngModel)]="username"/>
                     </div>
                     <div class="spacing">
-                        <label for="mdp">Mot de passe : </label>
-                        <input id="password" name="mdp"/>
+                        <label>Mot de passe : </label>
+                        <input type="password" name="password" [(ngModel)]="password" />
                     </div>
                     <div>
-                        <button class="button-card" [routerLink]="['/accueilUser']">Connexion</button>
+                        <button class="button-card" (click)="login()">Connexion</button>
+                        <p *ngIf="wrongCredentials">erreur données invalides</p>
                     </div>
                 </form>
+
+
             </div>
         </div>
         <div style="margin-left: auto" class="log">

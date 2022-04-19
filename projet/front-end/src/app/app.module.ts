@@ -73,14 +73,14 @@ import { TextToSpeechComponent } from './textToSpeech/text-to-speech.component';
     UserComponent,
     UserFormComponent,
     UserListComponent,
-    MesQuizComponent,
+    MesQuizComponent
   ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
