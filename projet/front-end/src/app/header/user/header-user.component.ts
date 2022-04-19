@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, TemplateRef, ViewChild} from '@angular/core';
+import {MatDialog} from '@angular/material/dialog';
 
 @Component({
   selector: 'app-header-user',
@@ -7,7 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderUserComponent implements OnInit {
 
-  constructor() { }
+  constructor(private dialog: MatDialog){
+  }
+  @ViewChild('secondDialog', { static: true }) secondDialog: TemplateRef<any>;
+  openDialogWithTemplateRef(templateRef: TemplateRef<any>): void {
+    this.dialog.open(templateRef);
+  }
+
+  openDialogWithoutRef(): void{
+    this.dialog.open(this.secondDialog);
+  }
 
   ngOnInit(): void {
   }
