@@ -8,7 +8,7 @@ export const QUESTION_MONUMENT: Question = {
     answers: [
         {
             value: 'Chicago',
-            isCorrect: true,
+            isCorrect: false,
         },
         {
             value: 'New York',
@@ -16,7 +16,7 @@ export const QUESTION_MONUMENT: Question = {
         },
         {
           value: 'San Francisco',
-          isCorrect: false,
+          isCorrect: true,
         },
         {
           value: 'Londres',
