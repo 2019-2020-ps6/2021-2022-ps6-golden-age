@@ -1,4 +1,4 @@
-<app-textToSpeech #TTS></app-textToSpeech>
+<app-text-to-speech #TTS></app-text-to-speech>
 <div #tts10 (mouseover)="TTS.say(tts10.innerText)" (mouseout)="TTS.stop()" class="card">
     <h2>{{question.label}}</h2>
     <div class="answer" *ngFor="let answer of question.answers; let i=index">
