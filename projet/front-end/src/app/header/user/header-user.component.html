@@ -16,11 +16,9 @@
     </div>
 
     <div style="order: 3" class="align">
-      <img #tts13 alt="Réglage" src="assets/images/cogLogo.png" height="80" width="70" (mouseover)="TTS.say(tts13.alt)" (mouseout)="TTS.stop()" >
-
+      <button mat-button color="primary" (click)="openDialogWithTemplateRef(myDialog)"><img #tts13 alt="Réglages" src="assets/images/cogLogo.png" height="80" width="70" (mouseover)="TTS.say(tts13.alt)" (mouseout)="TTS.stop()" ></button>
       <a [routerLink]="['/login']"><img #tts14 alt="Déconnexion" src="assets/images/logOutLogo.png" height="70" width="60" class="align" (mouseover)="TTS.say(tts14.alt)" (mouseout)="TTS.stop()"/></a>
     </div>
-
   </div>
 
   <div class="displayed">
@@ -30,5 +28,15 @@
         <a #tts22 (mouseover)="TTS.say(tts22.innerText)" (mouseout)="TTS.stop()" class="navigation" [routerLink]="['/user-list']">Mes statistiques</a>
       </nav>
   </div>
+
+  <ng-template #myDialog>
+    <h2 matDialogTitle>Dialog!</h2>
+    <mat-dialog-content>
+      <p>The content of this dialog came from an <code>ng-template</code>! Amazing, right?</p>
+    </mat-dialog-content>
+    <mat-dialog-actions align="end">
+      <button mat-button matDialogClose="true" color="primary">Dismiss</button>
+    </mat-dialog-actions>
+  </ng-template>
 
 </div>
