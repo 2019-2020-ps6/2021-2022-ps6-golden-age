@@ -14,7 +14,6 @@ import { ThemeComponent } from './themes/theme/user/theme.component';
 import { ThemeListProComponent } from './themes/theme-list/pro/theme-list-pro.component';
 import { ThemeProComponent } from './themes/theme/pro/theme-pro.component';
 
-import { QuestionListComponent } from './questions/question-list/question-list.component';
 import { QuestionFormComponent } from './questions/question-form/question-form.component';
 import { QuestionComponent } from './questions/question/question.component';
 import {ShowQuestionComponent} from './questions/show-question/show-question.component';
@@ -56,7 +55,6 @@ import {MatButtonModule} from '@angular/material/button';
     ThemeFormComponent,
     ThemeComponent,
     ThemeProComponent,
-    QuestionListComponent,
     QuestionFormComponent,
     QuestionComponent,
     QuizListComponent,

@@ -5,7 +5,6 @@ import { HelpPageProComponent } from './help/pro/help-page-pro.component';
 import { AccueilUserComponent } from './accueil/user/accueilUser.component';
 import { ThemeListUserComponent } from './themes/theme-list/user/theme-list-user.component';
 import {QuizListComponent} from './quizzes/quiz-list/quiz-list.component';
-import {QuestionListComponent} from './questions/question-list/question-list.component';
 import {ShowQuizComponent} from './quizzes/show-quiz/show-quiz.component';
 import {ShowQuestionComponent} from './questions/show-question/show-question.component';
 import { LoginComponent } from './account/login/login.component';
@@ -25,7 +24,6 @@ const routes: Routes = [
     {path: 'helpPro', component: HelpPageProComponent},
     {path: 'theme/:id', component: QuizListComponent},
     {path: 'accueilUser', component: AccueilUserComponent},
-    {path: 'question-list/:id', component: QuestionListComponent},
     {path: 'quiz/:id', component: ShowQuizComponent},
     {path: 'quiz/:id/questions/:questionId', component: ShowQuestionComponent},
     {path: 'login', component: LoginComponent},
