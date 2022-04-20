@@ -10,12 +10,12 @@
     <br>
     <form class="quiz-form" [formGroup]="questionForm">
       <div class="align">
-        <div>
-          <div class="item">
+        <div class="sameWidth">
+          <div>
             <label for="label">Enoncé de la question :</label>
-            <input class="input-custom" type="text" id="label" [formControlName]="'label'">
+            <input class="input-custom" type="text" id="label" [formControlName]="'label'" >
           </div>
-          <div class="item" formArrayName="answers">
+          <div formArrayName="answers">
             <div *ngFor="let address of answers.controls; let i=index">
               <div [formGroupName]="i">
                 <label>Réponse {{i + 1}} :</label>
@@ -25,24 +25,28 @@
             </div>
           </div>
         </div>
-        <div class="item">
+        <div class="sameWidth">
           <label for="img">
             <p>Image </p>
-            <input class="input-custom" type="text" id="img" [formControlName]="'img'">
+            <input class="input-custom item" type="text" id="img" [formControlName]="'img'">
+            <br>
+            <img *ngIf="!newQuestion" src="{{quiz.questions[questionId].img}}">
           </label>
         </div>
       </div>
+      <br>
       <ng-container *ngIf="questionId > 0">
         <button type="submit" class="button-card" (click)="previousQuestion()">Précédente</button>
       </ng-container>
-      <button type="submit" class="button-card" (click)="nextQuestion()">
+      <button type="submit" class="button-card item" (click)="nextQuestion()">
         <ng-container *ngIf="questionId >= quiz.questions.length - 1">Ajouter une question</ng-container>
         <ng-container *ngIf="questionId < quiz.questions.length - 1">Suivante</ng-container>
       </button>
       <button type="submit" class="button-card" (click)="deleteQuestion()">Suprimer</button>
       <button class="button-card item" (click)="finish()">Terminer</button>
       <br>
-      <img *ngIf="!newQuestion" src="{{quiz.questions[questionId].img}}">
     </form>
   </div>
 </ng-container>
+
+<app-footer-pro></app-footer-pro>
