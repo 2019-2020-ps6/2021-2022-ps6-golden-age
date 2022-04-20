@@ -23,6 +23,8 @@ export class ShowQuestionComponent implements OnInit {
   public answered: boolean;
   public currentScore: number;
 
+  public classes = ['answerDefault', 'answerDefault', 'answerDefault', 'answerDefault'];
+
   constructor(private route: ActivatedRoute, private router: Router, private quizService: QuizService, private dialog: MatDialog) {
     this.quizService.quizSelected$.subscribe((quiz) => {
       this.quiz = quiz;
@@ -51,11 +53,31 @@ export class ShowQuestionComponent implements OnInit {
     }
   }
 
+  updateClass(answer: Answer): void {
+    const index = this.answers.indexOf(answer);
+    for (let i = 0; i < 4; i += 1){
+      if (this.answers[i].isCorrect){
+        this.classes[i] = 'answerRight';
+      }
+      else {
+        if (i === index && !this.answers[i].isCorrect){
+          this.classes[i] = 'answerWrong';
+        }
+        else {
+          this.classes[i] = 'answerOther';
+        }
+      }
+    }
+  }
+
   selectAnswer(answer: Answer): void {
-    this.selectedAnswer = answer;
-    this.answered = true;
-    if (this.selectedAnswer.isCorrect){
-      this.currentScore += 1;
+    if (!this.answered){
+      this.selectedAnswer = answer;
+      this.answered = true;
+      if (this.selectedAnswer.isCorrect) {
+        this.currentScore += 1;
+      }
+      this.updateClass(answer);
     }
   }
 
