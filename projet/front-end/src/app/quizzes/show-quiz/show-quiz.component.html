@@ -1,15 +1,16 @@
+<app-text-to-speech #TTS></app-text-to-speech>
 <app-header-user></app-header-user>
 <br>
 <div class="displayed" *ngIf="quiz && theme">
   <div class="title">
     <p>Vous avez sélectionné :</p>
   </div>
-  <p>Quiz {{theme.name}} : {{quiz.name}}</p>
+  <p #tts1 (mouseover)="TTS.say(tts1.innerText)" (mouseout)="TTS.stop()">Quiz {{theme.name}} : {{quiz.name}}</p>
   <div class="align">
     <p>Nombre de questions : {{quiz.questions.length}}</p>
     <img src="{{quiz.img}}"/>
     <div class="bottom">
-      <button class="button-card" (click)="startQuiz()">Commencer</button>
+      <button #tts2 class="button-card" (click)="startQuiz()" (mouseover)="TTS.say(tts2.innerText)" (mouseout)="TTS.stop()" value="Commencer le quiz" (keyup.tab)="TTS.say(tts2.value)" (keyup.shift.tab)="TTS.say(tts2.value)" >Commencer</button>
     </div>
   </div>
 </div>
