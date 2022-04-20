@@ -48,40 +48,24 @@ h1,h2, p{
   background-color: green;
   color: white;
   border: solid 1px green;
-  font-weight: bold;
-  font-size: 15px;
-  padding: 0.5em 1em;
-  margin-bottom: 1em;
 }
 
 .answerWrong{
   background-color: brown;
   color: white;
   border: solid 1px brown;
-  font-weight: bold;
-  font-size: 15px;
-  padding: 0.5em 1em;
-  margin-bottom: 1em;
 }
 
 .answerOther{
   background-color: white;
   color: $blue;
   border: solid 1px $blue;
-  font-weight: bold;
-  font-size: 15px;
-  padding: 0.5em 1em;
-  margin-bottom: 1em;
 }
 
 .answerDefault{
   background-color: white;
   color: $blue;
   border: solid 1px $blue;
-  font-weight: bold;
-  font-size: 15px;
-  padding: 0.5em 1em;
-  margin-bottom: 1em;
 }
 
 .putRight{
@@ -96,4 +80,12 @@ h1,h2, p{
 
 .score{
   margin-right: 5%;;
+}
+
+.buttonAnswer{
+  font-weight: bold;
+  font-size: 15px;
+  padding: 0.5em 1em;
+  margin: 0em 2em 1em 2em;
+  width: 50%;
 }

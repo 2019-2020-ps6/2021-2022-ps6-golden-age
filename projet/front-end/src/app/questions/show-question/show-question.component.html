@@ -22,13 +22,13 @@
     <h2 class="align" #tts12 (mouseover)="TTS.say(tts12.innerText)" (mouseout)="TTS.stop()" (keyup.tab)="TTS.say(tts12.innerText)" (keyup.shift.tab)="TTS.say(tts12.innerText)" tabindex="0">Question {{id+1}} : {{question.label}}</h2>
 
     <div class="answers">
-      <button #tts20 (mouseover)="TTS.say(tts20.innerText)" (mouseout)="TTS.stop()" class="{{classes[0]}}" (click)="selectAnswer(answers[0])" (keyup.tab)="TTS.say(tts20.innerText)" (keyup.shift.tab)="TTS.say(tts20.innerText)" >{{answers[0].value}}</button>
-      <button #tts30 (mouseover)="TTS.say(tts30.innerText)" (mouseout)="TTS.stop()" class="{{classes[1]}}" (click)="selectAnswer(answers[1])" (keyup.tab)="TTS.say(tts30.innerText)" (keyup.shift.tab)="TTS.say(tts30.innerText)" >{{answers[1].value}}</button>
+      <button #tts20 (mouseover)="TTS.say(tts20.innerText)" (mouseout)="TTS.stop()" class="{{classes[0]}} buttonAnswer" (click)="selectAnswer(answers[0])" (keyup.tab)="TTS.say(tts20.innerText)" (keyup.shift.tab)="TTS.say(tts20.innerText)" >{{answers[0].value}}</button>
+      <button #tts30 (mouseover)="TTS.say(tts30.innerText)" (mouseout)="TTS.stop()" class="{{classes[1]}} buttonAnswer" (click)="selectAnswer(answers[1])" (keyup.tab)="TTS.say(tts30.innerText)" (keyup.shift.tab)="TTS.say(tts30.innerText)" >{{answers[1].value}}</button>
     </div>
 
     <div class="answers">
-      <button #tts40 (mouseover)="TTS.say(tts40.innerText)" (mouseout)="TTS.stop()" class="{{classes[2]}}" (click)="selectAnswer(answers[2])" (keyup.tab)="TTS.say(tts40.innerText)" (keyup.shift.tab)="TTS.say(tts40.innerText)" >{{answers[2].value}}</button>
-      <button #tts50 (mouseover)="TTS.say(tts50.innerText)" (mouseout)="TTS.stop()" class="{{classes[3]}}" (click)="selectAnswer(answers[3])" (keyup.tab)="TTS.say(tts50.innerText)" (keyup.shift.tab)="TTS.say(tts50.innerText)" >{{answers[3].value}}</button>
+      <button #tts40 (mouseover)="TTS.say(tts40.innerText)" (mouseout)="TTS.stop()" class="{{classes[2]}} buttonAnswer" (click)="selectAnswer(answers[2])" (keyup.tab)="TTS.say(tts40.innerText)" (keyup.shift.tab)="TTS.say(tts40.innerText)" >{{answers[2].value}}</button>
+      <button #tts50 (mouseover)="TTS.say(tts50.innerText)" (mouseout)="TTS.stop()" class="{{classes[3]}} buttonAnswer" (click)="selectAnswer(answers[3])" (keyup.tab)="TTS.say(tts50.innerText)" (keyup.shift.tab)="TTS.say(tts50.innerText)" >{{answers[3].value}}</button>
     </div>
 
     <div class="putRight" *ngIf="answered">
