@@ -1,7 +1,4 @@
 const { Theme } = require('../../models')
-// const { filterQuizFromTheme } = require('./quizzes/manager')
-// const { filterQuestionsFromQuiz } = require('./quizzes/questions/manager')
-// const { filterAnswersFromQuizzes } = require('./quizzes/questions/answers/manager')
 
 /**
  * Function buildTheme

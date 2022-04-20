@@ -26,6 +26,9 @@ import { ShowQuizComponent } from './quizzes/show-quiz/show-quiz.component';
 import { MesQuizComponent } from './quizzes/mes-quiz/mes-quiz.component';
 import { QuizProComponent } from './quizzes/quiz/pro/quiz-pro.component';
 
+import { QuizPlayedComponent } from './quizzes-played/quiz-played/quiz-played.component';
+import { QuizPlayedListComponent } from './quizzes-played/quiz-played-list/quiz-played-list.component';
+
 import { HelpPageProComponent } from './help/pro/help-page-pro.component';
 import { HelpPageUserComponent } from './help/user/help-page-user.component';
 
@@ -66,6 +69,8 @@ import { MatButtonModule } from '@angular/material/button';
     QuizFormComponent,
     QuizUserComponent,
     QuizProComponent,
+    QuizPlayedComponent,
+    QuizPlayedListComponent,
     ResultsQuizComponent,
     EditQuizComponent,
     ShowQuizComponent,

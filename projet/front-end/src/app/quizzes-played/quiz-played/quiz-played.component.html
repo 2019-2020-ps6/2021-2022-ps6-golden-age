@@ -1,0 +1,13 @@
+<app-text-to-speech #TTS></app-text-to-speech>
+<ng-container *ngIf="quizPlayed && quiz && theme">
+  <div class="displayed">
+    <div class="align">
+      <img src="{{quiz.img}}"/>
+      <div>
+        <p #tts1 (mouseover)="TTS.say(tts1.innerText)" (mouseout)="TTS.stop()">{{theme.name}}</p>
+        <p #tts1 (mouseover)="TTS.say(tts1.innerText)" (mouseout)="TTS.stop()">{{quiz.name}}</p>
+        <p #tts2 (mouseover)="TTS.say(tts2.innerText)" (mouseout)="TTS.stop()">Score : {{quizPlayed.score}}/{{quiz.questions.length}}</p>
+      </div>
+    </div>
+  </div>
+</ng-container>
