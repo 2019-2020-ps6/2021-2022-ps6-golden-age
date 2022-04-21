@@ -41,6 +41,7 @@ export class QuizPlayedListComponent implements OnInit {
       this.quizPlayedService.quizzes$.subscribe((quizzesPlayedList) => {
         console.log('hzevfhljv', quizzesPlayedList);
         this.quizPlayedList = quizzesPlayedList.filter((quizPlayed) => quizPlayed.playerName === playerName);
+        this.quizPlayedList.reverse();
         console.log('quizPlayedList', this.quizPlayedList);
       });
       this.find = true;
@@ -50,5 +51,14 @@ export class QuizPlayedListComponent implements OnInit {
       this.find = false;
       this.wrongForm = true;
     }
+  }
+
+  findAllQuizPlayed(): void {
+    this.quizPlayedService.retrieveQuizzesPlayed();
+    this.quizPlayedService.quizzes$.subscribe((quizzesPlayedList) => {
+      this.quizPlayedList = quizzesPlayedList;
+      this.quizPlayedList.reverse();
+    });
+    this.find = true;
   }
 }
