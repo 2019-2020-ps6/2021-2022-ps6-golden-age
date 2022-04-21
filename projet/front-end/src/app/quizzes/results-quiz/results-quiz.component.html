@@ -1,12 +1,25 @@
 <app-header-user></app-header-user>
 <br>
-  <div class="displayed">
-    <h2>Quiz {{theme.name}} : {{quiz.name}}</h2>
-    <div class="align">
-        <img src="{{quiz.img}}" class="picture"/>
-        <p class="score">Score : {{score}}/{{quiz.questions.length}}</p>
+  <ng-container *ngIf="quiz && theme">
+    <div class="displayed">
+      <h2>Quiz {{theme.name}} : {{quiz.name}}</h2>
+      <div class="align">
+          <img src="{{quiz.img}}" class="picture"/>
+          <p class="score">Score : {{score}}/{{quiz.questions.length}}</p>
+      </div>
+      <ng-container *ngIf="!save">
+        <form class="save-form" [formGroup]="saveForm">
+          <input class="input-custom" type="text" id="playerName" [formControlName]="'playerName'">
+          <button type="submit" class="button-card" (click)="saveQuizPlayed()">Sauvegarder le quiz</button>
+        </form>
+      </ng-container>
+      <ng-container *ngIf="wrongForm">
+        <p>Le nom rentré n'est pas valide</p>
+      </ng-container>
+      <ng-container *ngIf="save">
+        <button class="button-card" (click)="restartQuiz()">Recommencer</button>
+        <button class="button-card" (click)="showQuiz()">Voir d'autres quiz</button>
+      </ng-container>
     </div>
-    <button class="button-card" (click)="restartQuiz()">Recommencer</button>
-    <button class="button-card" (click)="showQuiz()">Voir d'autres quiz</button>
-  </div>
+  </ng-container>
 <app-footer-user></app-footer-user>
