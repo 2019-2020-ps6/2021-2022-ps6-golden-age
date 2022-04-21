@@ -1,7 +1,9 @@
 export interface QuizPlayed {
   id: number;
   playerName: string;
-  themeId: number;
-  quizId: number;
+  playedThemeName: string;
+  playedQuizName: string;
+  quizImg: string;
   score: number;
+  questionLength: number;
 }

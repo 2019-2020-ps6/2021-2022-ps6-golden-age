@@ -12,7 +12,6 @@
   <div class="displayed">
     <div *ngIf="quizPlayedList">
       <div class="quiz" *ngFor="let quizPlayed of quizPlayedList">
-        <p>{{quizPlayed.id}}</p>
         <app-quiz-played [quizPlayed]="quizPlayed"></app-quiz-played>
       </div>
     </div>

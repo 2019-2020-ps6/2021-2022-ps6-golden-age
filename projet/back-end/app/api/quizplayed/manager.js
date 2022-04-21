@@ -6,18 +6,15 @@ const { QuizPlayed } = require('../../models')
  * @param playerName
  */
 const buildQuizPlayed = (playerName) => {
-  const quizPlayed = QuizPlayed.getQuizPlayedByPlayerName(playerName)
-  return { ...quizPlayed }
+  const quizzesPlayed = QuizPlayed.get()
+  return quizzesPlayed.map((quizPlayed) => quizPlayed.playerName === playerName)
 }
 
 /**
  * Function buildThemes.
  * This function aggregates the questions and answers from the database to build entire themes.
  */
-const buildQuizzesPlayed = () => {
-  const quizzesPlayed = QuizPlayed.get()
-  return quizzesPlayed.map((quizPlayed) => buildQuizPlayed(quizPlayed.playerName))
-}
+const buildQuizzesPlayed = () => QuizPlayed.get()
 
 module.exports = {
   buildQuizPlayed,

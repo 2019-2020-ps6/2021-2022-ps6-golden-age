@@ -18,23 +18,11 @@ export class QuizPlayedComponent implements OnInit {
   @Output()
   quizSelected: EventEmitter<boolean> = new EventEmitter<boolean>();
 
-  quiz: Quiz;
-  theme: Theme;
 
-  constructor(public themeService: ThemeService, public quizService: QuizService) {
+  constructor() {
   }
 
   ngOnInit(): void {
-    console.log('errmhgqiou', this.quizPlayed);
-    this.themeService.setSelectedTheme(this.quizPlayed.themeId);
-    this.themeService.themeSelected$.subscribe( (theme) => {
-      this.theme = theme;
-    });
-
-    this.quizService.setSelectedQuiz(this.quizPlayed.quizId);
-    this.quizService.quizSelected$.subscribe((quiz) => {
-      this.quiz = quiz;
-    });
   }
 
 }

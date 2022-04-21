@@ -26,9 +26,7 @@ router.get('/:playerName', (req, res) => {
 
 router.post('/', (req, res) => {
   try {
-    console.log(req.body)
     const quizPlayed = QuizPlayed.create({ ...req.body })
-    console.log(quizPlayed)
     res.status(201).json(quizPlayed)
   } catch (err) {
     manageAllErrors(res, err)
