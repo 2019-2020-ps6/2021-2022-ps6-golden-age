@@ -39,7 +39,7 @@ export class LoginComponent implements OnInit {
       console.log('player user : ', user, typeof user);
       this.userService.retrieveUsers();
       this.userService.users$.subscribe((userList) => {
-        this.users = userList.filter((u) => u.userName === user.userName); });
+        this.users = userList.filter((u) => u.userName === user.userName && u.password === user.password); });
       if (this.users.length === 1) {
         this.router.navigate(['/accueilUser']); }
       else{
