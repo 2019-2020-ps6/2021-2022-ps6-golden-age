@@ -32,6 +32,12 @@
             <br>
             <img *ngIf="!newQuestion" src="{{quiz.questions[questionId].img}}">
           </label>
+          <div class="item">
+            <label for="description">
+              <p>Description de l'image </p>
+              <input class="input-custom" type="text" id="description" [formControlName]="'description'">
+            </label>
+          </div>
         </div>
       </div>
       <br>

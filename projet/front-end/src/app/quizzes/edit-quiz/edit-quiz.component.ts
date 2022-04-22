@@ -54,6 +54,7 @@ export class EditQuizComponent implements OnInit {
       label: ['', Validators.required],
       answers: this.formBuilder.array([]),
       img: [''],
+      description: [''],
     });
     for (let i = 1; i <= 4 ; i++) {
       this.addAnswer();
