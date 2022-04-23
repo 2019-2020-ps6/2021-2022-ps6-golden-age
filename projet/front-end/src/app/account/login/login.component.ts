@@ -32,7 +32,7 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  findUser(): void{
+  findUser(pro: boolean): void{
     const user: User = this.findForm.getRawValue() as User;
     console.log('user:', user);
     if (user.userName !== ''){
@@ -41,7 +41,14 @@ export class LoginComponent implements OnInit {
       this.userService.users$.subscribe((userList) => {
         this.users = userList.filter((u) => u.userName === user.userName && u.password === user.password); });
       if (this.users.length === 1) {
-        this.router.navigate(['/accueilUser']); }
+        this.userService.setSelectedUser(user.id);
+        if (this.users[0].pro && pro){
+          this.router.navigate(['/mes-quiz']);
+        }
+        if (this.users[0].pro === false && pro === false){
+          this.router.navigate(['/accueilUser']);
+        }
+      }
       else{
         console.log('user not found');
       }

@@ -10,15 +10,15 @@
                 <h2>Utilisateurs</h2><br>
                 <form class="user-login" [formGroup]="findForm">
                     <div class="spacing">
-                        <label for="user_name">Nom d'utilisateur : </label>
+                        <label for="u_name">Nom d'utilisateur : </label>
                         <input type="text" id="u_name" name="user_name" [formControlName]="'userName'"/>
                     </div>
                     <div class="spacing">
-                        <label for="mdp">Mot de passe : </label>
+                        <label for="password">Mot de passe : </label>
                         <input id="password" name="mdp" [formControlName]="'password'"/>
                     </div>
                     <div>
-                        <button class="button-card" (click)="findUser()">Connexion</button>
+                        <button class="button-card" (click)="findUser(false)">Connexion</button>
                     </div>
                 </form>
             </div>
@@ -26,18 +26,18 @@
         <div style="margin-left: auto" class="log">
             <div id="pro">
                 <h2>Professionnels</h2><br>
-                <form action="/ma-page-de-traitement" method="post">
-                    <div class="spacing">
-                        <label for="user_name">Nom d'utilisateur : </label>
-                        <input type="text" id="user_name" name="user_name"/>
-                    </div>
-                    <div class="spacing">
-                        <label for="mdp">Mot de passe : </label>
-                        <input id="mdp" name="mdp"/>
-                    </div>
-                    <div>
-                        <button class="button-card" [routerLink]="['/mes-quiz']">Connexion</button>
-                    </div>
+                <form class="user-login" [formGroup]="findForm">
+                  <div class="spacing">
+                    <label for="u_name">Nom d'utilisateur : </label>
+                    <input type="text" id="u_name" name="user_name" [formControlName]="'userName'"/>
+                  </div>
+                  <div class="spacing">
+                    <label for="password">Mot de passe : </label>
+                    <input id="password" name="mdp" [formControlName]="'password'"/>
+                  </div>
+                  <div>
+                    <button class="button-card" (click)="findUser(true)">Connexion</button>
+                  </div>
                 </form>
             </div>
         </div>

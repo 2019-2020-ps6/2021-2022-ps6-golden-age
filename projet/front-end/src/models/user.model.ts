@@ -11,4 +11,5 @@ export interface User {
     userName: string;
     password: string;
     config: Configurations;
+    pro: boolean,
 }
