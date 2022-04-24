@@ -41,11 +41,13 @@ export class LoginComponent implements OnInit {
       this.userService.users$.subscribe((userList) => {
         this.users = userList.filter((u) => u.userName === user.userName && u.password === user.password); });
       if (this.users.length === 1) {
-        this.userService.setSelectedUser(user.id);
         if (this.users[0].pro && pro){
+          this.userService.setSelectedUser(this.users[0].id);
           this.router.navigate(['/mes-quiz']);
         }
         if (this.users[0].pro === false && pro === false){
+          this.userService.setSelectedUser(this.users[0].id);
+          console.log(this.users[0]);
           this.router.navigate(['/accueilUser']);
         }
       }
