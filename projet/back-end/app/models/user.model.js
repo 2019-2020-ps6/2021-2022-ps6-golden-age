@@ -8,5 +8,7 @@ module.exports = new BaseModel('User', {
   userName: Joi.string().required(),
   password: Joi.string().required(),
   pro: Joi.boolean(),
-
+  volume: Joi.string(),
+  voice: Joi.string(),
+  size: Joi.number(),
 })

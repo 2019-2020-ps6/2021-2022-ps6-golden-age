@@ -1,15 +1,11 @@
-export interface Configurations{
-  size: number;
-  volume: string;
-  voice: string;
-}
-
 export interface User {
     id: string;
     firstName: string;
     lastName: string;
     userName: string;
     password: string;
-    config: Configurations;
-    pro: boolean,
+    size: number;
+    volume: number;
+    voice: string;
+    pro: boolean;
 }
