@@ -7,6 +7,6 @@
         <p #tts1 (mouseover)="TTS.say(tts1.innerText)" (mouseout)="TTS.stop()">{{quiz.name}}</p>
         <p #tts2 (mouseover)="TTS.say(tts2.innerText)" (mouseout)="TTS.stop()">Nombre de questions : {{quiz.questions.length}}</p>
       </div>
-      <button #tts2 class="button-card" (click)="selectQuiz()" (mouseover)="TTS.say(tts2.innerText)" (mouseout)="TTS.stop()">Sélectionner</button>
+      <button #tts3 class="button-card" (click)="selectQuiz()" (mouseover)="TTS.say(tts3.innerText)" (mouseout)="TTS.stop()" value="Séléctionner le quiz {{quiz.name}} qui comporte {{quiz.questions.length}} questions" (keyup.tab)="TTS.say(tts3.value)" (keyup.shift.tab)="TTS.say(tts3.value)">Sélectionner</button>
   </div>
 </div>

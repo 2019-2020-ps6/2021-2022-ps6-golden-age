@@ -9,6 +9,6 @@ export interface Question {
     number: number;
     answers: Answer[];
     img: string;
+    description: string;
 }
 
-// Créer un modèle dans le backend pour stocker les réponses données

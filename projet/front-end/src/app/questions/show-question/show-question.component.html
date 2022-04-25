@@ -1,34 +1,53 @@
-<app-text-to-speech #TTS></app-text-to-speech>
-<div>
-  <div class="displayed" *ngIf="question">
-    <div #tts10 (mouseover)="TTS.say(tts10.innerText)" (mouseout)="TTS.stop()" class="name">{{quiz.name}}</div>
-    <div #tts11 (mouseover)="TTS.say(tts11.innerText)" (mouseout)="TTS.stop()">Question {{id+1}} : {{question.label}}</div> 
-    <br>
-    <div class="align">
-      <img src="{{question.img}}"/>
+<ng-container *ngIf="quiz">
+  <div class="box">
+    <div class="alignment">
+      <img #tts10 alt="logo GoldenAge" src="assets/images/logoPetit.png" height="157" width="153" (mouseover)="TTS.say(tts10.alt)" (mouseout)="TTS.stop()">
+      <img alt="logo user" src="assets/images/userLogo.png" height="80" width="70" class="alignment">
     </div>
-    <div class="answers" *ngFor="let answer of answers">
-      <div class="answered" *ngIf="answered">
-        <div class="correct" *ngIf="answer.isCorrect">
-          <button #tts20 (mouseover)="TTS.say(tts20.innerText)" (mouseout)="TTS.stop()" class="answer" style="background-color: green; color: white">{{answer.value}}</button>
-        </div>
-        <div class="incorrect" *ngIf="answer === selectedAnswer && !answer.isCorrect">
-          <button #tts30 (mouseover)="TTS.say(tts30.innerText)" (mouseout)="TTS.stop()" class="answer" style="background-color: brown; color: white">{{answer.value}}</button>
-        </div>
-        <div class="others" *ngIf="answer !== selectedAnswer && !answer.isCorrect">
-          <button #tts40 (mouseover)="TTS.say(tts40.innerText)" (mouseout)="TTS.stop()" class="answer" style="background-color: white; color: black" >{{answer.value}}</button>
-        </div>
-      </div>
-
-      <div class="answers" *ngIf="answered === false">
-        <button #tts50 (mouseover)="TTS.say(tts50.innerText)" (mouseout)="TTS.stop()" class="answer" style="background-color: white; color: black" (click)="selectAnswer(answer)" >{{answer.value}}</button>
-      </div>
-
+    <div>
+      <h1 #tts11 (mouseover)="TTS.say(tts11.innerText)" (mouseout)="TTS.stop()" class="name" (keyup.tab)="TTS.say(tts11.innerText)" (keyup.shift.tab)="TTS.say(tts11.innerText)" tabindex="0">{{quiz.name}}</h1>
     </div>
-
-    <div class="displayed" *ngIf="answered">
-      <a #tts60 (mouseover)="TTS.say(tts60.innerText)" (mouseout)="TTS.stop()" class="next" style="color: #123c69; background-color: transparent; border-color: transparent" (click)="suivant()">Suivant</a>
+    <div class="alignment">
+      <button mat-button color="primary" (click)="openDialogWithTemplateRef(myDialog)"><img #tts13 alt="Réglages" src="assets/images/cogLogo.png" height="80" width="70" (mouseover)="TTS.say(tts13.alt)" (mouseout)="TTS.stop()" ></button>
+      <a [routerLink]="['/login']"><img #tts14 alt="Déconnexion" src="assets/images/logOutLogo.png" height="70" width="60" class="alignment" (mouseover)="TTS.say(tts14.alt)" (mouseout)="TTS.stop()"/></a>
     </div>
-
   </div>
-</div>
+
+  <app-text-to-speech #TTS></app-text-to-speech>
+
+  <div>
+    <div *ngIf="question">
+      <div class="align">
+        <img src="{{question.img}}" class="picture" alt="{{question.description}} " #tts60 (mouseover)="TTS.say(tts60.alt)" (keyup.tab)="TTS.say(tts60.alt)" (keyup.shift.tab)="TTS.say(tts60.alt)" tabindex="0"/>
+        <p class="score" >Score : {{currentScore}}/{{quiz.questions.length}}</p>
+      </div>
+      <h2 class="align" #tts12 (mouseover)="TTS.say(tts12.innerText)" (mouseout)="TTS.stop()" (keyup.tab)="TTS.say(tts12.innerText)" (keyup.shift.tab)="TTS.say(tts12.innerText)" tabindex="0">Question {{id+1}} : {{question.label}}</h2>
+
+      <div class="answers">
+        <button #tts20 (mouseover)="TTS.say(tts20.innerText)" (mouseout)="TTS.stop()" class="{{classes[0]}} buttonAnswer" (click)="selectAnswer(answers[0])" (keyup.tab)="TTS.say(tts20.innerText)" (keyup.shift.tab)="TTS.say(tts20.innerText)" >{{answers[0].value}}</button>
+        <button #tts30 (mouseover)="TTS.say(tts30.innerText)" (mouseout)="TTS.stop()" class="{{classes[1]}} buttonAnswer" (click)="selectAnswer(answers[1])" (keyup.tab)="TTS.say(tts30.innerText)" (keyup.shift.tab)="TTS.say(tts30.innerText)" >{{answers[1].value}}</button>
+      </div>
+
+      <div class="answers">
+        <button #tts40 (mouseover)="TTS.say(tts40.innerText)" (mouseout)="TTS.stop()" class="{{classes[2]}} buttonAnswer" (click)="selectAnswer(answers[2])" (keyup.tab)="TTS.say(tts40.innerText)" (keyup.shift.tab)="TTS.say(tts40.innerText)" >{{answers[2].value}}</button>
+        <button #tts50 (mouseover)="TTS.say(tts50.innerText)" (mouseout)="TTS.stop()" class="{{classes[3]}} buttonAnswer" (click)="selectAnswer(answers[3])" (keyup.tab)="TTS.say(tts50.innerText)" (keyup.shift.tab)="TTS.say(tts50.innerText)" >{{answers[3].value}}</button>
+      </div>
+
+      <div class="putRight" *ngIf="answered">
+        <p><a #tts60 (mouseover)="TTS.say(tts60.innerText)" (mouseout)="TTS.stop()" (click)="suivant()" (keyup.enter)="suivant()" (keyup.tab)="TTS.say(tts60.innerText)" (keyup.shift.tab)="TTS.say(tts60.innerText)" tabindex="0">Suivant</a></p>
+      </div>
+    </div>
+  </div>
+</ng-container>
+
+<ng-template #myDialog>
+  <h2 matDialogTitle>Dialog!</h2>
+  <mat-dialog-content>
+    <p>The content of this dialog came from an <code>ng-template</code>! Amazing, right?</p>
+  </mat-dialog-content>
+  <mat-dialog-actions align="end">
+    <button mat-button matDialogClose="true" color="primary">Dismiss</button>
+  </mat-dialog-actions>
+</ng-template>
+
+<app-footer-user></app-footer-user>

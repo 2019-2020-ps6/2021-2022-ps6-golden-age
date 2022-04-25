@@ -1,7 +1,12 @@
+@import '../../../styles/card.scss';
+@import '../../../styles/variables.scss';
+
+
 .align{
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: center;
+  align-items: center;
 }
 
 img{
@@ -10,10 +15,77 @@ img{
   padding-bottom: 1em;
 }
 
+h1,h2, p{
+  color:$blue;
+}
+
+.box {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.alignment{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+  align-items: center;
+}
+
 .answers{
   display: flex;
-  flex-wrap: nowrap;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding-bottom: 1em;
+  padding: 0.5em 1em;
+}
+
+.answerRight{
+  background-color: green;
+  color: white;
+  border: solid 1px green;
+}
+
+.answerWrong{
+  background-color: brown;
+  color: white;
+  border: solid 1px brown;
+}
+
+.answerOther{
+  background-color: white;
+  color: $blue;
+  border: solid 1px $blue;
+}
+
+.answerDefault{
+  background-color: white;
+  color: $blue;
+  border: solid 1px $blue;
+}
+
+.putRight{
+  position: absolute;
+  right: 20px;
+}
+
+.picture{
+  margin-left: 25%;
+  margin-right: auto;
+}
+
+.score{
+  margin-right: 5%;;
+}
+
+.buttonAnswer{
+  font-weight: bold;
+  font-size: 15px;
+  padding: 0.5em 1em;
+  margin: 0em 2em 1em 2em;
+  width: 50%;
 }

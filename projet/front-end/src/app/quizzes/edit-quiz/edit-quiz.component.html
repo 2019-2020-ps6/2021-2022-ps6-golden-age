@@ -1,7 +1,58 @@
-<button class="button-card" routerLink="/quiz-list">Back</button>
-
+<app-header-pro></app-header-pro>
+<br>
 <ng-container *ngIf="quiz">
-    <h2>{{quiz.name}}</h2>
-    <app-question-form [quiz]="quiz"></app-question-form>
-    <app-question-list [quiz]="quiz"></app-question-list>
+  <div class="displayed">
+    <h1>Quiz : {{quiz.name}}</h1>
+    <h2>Question : {{questionId + 1}}/
+      <ng-container *ngIf="newQuestion"> {{quiz.questions.length + 1}}</ng-container>
+      <ng-container *ngIf="!newQuestion"> {{quiz.questions.length}}</ng-container>
+    </h2>
+    <br>
+    <form class="quiz-form" [formGroup]="questionForm">
+      <div class="align">
+        <div class="sameWidth">
+          <div>
+            <label for="label">Enoncé de la question :</label>
+            <input class="input-custom" type="text" id="label" [formControlName]="'label'" >
+          </div>
+          <div formArrayName="answers">
+            <div *ngFor="let address of answers.controls; let i=index">
+              <div [formGroupName]="i">
+                <label>Réponse {{i + 1}} :</label>
+                <input type="text" [formControlName]="'value'">
+                <input type="checkbox" [formControlName]="'isCorrect'">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="sameWidth">
+          <label for="img">
+            <p>Image </p>
+            <input class="input-custom item" type="text" id="img" [formControlName]="'img'">
+            <br>
+            <img *ngIf="!newQuestion" src="{{quiz.questions[questionId].img}}">
+          </label>
+          <div class="item">
+            <label for="description">
+              <p>Description de l'image </p>
+              <input class="input-custom" type="text" id="description" [formControlName]="'description'">
+            </label>
+          </div>
+        </div>
+      </div>
+      <br>
+      <ng-container *ngIf="questionId > 0">
+        <button type="submit" class="button-card" (click)="previousQuestion()">Précédente</button>
+      </ng-container>
+      <button type="submit" class="button-card item" (click)="nextQuestion()">
+        <ng-container *ngIf="questionId >= quiz.questions.length - 1">Ajouter une question</ng-container>
+        <ng-container *ngIf="questionId < quiz.questions.length - 1">Suivante</ng-container>
+      </button>
+      <button type="submit" class="button-card" (click)="deleteQuestion()">Suprimer</button>
+      <button class="button-card item" (click)="finish()">Terminer</button>
+      <br>
+    </form>
+  </div>
 </ng-container>
+
+<app-footer-pro></app-footer-pro>

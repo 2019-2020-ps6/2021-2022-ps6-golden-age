@@ -3,5 +3,5 @@
 <div class="card">
   <img src="{{theme.img}}">
   <h2 #tts1 (mouseover)="TTS.say(tts1.innerText)" (mouseout)="TTS.stop()">{{theme.name}}</h2>
-  <button class="button-card" (click)="selectTheme()" #tts2 (mouseover)="TTS.say(tts2.innerText)" (mouseout)="TTS.stop()">Sélectionner</button>
+  <button class="button-card" (click)="selectTheme()" #tts2 (mouseover)="TTS.say(tts2.innerText)" (mouseout)="TTS.stop()" value="Séléctionner le thème {{theme.name}}" (keyup.tab)="TTS.say(tts2.value)" (keyup.shift.tab)="TTS.say(tts2.value)">Sélectionner</button>
 </div>

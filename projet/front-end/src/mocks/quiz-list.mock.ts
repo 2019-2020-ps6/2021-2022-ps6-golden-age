@@ -23,6 +23,7 @@ export const QUESTION_MONUMENT: Question = {
           isCorrect: false,
         }
     ],
+  description: 'Golden Bridge',
   img : 'assets/images/pont.png',
 };
 

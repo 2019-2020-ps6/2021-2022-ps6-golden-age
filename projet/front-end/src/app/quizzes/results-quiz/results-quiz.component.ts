@@ -4,6 +4,9 @@ import {Router} from '@angular/router';
 import {QuizService} from '../../../services/quiz.service';
 import {Theme} from '../../../models/theme.model';
 import {ThemeService} from '../../../services/theme.service';
+import {FormBuilder, FormGroup} from '@angular/forms';
+import {QuizPlayed} from '../../../models/quiz.played.model';
+import {QuizPlayedService} from '../../../services/quiz.played.service';
 
 @Component({
   selector: 'app-results-quiz',
@@ -14,19 +17,28 @@ import {ThemeService} from '../../../services/theme.service';
 export class ResultsQuizComponent implements OnInit {
   public quiz: Quiz;
   public theme: Theme;
+  public score: number;
 
-  constructor(private router: Router, private quizService: QuizService, private themeService: ThemeService) {
+  public save = false;
+  public saveForm: FormGroup;
+  public wrongForm = false;
+
+  constructor(private router: Router, public formBuilder: FormBuilder, private quizService: QuizService,
+              private themeService: ThemeService, private quizPlayedService: QuizPlayedService) {
+  }
+
+  ngOnInit(): void {
     this.quizService.quizSelected$.subscribe((quiz) => {
-      console.log(quiz);
       this.quiz = quiz;
       this.themeService.setSelectedTheme(this.quiz.themeId);
     });
     this.themeService.themeSelected$.subscribe((theme) => {
       this.theme = theme;
     });
-  }
-
-  ngOnInit(): void {
+    this.score = history.state.data;
+    this.saveForm = this.formBuilder.group({
+      playerName: [''],
+    });
   }
 
   restartQuiz(): void {
@@ -39,4 +51,24 @@ export class ResultsQuizComponent implements OnInit {
     this.router.navigate(['theme-list']);
   }
 
+  saveQuizPlayed(): void {
+    const quizPlayedToCreate: QuizPlayed = this.saveForm.getRawValue() as QuizPlayed;
+    if (quizPlayedToCreate.playerName !== ''){
+      quizPlayedToCreate.playerName = quizPlayedToCreate.playerName.toLowerCase();
+      quizPlayedToCreate.playedQuizName = this.quiz.name;
+      quizPlayedToCreate.quizImg = this.quiz.img;
+      quizPlayedToCreate.playedThemeName = this.theme.name;
+      quizPlayedToCreate.score = this.score;
+      quizPlayedToCreate.questionLength = this.quiz.questions.length;
+      quizPlayedToCreate.id = Date.now();
+
+      console.log('quizPlayedToCreate :', quizPlayedToCreate);
+      this.quizPlayedService.addQuizPlayed(quizPlayedToCreate);
+      this.save = true;
+      this.wrongForm = false;
+    }
+    else {
+      this.wrongForm = true;
+    }
+  }
 }

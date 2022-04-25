@@ -43,7 +43,8 @@ import { UserListComponent } from './users/user-list/user-list.component';
     ],
     providers: [],
     exports: [
-        QuizFormComponent
+        QuizFormComponent,
+        UserFormComponent
     ],
     bootstrap: [AppComponent]
 })

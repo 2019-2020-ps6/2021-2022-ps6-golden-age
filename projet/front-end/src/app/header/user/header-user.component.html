@@ -16,17 +16,17 @@
     </div>
 
     <div style="order: 3" class="align">
-      <button mat-button color="primary" (click)="openDialogWithTemplateRef(myDialog)"><img #tts13 alt="Réglages" src="assets/images/cogLogo.png" height="80" width="70" (mouseover)="TTS.say(tts13.alt)" (mouseout)="TTS.stop()" ></button>
-      <a [routerLink]="['/login']"><img #tts14 alt="Déconnexion" src="assets/images/logOutLogo.png" height="70" width="60" class="align" (mouseover)="TTS.say(tts14.alt)" (mouseout)="TTS.stop()"/></a>
+      <button mat-button color="primary" (click)="openDialogWithTemplateRef(myDialog)"><img #tts13 alt="Réglages" src="assets/images/cogLogo.png" height="80" width="70" (mouseover)="TTS.say(tts13.alt)" (mouseout)="TTS.stop()" (keyup.tab)="TTS.say(tts13.alt)" (keyup.shift.tab)="TTS.say(tts13.alt)" ></button>
+      <a [routerLink]="['/login']"><img #tts14 alt="Déconnexion" src="assets/images/logOutLogo.png" height="70" width="60" class="align" (mouseover)="TTS.say(tts14.alt)" (mouseout)="TTS.stop()" (keyup.tab)="TTS.say(tts14.alt)" (keyup.shift.tab)="TTS.say(tts14.alt)"/></a>
     </div>
   </div>
 
   <div class="displayed">
-      <nav>
-        <a #tts20 (mouseover)="TTS.say(tts20.innerText)" (mouseout)="TTS.stop()" class="navigation" [routerLink]="['/accueilUser']">Accueil</a>
-        <a #tts21 (mouseover)="TTS.say(tts21.innerText)" (mouseout)="TTS.stop()" class="navigation" [routerLink]="['/theme-list']">Séléctionner un thème</a>
-        <a #tts22 (mouseover)="TTS.say(tts22.innerText)" (mouseout)="TTS.stop()" class="navigation" [routerLink]="['/user-list']">Mes statistiques</a>
-      </nav>
+    <nav>
+      <a #tts20 (mouseover)="TTS.say(tts20.innerText)" (mouseout)="TTS.stop()" (keyup.tab)="TTS.say(tts20.innerText)" (keyup.shift.tab)="TTS.say(tts20.innerText)" class="navigation" [routerLink]="['/accueilUser']">Accueil</a>
+      <a #tts21 (mouseover)="TTS.say(tts21.innerText)" (mouseout)="TTS.stop()" (keyup.tab)="TTS.say(tts21.innerText)" (keyup.shift.tab)="TTS.say(tts21.innerText)" class="navigation" [routerLink]="['/theme-list']">Sélectionner un thème</a>
+      <a #tts22 (mouseover)="TTS.say(tts22.innerText)" (mouseout)="TTS.stop()" (keyup.tab)="TTS.say(tts22.innerText)" (keyup.shift.tab)="TTS.say(tts22.innerText)" class="navigation" [routerLink]="['/quiz-played']">Mes statistiques</a>
+    </nav>
   </div>
 
   <ng-template #myDialog>
