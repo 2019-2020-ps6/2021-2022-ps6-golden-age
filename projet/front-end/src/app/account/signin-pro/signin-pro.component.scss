@@ -20,11 +20,10 @@ h1, label, h2{
 }
 
 .displayed {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  text-align : center;
+  display: grid;
+  place-items: center;
   padding-bottom: 5em;
+  text-align: center;
 }
 
 .spacing{
