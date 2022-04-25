@@ -34,7 +34,7 @@ export class SigninProComponent implements OnInit {
 
   addUser(): void{
     const userToCreate: User = this.userForm.getRawValue() as User;
-    userToCreate.pro = false;
+    userToCreate.pro = true;
     userToCreate.id = Date.now();
 
     console.log('userToCreate:', userToCreate);
