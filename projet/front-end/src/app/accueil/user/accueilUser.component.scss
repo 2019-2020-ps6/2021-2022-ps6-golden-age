@@ -6,10 +6,10 @@
   flex-wrap: wrap;
   text-align : center;
   background-color: $lightGrey;
-  border: solid;
-  border-color: $darkGrey;
+  border: solid $darkGrey;
 }
 
 p{
   color: $blue;
 }
+

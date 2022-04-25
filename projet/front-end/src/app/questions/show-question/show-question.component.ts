@@ -4,6 +4,7 @@ import {Answer, Question} from '../../../models/question.model';
 import {QuizService} from '../../../services/quiz.service';
 import {Quiz} from '../../../models/quiz.model';
 import {MatDialog} from '@angular/material/dialog';
+import {ConfigurationService} from "../../../services/configuration.service";
 
 @Component({
   selector: 'app-show-question',
@@ -25,7 +26,7 @@ export class ShowQuestionComponent implements OnInit {
 
   public classes = ['answerDefault', 'answerDefault', 'answerDefault', 'answerDefault'];
 
-  constructor(private route: ActivatedRoute, private router: Router, private quizService: QuizService, private dialog: MatDialog) {
+  constructor(private route: ActivatedRoute, private router: Router, private quizService: QuizService, private dialog: MatDialog, private configurationService: ConfigurationService) {
     this.quizService.quizSelected$.subscribe((quiz) => {
       this.quiz = quiz;
       this.question = quiz.questions[this.id];

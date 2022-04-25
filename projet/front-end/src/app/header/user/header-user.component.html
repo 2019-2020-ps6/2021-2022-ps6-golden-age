@@ -30,13 +30,13 @@
   </div>
 
   <ng-template #myDialog>
-    <h2 matDialogTitle>Dialog!</h2>
+    <h2>Paramètres :</h2>
     <mat-dialog-content>
 
   <app-text-to-speech #config ></app-text-to-speech>
     <div class="form-field">
       <label for="voice-control" class="form-field__label">
-        Voice:
+        <p>Voice :</p>
       </label>
       <div class="form-field__content">
         <select
@@ -50,16 +50,22 @@
             *ngFor="let voice of config.voices"
             [ngValue]="voice">
             {{ voice.name }}
-    
+
             <ng-template [ngIf]="config.recommendedVoices[ voice.name ]">
               &larr; Recommended
             </ng-template>
           </option>
         </select>
       </div>
+      <div>
+        <p>Choisissez la taille des caractères: </p>
+        <p [ngClass]="configurationService.getFontConfigurationExtraSmall()"><a>Text tout petit</a></p>
+        <p [ngClass]="configurationService.getFontConfigurationSmall()"><a>Text petit</a></p>
+        <p [ngClass]="configurationService.getFontConfigurationMedium()"><a>Text moyen</a></p>
+        <p [ngClass]="configurationService.getFontConfigurationLarge()"><a>Text grand</a></p>
+        <p [ngClass]="configurationService.getFontConfigurationExtraLarge()"><a>Text très grand</a></p>
+      </div>
     </div>
-  
-
 
 
       <!-- <p>The content of this dialog came from an <code>ng-template</code>! Amazing, right?</p> -->

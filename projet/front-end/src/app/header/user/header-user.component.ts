@@ -1,5 +1,6 @@
 import {Component, OnInit, TemplateRef, ViewChild} from '@angular/core';
 import {MatDialog} from '@angular/material/dialog';
+import {ConfigurationService} from '../../../services/configuration.service';
 
 @Component({
   selector: 'app-header-user',
@@ -8,7 +9,7 @@ import {MatDialog} from '@angular/material/dialog';
 })
 export class HeaderUserComponent implements OnInit {
 
-  constructor(private dialog: MatDialog){
+  constructor(private dialog: MatDialog, private configurationService: ConfigurationService){
   }
   @ViewChild('secondDialog', { static: true }) secondDialog: TemplateRef<any>;
   openDialogWithTemplateRef(templateRef: TemplateRef<any>): void {

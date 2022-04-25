@@ -54,11 +54,18 @@ h1{
 
 .navigation {
   font-size: 20px;
-  padding-left: 2em;
-  padding-right: 2em;
-  padding-top: 1em;
-  padding-bottom: 1em;
+  padding: 1em 2em;
   text-decoration: none;
   color: $pink;
   background-color: $white;
+}
+
+
+h2, p{
+  color: $blue;
+}
+
+nav{
+  font-size: 20px;
+
 }
