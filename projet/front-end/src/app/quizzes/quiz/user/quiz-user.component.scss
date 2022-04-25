@@ -21,7 +21,8 @@ p{
 
 
 .displayed {
-  display: grid;
-  place-items: center;
-  padding-bottom: 2em;
+  background-color: $lightGrey;
+  border: solid $darkGrey;
+  padding: 1em 1em 1em;
+  margin-bottom: 2em;
 }

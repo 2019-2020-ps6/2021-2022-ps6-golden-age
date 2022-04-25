@@ -3,8 +3,9 @@
 
 
 .displayed {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  place-items: center;
+  padding-bottom: 5em;
   text-align: center;
 }
 
@@ -13,3 +14,5 @@ h2{
   color: $blue;
   padding-bottom: 1em;
 }
+
+

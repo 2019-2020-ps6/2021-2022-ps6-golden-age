@@ -4,7 +4,7 @@
 <div class="displayed">
   <h2 *ngIf="theme" #tts1 (mouseover)="TTS.say(tts1.innerText)" (mouseout)="TTS.stop()">{{theme.name}}</h2>
   <div *ngIf="quizList">
-    <div class="quiz" *ngFor="let quiz of quizList">
+    <div *ngFor="let quiz of quizList" class="cadre">
       <app-quiz-user [quiz]="quiz" (quizSelected)="selectQuiz(quiz)"></app-quiz-user>
     </div>
   </div>
