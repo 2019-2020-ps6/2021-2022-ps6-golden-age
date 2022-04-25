@@ -24,7 +24,7 @@
   <div class="displayed">
     <nav>
       <a #tts20 (mouseover)="TTS.say(tts20.innerText)" (mouseout)="TTS.stop()" (keyup.tab)="TTS.say(tts20.innerText)" (keyup.shift.tab)="TTS.say(tts20.innerText)" class="navigation" [routerLink]="['/accueilUser']">Accueil</a>
-      <a #tts21 (mouseover)="TTS.say(tts21.innerText)" (mouseout)="TTS.stop()" (keyup.tab)="TTS.say(tts21.innerText)" (keyup.shift.tab)="TTS.say(tts21.innerText)" class="navigation" [routerLink]="['/theme-list']">Séléctionner un thème</a>
+      <a #tts21 (mouseover)="TTS.say(tts21.innerText)" (mouseout)="TTS.stop()" (keyup.tab)="TTS.say(tts21.innerText)" (keyup.shift.tab)="TTS.say(tts21.innerText)" class="navigation" [routerLink]="['/theme-list']">Sélectionner un thème</a>
       <a #tts22 (mouseover)="TTS.say(tts22.innerText)" (mouseout)="TTS.stop()" (keyup.tab)="TTS.say(tts22.innerText)" (keyup.shift.tab)="TTS.say(tts22.innerText)" class="navigation" [routerLink]="['/quiz-played']">Mes statistiques</a>
     </nav>
   </div>
@@ -32,7 +32,37 @@
   <ng-template #myDialog>
     <h2 matDialogTitle>Dialog!</h2>
     <mat-dialog-content>
-      <p>The content of this dialog came from an <code>ng-template</code>! Amazing, right?</p>
+
+  <app-text-to-speech #config ></app-text-to-speech>
+    <div class="form-field">
+      <label for="voice-control" class="form-field__label">
+        Voice:
+      </label>
+      <div class="form-field__content">
+        <select
+          id="voice-control"
+          name="voice"
+          [(ngModel)]="config.selectedVoice"
+          (change)="config.demoSelectedVoice(); config.updateSayCommand()"
+          class="form-field__control">
+          <option value="">- Select a voice -</option>
+          <option
+            *ngFor="let voice of config.voices"
+            [ngValue]="voice">
+            {{ voice.name }}
+    
+            <ng-template [ngIf]="config.recommendedVoices[ voice.name ]">
+              &larr; Recommended
+            </ng-template>
+          </option>
+        </select>
+      </div>
+    </div>
+  
+
+
+
+      <!-- <p>The content of this dialog came from an <code>ng-template</code>! Amazing, right?</p> -->
     </mat-dialog-content>
     <mat-dialog-actions align="end">
       <button mat-button matDialogClose="true" color="primary">Dismiss</button>

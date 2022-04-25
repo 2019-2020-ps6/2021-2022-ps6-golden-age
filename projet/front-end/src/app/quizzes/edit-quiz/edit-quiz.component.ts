@@ -54,6 +54,7 @@ export class EditQuizComponent implements OnInit {
       label: ['', Validators.required],
       answers: this.formBuilder.array([]),
       img: [''],
+      description: [''],
     });
     for (let i = 1; i <= 4 ; i++) {
       this.addAnswer();
@@ -93,6 +94,7 @@ export class EditQuizComponent implements OnInit {
       label: [question.label, Validators.required],
       answers: this.formBuilder.array([]),
       img: [question.img],
+      description: [question.description],
     });
     for (let i = 0; i < 4 ; i++) {
       this.addEditAnswer(question.answers[i]);

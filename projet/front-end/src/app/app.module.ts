@@ -37,6 +37,8 @@ import { AccueilUserComponent } from './accueil/user/accueilUser.component';
 import { ResultsQuizComponent } from './quizzes/results-quiz/results-quiz.component';
 
 import { LoginComponent } from './account/login/login.component';
+import { SigninUserComponent } from './account/signin-user/signin-user.component';
+import { SigninProComponent } from './account/signin-pro/signin-pro.component';
 
 import { UserComponent } from './users/user/user.component';
 import { UserFormComponent } from './users/user-form/user-form.component';
@@ -81,6 +83,8 @@ import { MatButtonModule } from '@angular/material/button';
     ShowQuizComponent,
     TextToSpeechComponent,
     LoginComponent,
+    SigninUserComponent,
+    SigninProComponent,
     UserComponent,
     UserFormComponent,
     UserListComponent,

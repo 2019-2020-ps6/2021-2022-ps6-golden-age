@@ -18,7 +18,7 @@
   <div>
     <div *ngIf="question">
       <div class="align">
-        <img src="{{question.img}}" class="picture"/>
+        <img src="{{question.img}}" class="picture" alt="{{question.description}} " #tts60 (mouseover)="TTS.say(tts60.alt)" (keyup.tab)="TTS.say(tts60.alt)" (keyup.shift.tab)="TTS.say(tts60.alt)" tabindex="0"/>
         <p class="score" >Score : {{currentScore}}/{{quiz.questions.length}}</p>
       </div>
       <h2 class="align" #tts12 (mouseover)="TTS.say(tts12.innerText)" (mouseout)="TTS.stop()" (keyup.tab)="TTS.say(tts12.innerText)" (keyup.shift.tab)="TTS.say(tts12.innerText)" tabindex="0">Question {{id+1}} : {{question.label}}</h2>

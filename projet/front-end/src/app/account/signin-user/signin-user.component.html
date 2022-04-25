@@ -1,0 +1,30 @@
+<div class="img">
+  <img alt="logo GoldenAge login" src="../../../assets/images/logoComplet.png" height="150" width="421">
+  <h1>Veuillez vous créer un compte.</h1>
+</div>
+<div class="displayed">
+  <div class="log">
+      <h2>Utilisateurs</h2><br>
+      <form class="user-login" [formGroup]="userForm">
+        <div class="spacing">
+          <label for="u_name">Nom : </label>
+          <input type="text" id="u_last_name" name="user_name" [formControlName]="'lastName'"/>
+        </div>
+        <div class="spacing">
+          <label for="u_name">Prénom : </label>
+          <input type="text" id="u_first_name" name="user_name" [formControlName]="'firstName'"/>
+        </div>
+        <div class="spacing">
+          <label for="u_name">Nom d'utilisateur : </label>
+          <input type="text" id="u_name" name="user_name" [formControlName]="'userName'"/>
+        </div>
+        <div class="spacing">
+          <label for="password">Mot de passe : </label>
+          <input id="password" name="mdp" [formControlName]="'password'"/>
+        </div>
+        <div>
+          <button class="button-card" (click)="addUser()">Création</button>
+        </div>
+      </form>
+  </div>
+</div>
