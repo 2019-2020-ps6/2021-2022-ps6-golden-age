@@ -56,8 +56,8 @@ export class TextToSpeechComponent {
     this.recommendedVoices.Yuri = true;
     this.userService.userSelected$.subscribe(u => {
       this.user = u;
-      console.log(this.user);
     });
+    userService.updateSelectedUser();
   }
   // ---
   // PUBLIC METHODS.
@@ -77,6 +77,9 @@ export class TextToSpeechComponent {
   // I get called once after the inputs have been bound for the first time.
   // tslint:disable-next-line:use-lifecycle-interface
   public ngOnInit(): void {
+    this.userService.userSelected$.subscribe(u => {
+      this.user = u;
+    });
     this.voices = speechSynthesis.getVoices();
     this.selectedVoice = ( this.voices[ 0 ] || null );
     this.updateSayCommand();
@@ -166,9 +169,9 @@ export class TextToSpeechComponent {
 
     const utterance = new SpeechSynthesisUtterance( text );
     utterance.voice = this.selectedVoice;
-		  utterance.rate = rate;
+    utterance.rate = rate;
     utterance.volume = this.user.volume;
-		  speechSynthesis.speak( utterance );
+    speechSynthesis.speak( utterance );
 
 	}
 
