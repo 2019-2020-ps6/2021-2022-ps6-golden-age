@@ -15,6 +15,8 @@ import {ThemeFormComponent} from './themes/theme-form/theme-form.component';
 import {EditQuizComponent} from './quizzes/edit-quiz/edit-quiz.component';
 import {ResultsQuizComponent} from './quizzes/results-quiz/results-quiz.component';
 import {QuizPlayedListComponent} from './quizzes-played/quiz-played-list/quiz-played-list.component';
+import {SigninUserComponent} from './account/signin-user/signin-user.component';
+import {SigninProComponent} from './account/signin-pro/signin-pro.component';
 
 
 const routes: Routes = [
@@ -35,6 +37,8 @@ const routes: Routes = [
   {path: 'textToSpeech', component : TextToSpeechComponent},
   {path: 'edit-quiz/:quizId/question/:questionId', component: EditQuizComponent},
   {path: 'quiz-played', component: QuizPlayedListComponent},
+  {path: 'signin-user', component: SigninUserComponent},
+  {path: 'signin-pro', component: SigninProComponent},
   {path: '', redirectTo: '/login', pathMatch: 'full'},
 
 ];

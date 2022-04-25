@@ -18,7 +18,8 @@
                         <input id="password" name="mdp" [formControlName]="'password'"/>
                     </div>
                     <div>
-                        <button class="button-card" (click)="findUser(false)">Connexion</button>
+                      <button class="button-card" (click)="findUser(false)">Connexion</button>
+                      <button class="button-card" (click)="signinUser()">Créer un compte</button>
                     </div>
                 </form>
             </div>
@@ -37,6 +38,7 @@
                   </div>
                   <div>
                     <button class="button-card" (click)="findUser(true)">Connexion</button>
+                    <button class="button-card" (click)="signinPro()">Créer un compte</button>
                   </div>
                 </form>
             </div>

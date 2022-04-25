@@ -61,4 +61,12 @@ export class LoginComponent implements OnInit {
       this.wrongForm = true;
     }
   }
+
+  signinUser(): void {
+    this.router.navigate(['/signin-user']);
+  }
+
+  signinPro(): void {
+    this.router.navigate(['/signin-pro']);
+  }
 }

@@ -40,7 +40,7 @@ export class UserService {
     this.http.post<User>(this.userUrl, user, this.httpOptions).subscribe(() => this.retrieveUsers());
   }
 
-  setSelectedUser(userId: string): void {
+  setSelectedUser(userId: number): void {
     const urlWithId = this.userUrl + '/' + userId;
     this.http.get<User>(urlWithId).subscribe((user) => {
       this.userSelected$.next(user);
