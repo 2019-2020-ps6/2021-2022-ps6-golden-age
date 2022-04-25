@@ -16,11 +16,6 @@ export class SigninUserComponent implements OnInit {
   public userForm: FormGroup;
 
   constructor(public formBuilder: FormBuilder, public userService: UserService, public router: Router) {
-    this.userService.retrieveUsers();
-    this.userService.users$.subscribe((users) => {
-      this.users = users;
-      console.log('Liste dutilisateurs :', this.users);
-    });
     this.userForm = this.formBuilder.group({
       lastName: [''],
       firstName: [''],
