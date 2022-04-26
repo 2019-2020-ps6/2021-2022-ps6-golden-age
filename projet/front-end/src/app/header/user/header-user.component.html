@@ -42,18 +42,15 @@
         <select
           id="voice-control"
           name="voice"
-          [(ngModel)]="config.selectedVoice"
-          (change)="config.demoSelectedVoice(); config.updateSayCommand()"
+          [(ngModel)]="config.selectedVoiceIndex"
+          (change)="config.changeVoice(); config.demoSelectedVoice()"
           class="form-field__control">
           <option value="">- Select a voice -</option>
           <option
-            *ngFor="let voice of config.voices"
-            [ngValue]="voice">
-            {{ voice.name }}
+            *ngFor="let voiceIndex of [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24]"
+            [ngValue]="voiceIndex">
+            {{ config.voices[voiceIndex].name }}
 
-            <ng-template [ngIf]="config.recommendedVoices[ voice.name ]">
-              &larr; Recommended
-            </ng-template>
           </option>
         </select>
       </div>

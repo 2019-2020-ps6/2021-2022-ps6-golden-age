@@ -6,6 +6,6 @@ export interface User {
     password: string;
     size: number;
     volume: number;
-    voice: string;
+    voice: number;
     pro: boolean;
 }
