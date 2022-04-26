@@ -30,6 +30,7 @@ export class SigninUserComponent implements OnInit {
   addUser(): void{
     const userToCreate: User = this.userForm.getRawValue() as User;
     userToCreate.pro = false;
+    userToCreate.volume = 1;
     userToCreate.id = Date.now();
 
     console.log('userToCreate:', userToCreate);
