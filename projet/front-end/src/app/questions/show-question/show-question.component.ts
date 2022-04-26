@@ -4,6 +4,9 @@ import {Answer, Question} from '../../../models/question.model';
 import {QuizService} from '../../../services/quiz.service';
 import {Quiz} from '../../../models/quiz.model';
 import {MatDialog} from '@angular/material/dialog';
+import {QuizPlayed} from '../../../models/quiz.played.model';
+import {UserService} from "../../../services/user.service";
+import {ThemeService} from "../../../services/theme.service";
 
 @Component({
   selector: 'app-show-question',
@@ -16,6 +19,8 @@ export class ShowQuestionComponent implements OnInit {
 
   @Input()
   public question: Question;
+
+  public quizPlayedToCreate: QuizPlayed;
   public quiz: Quiz;
   public id: number;
   public answers: Answer[];
@@ -25,7 +30,7 @@ export class ShowQuestionComponent implements OnInit {
 
   public classes = ['answerDefault', 'answerDefault', 'answerDefault', 'answerDefault'];
 
-  constructor(private route: ActivatedRoute, private router: Router, private quizService: QuizService, private dialog: MatDialog) {
+  constructor(private route: ActivatedRoute, private router: Router, private quizService: QuizService, private dialog: MatDialog, private userService: UserService, private themeService: ThemeService) {
     this.quizService.quizSelected$.subscribe((quiz) => {
       this.quiz = quiz;
       this.question = quiz.questions[this.id];
@@ -91,6 +96,13 @@ export class ShowQuestionComponent implements OnInit {
     }
     else{
       console.log('score:', this.currentScore);
+      this.quizPlayedToCreate.playerName = this.userService.userSelected.id;
+      this.quizPlayedToCreate.playedQuizName = this.quiz.name;
+      this.quizPlayedToCreate.quizImg = this.quiz.img;
+      this.quizPlayedToCreate.playedThemeName = this.themeService.themeSelected.name;
+      this.quizPlayedToCreate.score = this.currentScore;
+      this.quizPlayedToCreate.questionLength = this.quiz.questions.length;
+      this.quizPlayedToCreate.id = Date.now();
       this.router.navigate(['resultats'], {state: {data: this.currentScore}});
       this.quizService.setSelectedQuiz(this.quiz.id);
     }

@@ -28,6 +28,8 @@ export class ThemeService {
 
   public themeSelected$: Subject<Theme> = new Subject();
 
+  public themeSelected: Theme;
+
   private themeUrl = serverUrl + '/themes';
 
   private httpOptions = httpOptionsBase;
@@ -52,6 +54,7 @@ export class ThemeService {
     const urlWithId = this.themeUrl + '/' + themeId;
     this.http.get<Theme>(urlWithId).subscribe((theme) => {
       this.themeSelected$.next(theme);
+      this.themeSelected = theme;
     });
   }
 

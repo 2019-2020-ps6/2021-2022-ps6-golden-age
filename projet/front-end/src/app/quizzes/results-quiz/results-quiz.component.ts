@@ -54,13 +54,7 @@ export class ResultsQuizComponent implements OnInit {
   saveQuizPlayed(): void {
     const quizPlayedToCreate: QuizPlayed = this.saveForm.getRawValue() as QuizPlayed;
     if (quizPlayedToCreate.playerName !== ''){
-      quizPlayedToCreate.playerName = quizPlayedToCreate.playerName.toLowerCase();
-      quizPlayedToCreate.playedQuizName = this.quiz.name;
-      quizPlayedToCreate.quizImg = this.quiz.img;
-      quizPlayedToCreate.playedThemeName = this.theme.name;
-      quizPlayedToCreate.score = this.score;
-      quizPlayedToCreate.questionLength = this.quiz.questions.length;
-      quizPlayedToCreate.id = Date.now();
+
 
       console.log('quizPlayedToCreate :', quizPlayedToCreate);
       this.quizPlayedService.addQuizPlayed(quizPlayedToCreate);

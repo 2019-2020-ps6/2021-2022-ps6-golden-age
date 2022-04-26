@@ -25,7 +25,7 @@ export class UserService {
 
   private httpOptions = httpOptionsBase;
 
-  private user: User;
+  public userSelected: User;
 
   constructor(private http: HttpClient) {
     this.retrieveUsers();
@@ -45,8 +45,8 @@ export class UserService {
   setSelectedUser(userId: number): void {
     const urlWithId = this.userUrl + '/' + userId;
     this.http.get<User>(urlWithId).subscribe((user) => {
-      this.user = user;
-      this.userSelected$.next(this.user);
+      this.userSelected = user;
+      this.userSelected$.next(this.userSelected);
     });
   }
 
@@ -56,7 +56,7 @@ export class UserService {
   }
 
   updateSelectedUser(): void {
-    console.log('update user :', this.user);
-    this.userSelected$.next(this.user);
+    console.log('update user :', this.userSelected);
+    this.userSelected$.next(this.userSelected);
   }
 }
