@@ -10,7 +10,7 @@
   <input class="input-custom" type="text" id="playerName" [formControlName]="'playerName'">
   <button type="submit" class="button-card" (click)="findQuizPlayed()">Rechercher</button>
 </form>
-<button class="button-card" (click)="findAllQuizPlayed()">Tous les quiz</button>
+<button *ngIf="pro === 'pro'" class="button-card" (click)="findAllQuizPlayed()">Tous les quiz</button>
 <ng-container *ngIf="wrongForm">
   <p>Le nom rentré n'est pas valide</p>
 </ng-container>
