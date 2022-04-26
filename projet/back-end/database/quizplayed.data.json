@@ -1,0 +1,38 @@
+[
+  {
+    "playerName": "ludo",
+    "playedQuizName": "Le meilleur fruit",
+    "quizImg": "https://www.diabete.qc.ca/wp-content/uploads/2014/08/Les-fruits.png",
+    "playedThemeName": "Fruits",
+    "score": 1,
+    "questionLength": 1,
+    "id": 1650521169645
+  },
+  {
+    "playerName": "oui",
+    "playedQuizName": "Monuments",
+    "quizImg": "assets/images/a.png",
+    "playedThemeName": "Culture générale",
+    "score": 2,
+    "questionLength": 2,
+    "id": 1650521483978
+  },
+  {
+    "playerName": "aurélia",
+    "playedQuizName": "Le meilleur fruit",
+    "quizImg": "https://www.diabete.qc.ca/wp-content/uploads/2014/08/Les-fruits.png",
+    "playedThemeName": "Fruits",
+    "score": 1,
+    "questionLength": 1,
+    "id": 1650521817895
+  },
+  {
+    "playerName": "aurélia",
+    "playedQuizName": "Monuments",
+    "quizImg": "assets/images/a.png",
+    "playedThemeName": "Culture générale",
+    "score": 1,
+    "questionLength": 2,
+    "id": 1650521847751
+  }
+]

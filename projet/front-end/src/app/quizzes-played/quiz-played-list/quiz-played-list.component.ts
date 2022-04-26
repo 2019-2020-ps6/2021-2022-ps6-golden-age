@@ -18,7 +18,9 @@ export class QuizPlayedListComponent implements OnInit {
   public find = false;
   public wrongForm = false;
 
-  constructor(public formBuilder: FormBuilder, public quizPlayedService: QuizPlayedService) {
+  public pro: string;
+
+  constructor(private route: ActivatedRoute, public formBuilder: FormBuilder, public quizPlayedService: QuizPlayedService) {
     this.quizPlayedService.retrieveQuizzesPlayed();
     this.quizPlayedService.quizzes$.subscribe((quizPlayed) => {
       this.quizPlayedList = quizPlayed;
@@ -30,6 +32,7 @@ export class QuizPlayedListComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.pro = this.route.snapshot.paramMap.get('pro');
   }
 
   findQuizPlayed(): void {

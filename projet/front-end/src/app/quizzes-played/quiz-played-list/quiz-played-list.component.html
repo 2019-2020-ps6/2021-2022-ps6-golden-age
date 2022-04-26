@@ -1,5 +1,10 @@
 <app-text-to-speech #TTS></app-text-to-speech>
-<app-header-user></app-header-user>
+<ng-container *ngIf="pro === 'pro'">
+  <app-header-pro></app-header-pro>
+</ng-container>
+<ng-container *ngIf="pro === 'user'">
+  <app-header-user></app-header-user>
+</ng-container>
 <br>
 <form class="find-form" [formGroup]="findForm">
   <input class="input-custom" type="text" id="playerName" [formControlName]="'playerName'">
@@ -18,4 +23,10 @@
     </div>
   </div>
 </ng-container>
-<app-footer-user></app-footer-user>
+
+<ng-container *ngIf="pro === 'pro'">
+  <app-footer-pro></app-footer-pro>
+</ng-container>
+<ng-container *ngIf="pro === 'user'">
+  <app-footer-user></app-footer-user>
+</ng-container>

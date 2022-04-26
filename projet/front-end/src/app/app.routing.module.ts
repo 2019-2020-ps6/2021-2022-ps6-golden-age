@@ -36,7 +36,7 @@ const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'textToSpeech', component : TextToSpeechComponent},
   {path: 'edit-quiz/:quizId/question/:questionId', component: EditQuizComponent},
-  {path: 'quiz-played', component: QuizPlayedListComponent},
+  {path: 'quiz-played/:pro', component: QuizPlayedListComponent},
   {path: 'signin-user', component: SigninUserComponent},
   {path: 'signin-pro', component: SigninProComponent},
   {path: '', redirectTo: '/login', pathMatch: 'full'},
