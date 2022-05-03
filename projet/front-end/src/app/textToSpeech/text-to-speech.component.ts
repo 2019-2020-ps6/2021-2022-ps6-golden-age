@@ -75,7 +75,6 @@ export class TextToSpeechComponent {
   // I get called once after the inputs have been bound for the first time.
   // tslint:disable-next-line:use-lifecycle-interface
   public ngOnInit(): void {
-    console.log('init', localStorage.getItem('user'));
     this.userService.setSelectedUser(parseInt(localStorage.getItem('user'), 10));
     this.userService.userSelected$.subscribe(u => {
       this.user = u;

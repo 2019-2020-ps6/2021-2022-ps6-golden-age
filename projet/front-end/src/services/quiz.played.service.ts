@@ -39,7 +39,6 @@ export class QuizPlayedService {
   retrieveQuizzesPlayed(): void {
     this.http.get<QuizPlayed[]>(this.quizPlayedUrl).subscribe((quizPlayedList) => {
       this.quizzesPlayed = quizPlayedList;
-      console.log('retive quiz played');
       this.quizzesPlayed$.next(this.quizzesPlayed);
     });
   }
