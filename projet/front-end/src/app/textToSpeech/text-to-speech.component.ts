@@ -29,6 +29,8 @@ export class TextToSpeechComponent {
   public mute: boolean;
   // I initialize the app component.
   constructor(public userService: UserService) {
+    console.log(localStorage.getItem('user'));
+    userService.setSelectedUser(parseInt(localStorage.getItem('user'), 10));
     this.voices = [];
     this.rates = [ .25, .5, .75, 1, 1.25, 1.5, 1.75, 2 ];
     this.selectedVoice = null;
@@ -60,7 +62,6 @@ export class TextToSpeechComponent {
       this.user = u;
       this.mute = u.voice == 0;
     });
-    userService.updateSelectedUser();
   }
   // ---
   // PUBLIC METHODS.
