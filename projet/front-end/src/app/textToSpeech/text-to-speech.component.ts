@@ -135,6 +135,8 @@ export class TextToSpeechComponent {
 
     console.log("index dans cahnge voice " + this.selectedVoiceIndex);
     this.user.voice = this.selectedVoiceIndex;
+    this.userService.updateUser(this.user);
+    console.log(this.user);
 
   }
 
@@ -188,12 +190,8 @@ export class TextToSpeechComponent {
     const utterance = new SpeechSynthesisUtterance( text );
 
     // utterance.voice = this.selectedVoice;
-    console.log("avant le bug");
-    console.log(this.user);
     utterance.voice = this.voices[this.user.voice];
     console.log("usrvoiceindex " + this.user.voice);
-    console.log("utterance" + utterance)
-    console.log("voix utternace" + utterance.voice)
     utterance.rate = rate;
     utterance.volume = this.user.volume;
     speechSynthesis.speak( utterance );

@@ -47,6 +47,7 @@ export class UserService {
     this.http.get<User>(urlWithId).subscribe((user) => {
       this.user = user;
       this.userSelected$.next(this.user);
+      localStorage.setItem('user', String(user.id));
     });
   }
 
@@ -58,5 +59,10 @@ export class UserService {
   updateSelectedUser(): void {
     console.log('update user :', this.user);
     this.userSelected$.next(this.user);
+  }
+
+  updateUser(user: User): void {
+    const urlWithId = this.userUrl + '/' + user.id;
+    this.http.put<User>(urlWithId,user,this.httpOptions).subscribe(()=> this.retrieveUsers());
   }
 }

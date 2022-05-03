@@ -31,7 +31,7 @@ export class SigninUserComponent implements OnInit {
     const userToCreate: User = this.userForm.getRawValue() as User;
     userToCreate.pro = false;
     userToCreate.id = Date.now();
-
+    userToCreate.voice = 0;
     console.log('userToCreate:', userToCreate);
     this.userService.addUser(userToCreate);
     this.router.navigate(['/login']);
