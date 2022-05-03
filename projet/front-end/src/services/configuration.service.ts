@@ -1,13 +1,12 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Inject } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ConfigurationService {
 
-
-  constructor() {
-  }
+  constructor(@Inject(DOCUMENT) private document) { }
 
   // tslint:disable-next-line:typedef
   getFontConfigurationExtraSmall() {
@@ -28,5 +27,9 @@ export class ConfigurationService {
   // tslint:disable-next-line:typedef
   getFontConfigurationExtraLarge() {
     return {'text-extra-small': false, 'text-small': false, 'text-medium': false, 'text-large': false, 'text-extra-large': true};
+  }
+
+  setCss(element, attribute, value) {
+    this.document.querySelector(element).style[attribute] = value;
   }
 }

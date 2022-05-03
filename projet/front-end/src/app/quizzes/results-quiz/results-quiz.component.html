@@ -16,7 +16,7 @@
       <ng-container *ngIf="wrongForm">
         <p>Le nom rentré n'est pas valide</p>
       </ng-container>
-      <ng-container *ngIf="save">
+      <ng-container *ngIf="save" class="align">
         <button class="button-card" (click)="restartQuiz()">Recommencer</button>
         <button class="button-card" (click)="showQuiz()">Voir d'autres quiz</button>
       </ng-container>

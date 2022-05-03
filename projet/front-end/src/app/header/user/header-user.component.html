@@ -3,9 +3,9 @@
 
   <div class="box">
     <div style="order: 1" class="align">
-      <img #tts10 alt="logo GoldenAge" src="assets/images/logoPetit.png" height="157" width="153" (mouseover)="TTS.say(tts10.alt)" (mouseout)="TTS.stop()">
+      <a [routerLink]="['/accueilUser']"><img #tts10 alt="logo GoldenAge" src="assets/images/logoPetit.png" height="157" width="153" (mouseover)="TTS.say(tts10.alt)" (mouseout)="TTS.stop()"></a>
 
-      <img alt="logo user" src="assets/images/userLogo.png" height="80" width="70" class="align">
+      <a [routerLink]="['/accueilUser']"><img alt="logo user" src="assets/images/userLogo.png" height="80" width="70" class="align"></a>
     </div>
 
     <div style="order: 2; flex-grow: 2" class="column">
@@ -38,7 +38,7 @@
   <app-text-to-speech #config ></app-text-to-speech>
     <div class="form-field">
       <label for="voice-control" class="form-field__label">
-        <p>Voice :</p>
+        <p>Voix :</p>
       </label>
       <div class="form-field__content">
         <select
@@ -47,7 +47,7 @@
           [(ngModel)]="config.selectedVoiceIndex"
           (change)="config.changeVoice(); config.demoSelectedVoice()"
           class="form-field__control">
-          <option value="">- Select a voice -</option>
+          <option value="">- Sélectionner une voix -</option>
           <option
             *ngFor="let voiceIndex of [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24]"
             [ngValue]="voiceIndex">
@@ -58,11 +58,11 @@
       </div>
       <div>
         <p>Choisissez la taille des caractères: </p>
-        <p [ngClass]="configurationService.getFontConfigurationExtraSmall()"><a>Text tout petit</a></p>
-        <p [ngClass]="configurationService.getFontConfigurationSmall()"><a>Text petit</a></p>
-        <p [ngClass]="configurationService.getFontConfigurationMedium()"><a>Text moyen</a></p>
-        <p [ngClass]="configurationService.getFontConfigurationLarge()"><a>Text grand</a></p>
-        <p [ngClass]="configurationService.getFontConfigurationExtraLarge()"><a>Text très grand</a></p>
+        <p [ngClass]="configurationService.getFontConfigurationExtraSmall()"><a (click)="toggle('25px')">Texte par défaut</a></p>
+        <p [ngClass]="configurationService.getFontConfigurationSmall()"><a (click)="toggle('30px')">Texte petit</a></p>
+        <p [ngClass]="configurationService.getFontConfigurationMedium()"><a (click)="toggle('35px')">Texte moyen</a></p>
+        <p [ngClass]="configurationService.getFontConfigurationLarge()"><a (click)="toggle('40px')">Texte grand</a></p>
+        <p [ngClass]="configurationService.getFontConfigurationExtraLarge()"><a (click)="toggle('45px')">Texte très grand</a></p>
       </div>
     </div>
 
@@ -70,7 +70,7 @@
       <!-- <p>The content of this dialog came from an <code>ng-template</code>! Amazing, right?</p> -->
     </mat-dialog-content>
     <mat-dialog-actions align="end">
-      <button mat-button matDialogClose="true" color="primary">Dismiss</button>
+      <button mat-button matDialogClose="true" color="primary">Fermer</button>
     </mat-dialog-actions>
   </ng-template>
 
