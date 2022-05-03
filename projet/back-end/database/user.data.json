@@ -35,7 +35,7 @@
     "id": 1,
     "userName": "Ludo",
     "password": "oui",
-    "pro": false
+    "pro": false,
     "volume": 1,
     "voice": 0
   },
@@ -54,5 +54,16 @@
     "password": "h",
     "pro": false,
     "id": 1650875463055
+  },
+  {
+    "firstName": "Alberto",
+    "lastName": "Falberto",
+    "id": 1648037975497,
+    "userName": "AFO",
+    "password": "1",
+    "pro": false,
+    "size": 20,
+    "volume": 0,
+    "voice": 5
   }
 ]
