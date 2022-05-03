@@ -8,7 +8,7 @@
     "pro": false,
     "size": 20,
     "volume": 0,
-    "voice": ""
+    "voice": 0
   },
   {
     "firstName": "Albert",
@@ -19,7 +19,7 @@
     "pro": false,
     "size": 20,
     "volume": 1,
-    "voice": ""
+    "voice": 0
   },
   {
     "firstName": "Sasha",
@@ -36,6 +36,8 @@
     "userName": "Ludo",
     "password": "oui",
     "pro": false
+    "volume": 1,
+    "voice": 0
   },
   {
     "lastName": "a",
