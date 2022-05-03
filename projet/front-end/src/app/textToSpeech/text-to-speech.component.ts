@@ -26,6 +26,7 @@ export class TextToSpeechComponent {
   public selectedVoiceIndex: number;
   public text: string;
   public voices: SpeechSynthesisVoice[];
+  public mute: boolean;
   // I initialize the app component.
   constructor(public userService: UserService) {
     this.voices = [];
@@ -65,7 +66,7 @@ export class TextToSpeechComponent {
       console.warn( 'Expected a voice, but none was selected.' );
       return;
     }
-    const demoText = 'Best wishes and warmest regards.';
+    const demoText = 'Never gonna give you up, never gonna let you down';
 
     this.stop();
     this.synthesizeSpeechFromText(this.selectedRate, demoText );
@@ -127,6 +128,18 @@ export class TextToSpeechComponent {
 		}
 
     this.user.voice = this.selectedVoiceIndex;
+    this.userService.updateUser(this.user);
+
+  }
+
+  public switchMute(){
+    this.mute = !this.mute;
+    if(this.mute){
+      this.user.volume = 0;
+    }else{
+      this.user.volume = 1;
+    }
+
     this.userService.updateUser(this.user);
 
   }

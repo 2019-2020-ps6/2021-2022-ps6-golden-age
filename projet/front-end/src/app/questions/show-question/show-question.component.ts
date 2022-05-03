@@ -100,4 +100,5 @@ export class ShowQuestionComponent implements OnInit {
   openDialogWithoutRef(): void{
     this.dialog.open(this.secondDialog);
   }
+
 }
