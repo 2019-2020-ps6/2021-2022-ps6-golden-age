@@ -2,7 +2,8 @@ const Joi = require('joi')
 const BaseModel = require('../utils/base-model.js')
 
 module.exports = new BaseModel('QuizPlayed', {
-  id: Joi.number().required,
+  id: Joi.number().required(),
+  playerId: Joi.number().required(),
   playerName: Joi.string().required(),
   playedThemeName: Joi.string().required(),
   playedQuizName: Joi.string().required(),

@@ -28,8 +28,6 @@ export class TextToSpeechComponent {
   public voices: SpeechSynthesisVoice[];
   // I initialize the app component.
   constructor(public userService: UserService) {
-    console.log(localStorage.getItem('user'));
-    userService.setSelectedUser(parseInt(localStorage.getItem('user'), 10));
     this.voices = [];
     this.rates = [ .25, .5, .75, 1, 1.25, 1.5, 1.75, 2 ];
     this.selectedVoice = null;
@@ -57,9 +55,6 @@ export class TextToSpeechComponent {
     this.recommendedVoices.Veena = true;
     this.recommendedVoices.Victoria = true;
     this.recommendedVoices.Yuri = true;
-    this.userService.userSelected$.subscribe(u => {
-      this.user = u;
-    });
   }
   // ---
   // PUBLIC METHODS.
@@ -79,10 +74,11 @@ export class TextToSpeechComponent {
   // I get called once after the inputs have been bound for the first time.
   // tslint:disable-next-line:use-lifecycle-interface
   public ngOnInit(): void {
+    console.log('init', localStorage.getItem('user'));
+    this.userService.setSelectedUser(parseInt(localStorage.getItem('user'), 10));
     this.userService.userSelected$.subscribe(u => {
       this.user = u;
     });
-    console.log("user is " + this.user);
     this.voices = speechSynthesis.getVoices();
     this.selectedVoice = ( this.voices[ 0 ] || null );
     // this.updateSayCommand();
@@ -123,7 +119,7 @@ export class TextToSpeechComponent {
 	}
 
 
-  public changeVoice(){
+  public changeVoice(): void{
     if ( ! this.selectedVoice ) {
 
 			return;

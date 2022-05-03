@@ -1,5 +1,6 @@
 export interface QuizPlayed {
   id: number;
+  playerId: number;
   playerName: string;
   playedThemeName: string;
   playedQuizName: string;

@@ -23,7 +23,7 @@ export class QuizPlayedService {
    Observable which contains the list of the quiz.
    Naming convention: Add '$' at the end of the variable name to highlight it as an Observable.
    */
-  public quizzes$: BehaviorSubject<QuizPlayed[]>
+  public quizzesPlayed$: BehaviorSubject<QuizPlayed[]>
     = new BehaviorSubject(this.quizzesPlayed);
 
   public quizPlayedSelected$: Subject<QuizPlayed> = new Subject();
@@ -39,19 +39,12 @@ export class QuizPlayedService {
   retrieveQuizzesPlayed(): void {
     this.http.get<QuizPlayed[]>(this.quizPlayedUrl).subscribe((quizPlayedList) => {
       this.quizzesPlayed = quizPlayedList;
-      this.quizzes$.next(this.quizzesPlayed);
+      console.log('retive quiz played');
+      this.quizzesPlayed$.next(this.quizzesPlayed);
     });
   }
 
   addQuizPlayed(quizPlayed: QuizPlayed): void {
     this.http.post<QuizPlayed>(this.quizPlayedUrl, quizPlayed, this.httpOptions).subscribe(() => this.retrieveQuizzesPlayed());
-  }
-
-  setSelectedQuizPlayed(playerName: string): void {
-    const urlWithId = this.quizPlayedUrl + '/' + playerName;
-    this.http.get<QuizPlayed>(urlWithId).subscribe((quizPlayed) => {
-      this.quizPlayedSelected$.next(quizPlayed);
-      console.log('quizPlayed : ', quizPlayed);
-    });
   }
 }

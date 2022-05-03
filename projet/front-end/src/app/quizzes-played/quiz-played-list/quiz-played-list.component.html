@@ -1,20 +1,7 @@
 <app-text-to-speech #TTS></app-text-to-speech>
-<ng-container *ngIf="pro === 'pro'">
-  <app-header-pro></app-header-pro>
-</ng-container>
-<ng-container *ngIf="pro === 'user'">
-  <app-header-user></app-header-user>
-</ng-container>
+<app-header-user></app-header-user>
 <br>
-<form class="find-form" [formGroup]="findForm">
-  <input class="input-custom" type="text" id="playerName" [formControlName]="'playerName'">
-  <button type="submit" class="button-card" (click)="findQuizPlayed()">Rechercher</button>
-</form>
-<button *ngIf="pro === 'pro'" class="button-card" (click)="findAllQuizPlayed()">Tous les quiz</button>
-<ng-container *ngIf="wrongForm">
-  <p>Le nom rentré n'est pas valide</p>
-</ng-container>
-<ng-container *ngIf="find">
+<ng-container *ngIf="true">
   <div class="displayed">
     <div *ngIf="quizPlayedList">
       <div class="quiz" *ngFor="let quizPlayed of quizPlayedList">
@@ -24,9 +11,4 @@
   </div>
 </ng-container>
 
-<ng-container *ngIf="pro === 'pro'">
-  <app-footer-pro></app-footer-pro>
-</ng-container>
-<ng-container *ngIf="pro === 'user'">
-  <app-footer-user></app-footer-user>
-</ng-container>
+<app-footer-user></app-footer-user>

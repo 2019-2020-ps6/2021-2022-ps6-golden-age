@@ -1,9 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute, Router} from '@angular/router';
-import {ThemeService} from '../../../services/theme.service';
 import {QuizPlayed} from '../../../models/quiz.played.model';
 import {QuizPlayedService} from '../../../services/quiz.played.service';
-import {FormBuilder, FormGroup} from '@angular/forms';
+import {User} from '../../../models/user.model';
+import {UserService} from '../../../services/user.service';
 
 @Component({
   selector: 'app-quiz-played-list',
@@ -12,56 +11,27 @@ import {FormBuilder, FormGroup} from '@angular/forms';
 
 export class QuizPlayedListComponent implements OnInit {
 
+  public user: User;
   public quizPlayedList: QuizPlayed[] = [];
 
-  public findForm: FormGroup;
   public find = false;
-  public wrongForm = false;
 
-  public pro: string;
-
-  constructor(private route: ActivatedRoute, public formBuilder: FormBuilder, public quizPlayedService: QuizPlayedService) {
-    this.quizPlayedService.retrieveQuizzesPlayed();
-    this.quizPlayedService.quizzes$.subscribe((quizPlayed) => {
-      this.quizPlayedList = quizPlayed;
-      console.log('Liste de quizPlayed :', this.quizPlayedList);
-    });
-    this.findForm = this.formBuilder.group({
-      playerName: [''],
-    });
+  constructor(public quizPlayedService: QuizPlayedService, private userService: UserService) {
+    this.quizPlayedList = [];
   }
 
   ngOnInit(): void {
-    this.pro = this.route.snapshot.paramMap.get('pro');
-  }
-
-  findQuizPlayed(): void {
-    let playerName: string = this.findForm.getRawValue().playerName as string;
-    playerName = playerName.toLowerCase();
-    if (playerName !== ''){
-      console.log('player name : ', playerName, typeof playerName);
+    this.userService.userSelected$.subscribe((user) => {
+      this.user = user;
       this.quizPlayedService.retrieveQuizzesPlayed();
-      this.quizPlayedService.quizzes$.subscribe((quizzesPlayedList) => {
-        console.log('hzevfhljv', quizzesPlayedList);
-        this.quizPlayedList = quizzesPlayedList.filter((quizPlayed) => quizPlayed.playerName === playerName);
-        this.quizPlayedList.reverse();
-        console.log('quizPlayedList', this.quizPlayedList);
-      });
-      this.find = true;
-      this.wrongForm = false;
-    }
-    else {
-      this.find = false;
-      this.wrongForm = true;
-    }
-  }
-
-  findAllQuizPlayed(): void {
-    this.quizPlayedService.retrieveQuizzesPlayed();
-    this.quizPlayedService.quizzes$.subscribe((quizzesPlayedList) => {
-      this.quizPlayedList = quizzesPlayedList;
-      this.quizPlayedList.reverse();
     });
-    this.find = true;
+    this.quizPlayedService.quizzesPlayed$.subscribe((quizPlayed) => {
+      if (this.user ){
+        const list = quizPlayed.filter((item) => item.playerId === this.user.id);
+        if (this.quizPlayedList.length !== list.length) {
+          this.quizPlayedList = list;
+        }
+      }
+    });
   }
 }
