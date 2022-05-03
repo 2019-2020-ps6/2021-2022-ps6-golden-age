@@ -18,6 +18,7 @@ export class LoginComponent implements OnInit {
   public wrongForm = false;
 
   constructor(public formBuilder: FormBuilder, public userService: UserService, public router: Router) {
+    localStorage.clear();
     this.userService.retrieveUsers();
     this.userService.users$.subscribe((users) => {
       this.users = users;

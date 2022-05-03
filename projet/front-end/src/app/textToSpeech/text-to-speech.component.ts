@@ -23,6 +23,7 @@ export class TextToSpeechComponent {
   public selectedVolume: number;
   public selectedRate: number;
   public selectedVoice: SpeechSynthesisVoice | null;
+  public selectedVoiceIndex: number;
   public text: string;
   public voices: SpeechSynthesisVoice[];
   // I initialize the app component.
@@ -71,7 +72,7 @@ export class TextToSpeechComponent {
     const demoText = 'Best wishes and warmest regards.';
 
     this.stop();
-    this.synthesizeSpeechFromText( this.selectedVoice, this.selectedRate, demoText );
+    this.synthesizeSpeechFromText(this.selectedRate, demoText );
   }
 
   // I get called once after the inputs have been bound for the first time.
@@ -80,9 +81,10 @@ export class TextToSpeechComponent {
     this.userService.userSelected$.subscribe(u => {
       this.user = u;
     });
+    console.log("user is " + this.user);
     this.voices = speechSynthesis.getVoices();
     this.selectedVoice = ( this.voices[ 0 ] || null );
-    this.updateSayCommand();
+    // this.updateSayCommand();
     // The voices aren't immediately available (or so it seems). As such, if no
     // voices came back, let's assume they haven't loaded yet and we need to wait for
     // the "voiceschanged" event to fire before we can access them.
@@ -92,20 +94,19 @@ export class TextToSpeechComponent {
         () => {
           this.voices = speechSynthesis.getVoices();
           this.selectedVoice = ( this.voices[ 0 ] || null );
-          this.updateSayCommand();
         }
         );
     }
   }
 
-  // I synthesize speech from the current text for the currently-selected voice.
-  public speak(): void {
-    if ( ! this.selectedVoice || ! this.text ) {
-      return;
-    }
-    this.stop();
-    this.synthesizeSpeechFromText( this.selectedVoice, this.selectedRate, this.text );
-  }
+  // // I synthesize speech from the current text for the currently-selected voice.
+  // public speak(): void {
+  //   if ( ! this.selectedVoice || ! this.text ) {
+  //     return;
+  //   }
+  //   this.stop();
+  //   this.synthesizeSpeechFromText( this.selectedVoice, this.selectedRate, this.text );
+  // }
 
   public say(line: string): void {
 
@@ -116,9 +117,22 @@ export class TextToSpeechComponent {
 		}
 
 		this.stop();
-		this.synthesizeSpeechFromText( this.selectedVoice, this.selectedRate, line );
+		this.synthesizeSpeechFromText( this.selectedRate, line );
 
 	}
+
+
+  public changeVoice(){
+    if ( ! this.selectedVoice ) {
+
+			return;
+
+		}
+
+    this.user.voice = this.selectedVoiceIndex;
+    this.userService.updateUser(this.user);
+
+  }
 
 
 	// I stop any current speech synthesis.
@@ -135,26 +149,26 @@ export class TextToSpeechComponent {
 
 	// I update the "say" command that can be used to generate the a sound file from the
 	// current speech synthesis configuration.
-	public updateSayCommand(): void {
+	// public updateSayCommand(): void {
 
-		if ( ! this.selectedVoice || ! this.text ) {
+	// 	if ( ! this.selectedVoice || ! this.text ) {
 
-			return;
+	// 		return;
 
-		}
+	// 	}
 
-		// With the say command, the rate is the number of words-per-minute. As such, we
-		// have to finagle the SpeechSynthesis rate into something roughly equivalent for
-		// the terminal-based invocation.
-		const sanitizedRate = Math.floor( 200 * this.selectedRate );
-		const sanitizedText = this.text
-			.replace( /[\r\n]/g, ' ' )
-			.replace( /(["'\\\\/])/g, '\\$1' )
-		;
+	// 	// With the say command, the rate is the number of words-per-minute. As such, we
+	// 	// have to finagle the SpeechSynthesis rate into something roughly equivalent for
+	// 	// the terminal-based invocation.
+	// 	const sanitizedRate = Math.floor( 200 * this.selectedRate );
+	// 	const sanitizedText = this.text
+	// 		.replace( /[\r\n]/g, ' ' )
+	// 		.replace( /(["'\\\\/])/g, '\\$1' )
+	// 	;
 
-		this.sayCommand = `say --voice ${ this.selectedVoice.name } --rate ${ sanitizedRate } --output-file=demo.aiff "${ sanitizedText }"`;
+	// 	this.sayCommand = `say --voice ${ this.selectedVoice.name } --rate ${ sanitizedRate } --output-file=demo.aiff "${ sanitizedText }"`;
 
-	}
+	// }
 
 	// ---
 	// PRIVATE METHODS.
@@ -162,13 +176,15 @@ export class TextToSpeechComponent {
 
 	// I perform the low-level speech synthesis for the given voice, rate, and text.
 	private synthesizeSpeechFromText(
-		voice: SpeechSynthesisVoice,
+		// voice: SpeechSynthesisVoice,
 		rate: number,
 		text: string,
 		): void {
 
     const utterance = new SpeechSynthesisUtterance( text );
-    utterance.voice = this.selectedVoice;
+
+    // utterance.voice = this.selectedVoice;
+    utterance.voice = this.voices[this.user.voice];
     utterance.rate = rate;
     utterance.volume = this.user.volume;
     speechSynthesis.speak( utterance );

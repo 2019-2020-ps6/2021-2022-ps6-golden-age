@@ -32,7 +32,7 @@ export class SigninUserComponent implements OnInit {
     userToCreate.pro = false;
     userToCreate.volume = 1;
     userToCreate.id = Date.now();
-
+    userToCreate.voice = 0;
     console.log('userToCreate:', userToCreate);
     this.userService.addUser(userToCreate);
     this.router.navigate(['/login']);

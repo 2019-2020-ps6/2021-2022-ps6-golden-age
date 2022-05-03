@@ -8,7 +8,7 @@
     "pro": false,
     "size": 20,
     "volume": 0,
-    "voice": ""
+    "voice": 0
   },
   {
     "firstName": "Albert",
@@ -19,7 +19,7 @@
     "pro": false,
     "size": 20,
     "volume": 1,
-    "voice": ""
+    "voice": 10
   },
   {
     "firstName": "Pierre",
@@ -28,5 +28,42 @@
     "userName": "Pierre",
     "password": "pierre",
     "pro": true
+  },
+  {
+    "firstName": "Ludovic",
+    "lastName": "Bailet",
+    "id": 1,
+    "userName": "Ludo",
+    "password": "oui",
+    "pro": false,
+    "volume": 1,
+    "voice": 0
+  },
+  {
+    "lastName": "a",
+    "firstName": "b",
+    "userName": "c",
+    "password": "d",
+    "pro": false,
+    "id": 1650875447182
+  },
+  {
+    "lastName": "e",
+    "firstName": "f",
+    "userName": "g",
+    "password": "h",
+    "pro": false,
+    "id": 1650875463055
+  },
+  {
+    "firstName": "Alberto",
+    "lastName": "Falberto",
+    "id": 1648037975497,
+    "userName": "AFO",
+    "password": "1",
+    "pro": false,
+    "size": 20,
+    "volume": 0,
+    "voice": 5
   }
 ]
