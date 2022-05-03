@@ -84,8 +84,6 @@ export class TextToSpeechComponent {
     console.log("user is " + this.user);
     this.voices = speechSynthesis.getVoices();
     this.selectedVoice = ( this.voices[ 0 ] || null );
-    this.selectedVoiceIndex = 0;
-    this.changeVoice();
     // this.updateSayCommand();
     // The voices aren't immediately available (or so it seems). As such, if no
     // voices came back, let's assume they haven't loaded yet and we need to wait for
@@ -96,8 +94,6 @@ export class TextToSpeechComponent {
         () => {
           this.voices = speechSynthesis.getVoices();
           this.selectedVoice = ( this.voices[ 0 ] || null );
-          this.selectedVoiceIndex = 0;
-          this.changeVoice();
         }
         );
     }
@@ -133,10 +129,8 @@ export class TextToSpeechComponent {
 
 		}
 
-    console.log("index dans cahnge voice " + this.selectedVoiceIndex);
     this.user.voice = this.selectedVoiceIndex;
     this.userService.updateUser(this.user);
-    console.log(this.user);
 
   }
 
@@ -191,7 +185,6 @@ export class TextToSpeechComponent {
 
     // utterance.voice = this.selectedVoice;
     utterance.voice = this.voices[this.user.voice];
-    console.log("usrvoiceindex " + this.user.voice);
     utterance.rate = rate;
     utterance.volume = this.user.volume;
     speechSynthesis.speak( utterance );
