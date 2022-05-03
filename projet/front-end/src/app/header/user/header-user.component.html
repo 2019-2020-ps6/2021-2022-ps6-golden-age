@@ -16,6 +16,8 @@
     </div>
 
     <div style="order: 3" class="align">
+      <button *ngIf="TTS.mute" mat-button color="primary" (click)="TTS.switchMute()"><img  #tts15 alt="son on/off"  src="assets/images/sonOffLogo.png" height="80" width="70" (mouseover)="TTS.say(tts15.alt)" (mouseout)="TTS.stop()" (keyup.tab)="TTS.say(tts15.alt)" (keyup.shift.tab)="TTS.say(tts15.alt)" ></button>
+      <button *ngIf="!TTS.mute" mat-button color="primary" (click)="TTS.switchMute()"><img  #tts15 alt="son on/off"  src="assets/images/sonOnLogo.png" height="80" width="70" (mouseover)="TTS.say(tts15.alt)" (mouseout)="TTS.stop()" (keyup.tab)="TTS.say(tts15.alt)" (keyup.shift.tab)="TTS.say(tts15.alt)" ></button>
       <button mat-button color="primary" (click)="openDialogWithTemplateRef(myDialog)"><img #tts13 alt="Réglages" src="assets/images/cogLogo.png" height="80" width="70" (mouseover)="TTS.say(tts13.alt)" (mouseout)="TTS.stop()" (keyup.tab)="TTS.say(tts13.alt)" (keyup.shift.tab)="TTS.say(tts13.alt)" ></button>
       <a [routerLink]="['/login']"><img #tts14 alt="Déconnexion" src="assets/images/logOutLogo.png" height="70" width="60" class="align" (mouseover)="TTS.say(tts14.alt)" (mouseout)="TTS.stop()" (keyup.tab)="TTS.say(tts14.alt)" (keyup.shift.tab)="TTS.say(tts14.alt)"/></a>
     </div>
