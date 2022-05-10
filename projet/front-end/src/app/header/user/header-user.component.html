@@ -3,9 +3,9 @@
 
   <div class="box">
     <div style="order: 1" class="align">
-      <a [routerLink]="['/accueilUser']"><img #tts10 alt="logo GoldenAge" src="assets/images/logoPetit.png" height="157" width="153" (mouseover)="TTS.say(tts10.alt)" (mouseout)="TTS.stop()"></a>
+      <a [routerLink]="['/accueilUser']" (keyup.tab)="TTS.say(tts100.alt)" (keyup.shift.tab)="TTS.say(tts100.alt)"><img #tts100 alt="GoldenAge" src="assets/images/logoPetit.png" height="157" width="153" ></a>
 
-      <a [routerLink]="['/accueilUser']"><img alt="logo user" src="assets/images/userLogo.png" height="80" width="70" class="align"></a>
+      <a [routerLink]="['/accueilUser']" (keyup.tab)="TTS.say(tts101.alt)" (keyup.shift.tab)="TTS.say(tts101.alt)"><img #tts101 alt="Accueil" src="assets/images/userLogo.png" height="80" width="70" class="align" (mouseover)="TTS.say(tts101.alt)" (mouseout)="TTS.stop()"></a>
     </div>
 
     <div style="order: 2; flex-grow: 2" class="column">
@@ -16,10 +16,10 @@
     </div>
 
     <div style="order: 3" class="align">
-      <button *ngIf="TTS.mute" mat-button color="primary" (click)="TTS.switchMute()"><img  #tts15 alt="son on/off"  src="assets/images/sonOffLogo.png" height="80" width="70" (mouseover)="TTS.say(tts15.alt)" (mouseout)="TTS.stop()" (keyup.tab)="TTS.say(tts15.alt)" (keyup.shift.tab)="TTS.say(tts15.alt)" ></button>
-      <button *ngIf="!TTS.mute" mat-button color="primary" (click)="TTS.switchMute()"><img  #tts15 alt="son on/off"  src="assets/images/sonOnLogo.png" height="80" width="70" (mouseover)="TTS.say(tts15.alt)" (mouseout)="TTS.stop()" (keyup.tab)="TTS.say(tts15.alt)" (keyup.shift.tab)="TTS.say(tts15.alt)" ></button>
-      <button mat-button color="primary" (click)="openDialogWithTemplateRef(myDialog)"><img #tts13 alt="Réglages" src="assets/images/cogLogo.png" height="80" width="70" (mouseover)="TTS.say(tts13.alt)" (mouseout)="TTS.stop()" (keyup.tab)="TTS.say(tts13.alt)" (keyup.shift.tab)="TTS.say(tts13.alt)" ></button>
-      <a [routerLink]="['/login']"><img #tts14 alt="Déconnexion" src="assets/images/logOutLogo.png" height="70" width="60" class="align" (mouseover)="TTS.say(tts14.alt)" (mouseout)="TTS.stop()" (keyup.tab)="TTS.say(tts14.alt)" (keyup.shift.tab)="TTS.say(tts14.alt)"/></a>
+      <button *ngIf="TTS.mute" mat-button color="primary" (click)="TTS.switchMute()" (keyup.tab)="TTS.say(tts15.alt)" (keyup.shift.tab)="TTS.say(tts15.alt)"><img  #tts15 alt="son on/off"  src="assets/images/sonOffLogo.png" height="80" width="70" (mouseover)="TTS.say(tts15.alt)" (mouseout)="TTS.stop()"></button>
+      <button *ngIf="!TTS.mute" mat-button color="primary" (click)="TTS.switchMute()" (keyup.tab)="TTS.say(tts15.alt)" (keyup.shift.tab)="TTS.say(tts15.alt)"><img  #tts15 alt="son on/off"  src="assets/images/sonOnLogo.png" height="80" width="70" (mouseover)="TTS.say(tts15.alt)" (mouseout)="TTS.stop()"></button>
+      <button mat-button color="primary" (click)="openDialogWithTemplateRef(myDialog)" (keyup.tab)="TTS.say(tts13.alt)" (keyup.shift.tab)="TTS.say(tts13.alt)" ><img #tts13 alt="Réglages" src="assets/images/cogLogo.png" height="80" width="70" (mouseover)="TTS.say(tts13.alt)" (mouseout)="TTS.stop()"></button>
+      <a [routerLink]="['/login']" (keyup.tab)="TTS.say(tts14.alt)" (keyup.shift.tab)="TTS.say(tts14.alt)"><img #tts14 alt="Déconnexion" src="assets/images/logOutLogo.png" height="70" width="60" class="align" (mouseover)="TTS.say(tts14.alt)" (mouseout)="TTS.stop()"/></a>
     </div>
   </div>
 
