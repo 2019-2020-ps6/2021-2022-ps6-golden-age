@@ -131,9 +131,9 @@ export class TextToSpeechComponent {
 
   }
 
-  public switchMute(){
+  public switchMute(): void{
     this.mute = !this.mute;
-    if(this.mute){
+    if (this.mute){
       this.user.volume = 0;
     }else{
       this.user.volume = 1;

@@ -54,7 +54,7 @@
           id="voice-control"
           name="voice"
           [(ngModel)]="config.selectedVoice"
-          (change)="config.demoSelectedVoice(); config.updateSayCommand()"
+          (change)="config.demoSelectedVoice(); config.changeVoice()"
           class="form-field__control">
           <option value="">- Select a voice -</option>
           <option
