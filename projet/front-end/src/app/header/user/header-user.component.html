@@ -58,11 +58,11 @@
       </div>
       <div>
         <p>Choisissez la taille des caractères: </p>
-        <p [ngClass]="configurationService.getFontConfigurationExtraSmall()"><a (click)="toggle('25px')">Texte par défaut</a></p>
-        <p [ngClass]="configurationService.getFontConfigurationSmall()"><a (click)="toggle('30px')">Texte petit</a></p>
-        <p [ngClass]="configurationService.getFontConfigurationMedium()"><a (click)="toggle('35px')">Texte moyen</a></p>
-        <p [ngClass]="configurationService.getFontConfigurationLarge()"><a (click)="toggle('40px')">Texte grand</a></p>
-        <p [ngClass]="configurationService.getFontConfigurationExtraLarge()"><a (click)="toggle('45px')">Texte très grand</a></p>
+        <p style="font-size:25px"><a (click)="toggle('25px')">Texte par défaut</a></p>
+        <p style="font-size:30px"><a (click)="toggle('30px')">Texte petit</a></p>
+        <p style="font-size:35px"><a (click)="toggle('35px')">Texte moyen</a></p>
+        <p style="font-size:40px"><a (click)="toggle('40px')">Texte grand</a></p>
+        <p style="font-size:45px"><a (click)="toggle('45px')">Texte très grand</a></p>
       </div>
     </div>
 
