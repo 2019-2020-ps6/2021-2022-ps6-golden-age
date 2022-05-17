@@ -5,9 +5,9 @@ const { QuizPlayed } = require('../../models')
  * This function aggregates the questions and answers from the database to build a quizz with all the data needed by the clients.
  * @param playerName
  */
-const buildQuizPlayed = (playerName) => {
+const buildQuizPlayed = (playerId) => {
   const quizzesPlayed = QuizPlayed.get()
-  return quizzesPlayed.map((quizPlayed) => quizPlayed.playerName === playerName)
+  return quizzesPlayed.filter((quizPlayed) => quizPlayed.playerId === parseInt(playerId, 10))
 }
 
 /**

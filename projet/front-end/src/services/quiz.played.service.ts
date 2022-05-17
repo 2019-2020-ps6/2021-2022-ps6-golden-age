@@ -26,8 +26,6 @@ export class QuizPlayedService {
   public quizzesPlayed$: BehaviorSubject<QuizPlayed[]>
     = new BehaviorSubject(this.quizzesPlayed);
 
-  public quizPlayedSelected$: Subject<QuizPlayed> = new Subject();
-
   private quizPlayedUrl = serverUrl + '/quizplayed';
 
   private httpOptions = httpOptionsBase;
@@ -38,6 +36,14 @@ export class QuizPlayedService {
 
   retrieveQuizzesPlayed(): void {
     this.http.get<QuizPlayed[]>(this.quizPlayedUrl).subscribe((quizPlayedList) => {
+      this.quizzesPlayed = quizPlayedList;
+      this.quizzesPlayed$.next(this.quizzesPlayed);
+    });
+  }
+
+  getQuizzesPlayedById(playerId: number): void {
+    const urlWithId = this.quizPlayedUrl + '/' + playerId;
+    this.http.get<QuizPlayed[]>(urlWithId).subscribe((quizPlayedList) => {
       this.quizzesPlayed = quizPlayedList;
       this.quizzesPlayed$.next(this.quizzesPlayed);
     });

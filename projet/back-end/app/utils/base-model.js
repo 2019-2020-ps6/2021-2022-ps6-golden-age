@@ -36,12 +36,6 @@ module.exports = class BaseModel {
     return this.items
   }
 
-  getQuizPlayedByPlayerName(playerName) {
-    const item = this.items.find((i) => i.playerName === playerName)
-    if (!item) throw new NotFoundError(`Cannot get ${this.name} name=${playerName} : not found`)
-    return item
-  }
-
   getById(id) {
     if (typeof id === 'string') id = parseInt(id, 10)
     const item = this.items.find((i) => i.id === id)

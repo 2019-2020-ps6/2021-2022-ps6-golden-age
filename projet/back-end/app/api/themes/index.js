@@ -38,7 +38,7 @@ router.post('/', (req, res) => {
 
 router.put('/:themeId', (req, res) => {
   try {
-    res.status(200).json(Theme.update(req.params.quizId, req.body))
+    res.status(200).json(Theme.update(req.params.themeId, req.body))
   } catch (err) {
     manageAllErrors(res, err)
   }

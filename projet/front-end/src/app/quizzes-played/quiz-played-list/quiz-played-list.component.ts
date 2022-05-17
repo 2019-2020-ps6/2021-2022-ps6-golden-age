@@ -23,13 +23,12 @@ export class QuizPlayedListComponent implements OnInit {
   ngOnInit(): void {
     this.userService.userSelected$.subscribe((user) => {
       this.user = user;
-      this.quizPlayedService.retrieveQuizzesPlayed();
+      this.quizPlayedService.getQuizzesPlayedById(user.id);
     });
     this.quizPlayedService.quizzesPlayed$.subscribe((quizPlayed) => {
       if (this.user ){
-        const list = quizPlayed.filter((item) => item.playerId === this.user.id);
-        if (this.quizPlayedList.length !== list.length) {
-          this.quizPlayedList = list;
+        if (this.quizPlayedList.length !== quizPlayed.length) {
+          this.quizPlayedList = quizPlayed;
         }
       }
     });
