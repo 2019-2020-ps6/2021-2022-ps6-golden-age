@@ -15,9 +15,9 @@ router.get('/', (req, res) => {
   }
 })
 
-router.get('/:playerName', (req, res) => {
+router.get('/:playerId', (req, res) => {
   try {
-    const quizPlayed = buildQuizPlayed(req.params.playerName)
+    const quizPlayed = buildQuizPlayed(req.params.playerId)
     res.status(200).json(quizPlayed)
   } catch (err) {
     manageAllErrors(res, err)
