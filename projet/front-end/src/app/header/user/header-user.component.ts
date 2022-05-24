@@ -23,7 +23,8 @@ export class HeaderUserComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  toggle(size) {
-    this.configurationService.setCss('body', 'font-size', size);
+  toggle(size): void {
+    this.configurationService.setCss('html', 'font-size', size);
   }
+
 }

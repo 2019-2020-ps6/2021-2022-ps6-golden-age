@@ -1,8 +1,8 @@
 <ng-container *ngIf="quiz">
   <div class="box">
     <div class="alignment">
-      <img #tts10 alt="logo GoldenAge" src="assets/images/logoPetit.png" height="157" width="153" (mouseover)="TTS.say(tts10.alt)" (mouseout)="TTS.stop()">
-      <img alt="logo user" src="assets/images/userLogo.png" height="80" width="70" class="alignment">
+      <img [routerLink]="['/accueilUser']" #tts10 alt="logo GoldenAge" src="assets/images/logoPetit.png" height="157" width="153" (mouseover)="TTS.say(tts10.alt)" (mouseout)="TTS.stop()">
+      <img [routerLink]="['/accueilUser']" alt="logo user" src="assets/images/userLogo.png" height="80" width="70" class="alignment">
     </div>
     <div>
       <h1 #tts11 (mouseover)="TTS.say(tts11.innerText)" (mouseout)="TTS.stop()" class="name" (keyup.tab)="TTS.say(tts11.innerText)" (keyup.shift.tab)="TTS.say(tts11.innerText)" tabindex="0">{{quiz.name}}</h1>
@@ -47,34 +47,31 @@
     <app-text-to-speech #config ></app-text-to-speech>
     <div class="form-field">
       <label for="voice-control" class="form-field__label">
-        <p>Voice :</p>
+        <p>Voix :</p>
       </label>
       <div class="form-field__content">
         <select
           id="voice-control"
           name="voice"
-          [(ngModel)]="config.selectedVoice"
-          (change)="config.demoSelectedVoice(); config.changeVoice()"
+          [(ngModel)]="config.selectedVoiceIndex"
+          (change)="config.changeVoice(); config.demoSelectedVoice()"
           class="form-field__control">
-          <option value="">- Select a voice -</option>
+          <option value="">- Sélectionner une voix -</option>
           <option
-            *ngFor="let voice of config.voices"
-            [ngValue]="voice">
-            {{ voice.name }}
+            *ngFor="let voiceIndex of [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24]"
+            [ngValue]="voiceIndex">
+            {{ config.voices[voiceIndex].name }}
 
-            <ng-template [ngIf]="config.recommendedVoices[ voice.name ]">
-              &larr; Recommended
-            </ng-template>
           </option>
         </select>
       </div>
       <div>
         <p>Choisissez la taille des caractères: </p>
-        <p [ngClass]="configurationService.getFontConfigurationExtraSmall()"><a>Text tout petit</a></p>
-        <p [ngClass]="configurationService.getFontConfigurationSmall()"><a>Text petit</a></p>
-        <p [ngClass]="configurationService.getFontConfigurationMedium()"><a>Text moyen</a></p>
-        <p [ngClass]="configurationService.getFontConfigurationLarge()"><a>Text grand</a></p>
-        <p [ngClass]="configurationService.getFontConfigurationExtraLarge()"><a>Text très grand</a></p>
+        <p style="font-size:25px"><a (click)="toggle('25px')">Texte par défaut</a></p>
+        <p style="font-size:30px"><a (click)="toggle('30px')">Texte petit</a></p>
+        <p style="font-size:35px"><a (click)="toggle('35px')">Texte moyen</a></p>
+        <p style="font-size:40px"><a (click)="toggle('40px')">Texte grand</a></p>
+        <p style="font-size:45px"><a (click)="toggle('45px')">Texte très grand</a></p>
       </div>
     </div>
 
@@ -82,7 +79,7 @@
     <!-- <p>The content of this dialog came from an <code>ng-template</code>! Amazing, right?</p> -->
   </mat-dialog-content>
   <mat-dialog-actions align="end">
-    <button mat-button matDialogClose="true" color="primary">Dismiss</button>
+    <button mat-button matDialogClose="true" color="primary">Fermer</button>
   </mat-dialog-actions>
 </ng-template>
 

@@ -101,4 +101,9 @@ export class ShowQuestionComponent implements OnInit {
     this.dialog.open(this.secondDialog);
   }
 
+  toggle(size): void {
+    this.configurationService.setCss('html', 'font-size', size);
+    this.configurationService.setCss('.buttonAnswer', 'font-size', size);
+  }
+
 }
