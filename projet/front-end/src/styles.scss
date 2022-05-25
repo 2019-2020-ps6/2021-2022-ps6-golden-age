@@ -2,7 +2,9 @@
 
 /* You can add global styles to this file, and also import other style files */
 html {
-  font: 500 25px Roboto, "Helvetica Neue", sans-serif;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-size: 25px;
+  font-weight: 500;
 }
 
 body {
@@ -13,20 +15,3 @@ body {
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
-
-
-.text-extra-small {
-  font-size: 25px;
-}
-.text-small {
-  font-size: 30px;
-}
-.text-medium{
-  font-size: 35px;
-}
-.text-large{
-  font-size: 40px;
-}
-.text-extra-large{
-  font-size: 45px;
-}
