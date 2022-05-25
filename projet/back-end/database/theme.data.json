@@ -8,5 +8,15 @@
     "name": "Culture générale",
     "img": "assets/images/a.png",
     "id": 1650314736215
+  },
+  {
+    "name": "Animaux",
+    "img": "https://img.freepik.com/vecteurs-libre/ensemble-animaux-sauvages_1308-28248.jpg",
+    "id": 1653470279948
+  },
+  {
+    "name": "Sport",
+    "img": "https://cuisinemoiunmouton.com/wp-content/uploads/2021/11/1630493771.jpeg",
+    "id": 1653470525441
   }
 ]
