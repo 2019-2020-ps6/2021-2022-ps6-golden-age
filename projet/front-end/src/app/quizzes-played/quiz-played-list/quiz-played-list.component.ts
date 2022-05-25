@@ -29,6 +29,7 @@ export class QuizPlayedListComponent implements OnInit {
       if (this.user ){
         if (this.quizPlayedList.length !== quizPlayed.length) {
           this.quizPlayedList = quizPlayed;
+          this.quizPlayedList.reverse();
         }
       }
     });

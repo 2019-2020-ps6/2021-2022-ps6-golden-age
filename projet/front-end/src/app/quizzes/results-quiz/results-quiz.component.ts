@@ -21,6 +21,7 @@ export class ResultsQuizComponent implements OnInit {
   public theme: Theme;
   public score: number;
   public user: User;
+  private save = false;
 
   constructor(private router: Router, public formBuilder: FormBuilder, private quizService: QuizService,
               private themeService: ThemeService, private quizPlayedService: QuizPlayedService, private userService: UserService) {
@@ -34,6 +35,7 @@ export class ResultsQuizComponent implements OnInit {
     });
     themeService.themeSelected$.subscribe((theme) => {
       this.theme = theme;
+      this.saveQuizPlayed();
     });
     this.score = history.state.data;
   }
@@ -42,29 +44,30 @@ export class ResultsQuizComponent implements OnInit {
   }
 
   restartQuiz(): void {
-    this.saveQuizPlayed();
     console.log('retry');
     this.router.navigate(['quiz/' + this.quiz.id + '/questions/1' ]);
   }
 
   showQuiz(): void {
-    this.saveQuizPlayed();
     console.log('bye');
     this.router.navigate(['theme-list']);
   }
 
   saveQuizPlayed(): void {
-    const quizPlayedToCreate = {
-      playerName: this.user.userName,
-      playedQuizName: this.quiz.name,
-      quizImg: this.quiz.img,
-      playedThemeName: this.theme.name,
-      score: this.score,
-      questionLength: this.quiz.questions.length,
-      id: Date.now(),
-      playerId: this.user.id
-    };
-    console.log('quizPlayedToCreate :', quizPlayedToCreate);
-    this.quizPlayedService.addQuizPlayed(quizPlayedToCreate);
+    if (!this.save) {
+      const quizPlayedToCreate = {
+        playerName: this.user.userName,
+        playedQuizName: this.quiz.name,
+        quizImg: this.quiz.img,
+        playedThemeName: this.theme.name,
+        score: this.score,
+        questionLength: this.quiz.questions.length,
+        id: Date.now(),
+        playerId: this.user.id
+      };
+      console.log('quizPlayedToCreate :', quizPlayedToCreate);
+      this.quizPlayedService.addQuizPlayed(quizPlayedToCreate);
+      this.save = true;
+    }
   }
 }
